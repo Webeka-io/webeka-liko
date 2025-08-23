@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* dis à l’extension où sont tes fichiers */
+@source "./src/**/*.{ts,tsx,js,jsx,mdx}";
