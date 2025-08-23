@@ -29,7 +29,7 @@ export default function HeroBannerFour() {
 
           
               <Link className="tp-btn-black-2" href="/contact">
-                C'est parti{" "}
+                C&apos;est parti{" "}
                 <span className="p-relative">
                   <RightArrowTwo />
                   <ArrowBg />
