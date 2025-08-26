@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
-import FooterTwo from "@/layouts/footers/footer-two";
+import HeaderFour from "@/layouts/headers/header-four";
+import FooterFour from "@/layouts/footers/footer-four";
 import error from '@/assets/img/error/error.png';
 
 const ErrorMain = () => {
@@ -19,7 +19,7 @@ const ErrorMain = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven />
+      <HeaderFour />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -35,11 +35,11 @@ const ErrorMain = () => {
                       <Image src={error} alt="error-img" style={{ height: 'auto' }} />
                       <div className="tp-error-content">
                         <h4 className="tp-error-title-sm">
-                          Something went Wrong...
+                          Quelques chose c'est mal passé ...
                         </h4>
-                        <p>Sorry, we {"couldn't"} find your page.</p>
+                        <p>Désolé , nous {"n'avons"} pas trouver votre page.</p>
                         <Link className="tp-btn-black-2" href="/">
-                          Back to Home
+                          Retour à l'accueil
                         </Link>
                       </div>
                     </div>
@@ -51,7 +51,7 @@ const ErrorMain = () => {
           </main>
 
           {/* footer area */}
-          <FooterTwo topCls="" />
+          <FooterFour />
           {/* footer area */}
         </div>
       </div>
