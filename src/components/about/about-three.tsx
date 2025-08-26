@@ -46,7 +46,7 @@ export default function AboutThree() {
                 Un site vitrine moderne et personnalisé pour votre commerce, <span className="text-decoration-underline">dès 199€/an</span>.
                 Sans frais cachés. Sans complications. Juste un site qui vous apporte des clients.
               </p>
-              <Link className="tp-btn-black-2 " href="/about-us">
+              <Link className="tp-btn-black-2 " href="/contact">
                 Commencer
                 <span className="p-relative">
                   <RightArrowTwo />

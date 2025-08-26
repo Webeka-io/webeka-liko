@@ -28,7 +28,7 @@ export const faq_data:IFaq[] = [
     id: 3,
     question: "Que comprend la maintenance annuelle ?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
+      "Hébergement, sécurité (HTTPS), mises à jour techniques, corrections mineures, petite assistance (ajout/ajustement de textes, horaires, liens).",
   },
   {
     id: 4,

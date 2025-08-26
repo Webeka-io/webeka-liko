@@ -16,10 +16,10 @@ export default function FooterFour() {
                   <h4 className="tp-footer-3-title">Carte du site</h4>
                   <div className="tp-footer-3-menu">
                     <ul>
-                      <li><a href="#">Accueil</a></li>
-                      <li><a href="#">Offre</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">CGU</a></li>
+                      <li><a href="/">Accueil</a></li>
+                      <li><a href="/pricing">Offre</a></li>
+                      <li><a href="/contact">Contact</a></li>
+                      <li><a href="/cgu">CGU</a></li>
                     </ul>
                   </div>
                 </div>

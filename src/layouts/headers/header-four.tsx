@@ -26,8 +26,8 @@ export default function HeaderFour() {
           <span className="menu-bg"></span>
           <div className="container container-1740">
             <div className="row align-items-center ">
-              <div className="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div className="tp-header-logo tp-header-3-logo">
+              <div className="col-xl-3 col-lg-6 col-md-6 col-6 ">
+                <div className="tp-header-logo tp-header-3-logo pt-20px">
                   <Link className="logo-1" href="/">
                     <Image src={logo_1} alt="logo" />
                   </Link>

@@ -14,7 +14,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   phoneE164,
-  message = "Bonjour, j'aimerais réserver !",
+  message = "Bonjour, je veux mon site !",
   label = "WhatsApp",
   className,
   customPosition = { bottom: 24, right: 10 }, // défaut : bas-droite

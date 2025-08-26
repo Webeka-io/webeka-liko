@@ -8,11 +8,11 @@ export default function ContactTwo() {
   return (
     <div className="cn-contactform-area cn-contactform-style p-relative pb-100">
       <div className="ab-2-hero-social-wrap d-none d-xl-block">
-        <div className="ab-2-hero-social">
+        {/*<div className="ab-2-hero-social">
           <Social/>
-        </div>
+        </div>*/}
         <div className="ab-2-hero-social-text">
-          <span>Follow us</span>
+          <span>Webeka</span>
         </div>
       </div>
       <div className="container">
