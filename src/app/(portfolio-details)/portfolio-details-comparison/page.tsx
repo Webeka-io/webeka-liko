@@ -1,16 +1,14 @@
-import React from "react";
-import { Metadata } from "next";
-import PortfolioDetailsComparisonMain from "@/pages/portfolio/details/portfolio-details-comparison-main";
-
+// src/app/(portfolio-details)/portfolio-details-comparison/page.tsx
+import type { Metadata } from "next";
+import PortfolioDetailsComparisonMain from "@/pages/portfolio/portfolio-details-comparison-main"; // ← on changera l'import au Patch 3
 
 export const metadata: Metadata = {
   title: "Liko - Portfolio Details Comparison page",
 };
 
-const PortfolioDetailsComparisonPage = () => {
-  return (
-    <PortfolioDetailsComparisonMain/>
-  );
-};
+// (Optionnel pour contourner les soucis de prerender sur le contenu dynamique)
+export const dynamic = "force-dynamic"; // ou: export const revalidate = 0;
 
-export default PortfolioDetailsComparisonPage;
+export default function PortfolioDetailsComparisonPage() {
+  return <PortfolioDetailsComparisonMain />;
+}
