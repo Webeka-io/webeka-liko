@@ -2,14 +2,14 @@
   "name": "liko-next-js",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },
+    },
   "dependencies": {
-    "packageManager": "pnpm@10",
     "@gsap/react": "^2.1.1",
     "@hookform/resolvers": "^3.4.2",
     "@types/react-modal-video": "^1.2.3",
