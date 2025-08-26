@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import BackToTop from "@/components/back-to-top";
 import ThemeSetting from "@/components/theme-setting";
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap.bundle.min");
@@ -15,7 +14,7 @@ const Wrapper = ({ children, showBackToTop=true }: WrapperProps) => {
   return (
     <React.Fragment>
       {children}
-      {showBackToTop && <BackToTop />}
+      {/*{showBackToTop && <BackToTop />}*/}
       <ThemeSetting />
     </React.Fragment>
   );

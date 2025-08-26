@@ -1,88 +1,85 @@
+
+
 "use client";
 import { gsap } from "gsap";
-import React from "react";
-import { useGSAP } from "@gsap/react";
+import React, { useEffect } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
-import PricingArea from "@/components/pricing/pricing-area";
+import HeaderFour from "@/layouts/headers/header-four";
+import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
+import ContactOne from "@/components/contact/contact-one";
+import FooterFour from "@/layouts/footers/footer-four";
+import { textInvert } from "@/utils/text-invert";
+import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
+import { projectThreeAnimation } from "@/utils/project-anim";
+import { ctaAnimation } from "@/utils/cta-anim";
 import FaqAreaTwo from "@/components/faq/faq-area-2";
-import FooterTwo from "@/layouts/footers/footer-two";
-// animation
-import { charAnimation, titleAnimation } from "@/utils/title-animation";
+import PricingArea from "@/components/pricing/pricing-area";
 
-const PricingMain = () => {
+
+
+
+const HomeFourMain = () => {
   useScrollSmooth();
+  useEffect(() => {
+    document.body.classList.add("tp-smooth-scroll");
+    return () => {
+      document.body.classList.remove("tp-smooth-scroll");
+    };
+  }, []);
 
   useGSAP(() => {
     const timer = setTimeout(() => {
-      charAnimation();
-      titleAnimation();
+      fadeAnimation();
+      revelAnimationOne();
+      projectThreeAnimation();
+      ctaAnimation();
+      textInvert();
     }, 100);
     return () => clearTimeout(timer);
   });
 
+
+  
   return (
     <Wrapper>
+
       {/* header area start */}
-      <HeaderEleven />
+      <HeaderFour />
       {/* header area end */}
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div
-            className="inner-bg"
-            style={{
-              backgroundImage:
-                "url(/assets/img/home-01/team/team-details-bg.png)",
-            }}
-          >
-            <main>
-              {/* pricing hero */}
-              <div className="tm-hero-area tm-hero-ptb p-relative">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-12">
-                      <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
-                        <h4 className="tm-hero-title tp-char-animation">
-                          Pricing Plans
-                        </h4>
-                      </div>
-                      <div className="tm-hero-text">
-                        <p className="tp_title_anim">
-                          Choose the right pricing for you and get started{" "}
-                          <br />
-                          with your project.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* pricing hero */}
+          <main>
 
-              {/* pricing area */}
-              <PricingArea/>
-              {/* pricing area */}
+        {/* faq area */} 
+            <PricingArea/> 
+            {/* faq area */}
 
-              {/* faq area */}
-              <FaqAreaTwo/>
-              {/* faq area */}
-            </main>
+            {/* faq area */} 
+            <FaqAreaTwo/> 
+            {/* faq area */}
 
-            {/* footer area */}
-            <FooterTwo topCls="" />
-            {/* footer area */}
-          </div>
+            {/* contact area start */}
+            <ContactOne />
+            {/* contact area end */}
+
+          </main>
+
+          {/* footer area */}
+          <FooterFour />
+          {/* footer area */}
         </div>
       </div>
     </Wrapper>
   );
 };
 
-export default PricingMain;
+
+export default HomeFourMain;
+

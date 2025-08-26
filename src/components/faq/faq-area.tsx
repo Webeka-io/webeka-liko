@@ -14,39 +14,27 @@ type IFaq = {
 export const faq_data:IFaq[] = [
   {
     id: 1,
-    question: "What we do?",
+    question: "La création du site est-elle incluse dans 199€/an ?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
+      "Oui. La mise en place du site vitrine (sur la base d’un template personnalisé avec vos textes, couleurs et photos) est incluse. Aucun frais d’installation supplémentaire.",
   },
   {
     id: 2,
-    question: "How we do it?",
+    question: "Quel est le délai moyen de mise en ligne ?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
+      "En général 3 à 5 jours ouvrés après réception de vos contenus (logo, textes, photos, horaires, liens).",
   },
   {
     id: 3,
-    question: "How  can i download the products?",
+    question: "Que comprend la maintenance annuelle ?",
     answer:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
   },
   {
     id: 4,
-    question: "Free Shipping  & Return Order",
+    question: "Proposez-vous la prise de rendez-vous en ligne ?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
-  },
-  {
-    id: 5,
-    question: "Payment options",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
-  },
-  {
-    id: 6,
-    question: "Best Quality Products",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.!",
+      "Oui. Nous intégrons un bouton de réservation (Cal.com, Calendly ou Google Calendar) et/ou un lien vers vos plateformes (ex. Planity).",
   },
 ];
 

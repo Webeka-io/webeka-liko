@@ -8,10 +8,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import HeaderFour from "@/layouts/headers/header-four";
 import ContactTwo from "@/components/contact/contact-two";
 import ContactLocation from "@/components/contact/contact-location";
-import FooterTwo from "@/layouts/footers/footer-two";
+import FooterFour from "@/layouts/footers/footer-four";
+
 // animation
 import { charAnimation } from "@/utils/title-animation";
 
@@ -28,7 +29,7 @@ const ContactMain = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven />
+      <HeaderFour />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -47,9 +48,9 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">Webeka</span>
                         <h4 className="tm-hero-title-big tp-char-animation">
-                          Get in touch
+                          Contact
                         </h4>
                       </div>
                     </div>
@@ -68,7 +69,7 @@ const ContactMain = () => {
             </main>
 
             {/* footer area */}
-            <FooterTwo topCls="" whiteFooter={true} />
+              <FooterFour />
             {/* footer area */}
           </div>
         </div>

@@ -12,10 +12,10 @@ export default function ContactOne() {
           <div className="tp-cta-title-box p-relative">
             <h4 className="tp-cta-title cta-text">
               Parlons
-              <span>enssemble</span>
+              <span>ensemble</span>
             </h4>
             <p className="tp_fade_bottom">
-             Un site professionnel dès 199€/an, sans prise de tête.
+             Un site professionnel  <span className="text-decoration-underline">dès 199€/an</span>, sans prise de tête.
               Contactez-nous dès aujourd’hui et recevez votre site en quelques jours.
             </p>
             <div className="tp-cta-icon">
@@ -24,7 +24,7 @@ export default function ContactOne() {
             <div className="tp-cta-btn-box">
               <Link className="tp-btn-zikzak p-relative mr-10" href="/contact">
                 <span className="zikzak-content">
-                  Commencer <br /> Maintenant
+                  Je <br /> Commence
                   <RightArrow clr="#19191A" />
                 </span>
                 <ProjectShape />

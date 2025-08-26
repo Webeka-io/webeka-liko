@@ -20,7 +20,7 @@ const  ThemeSetting = () => {
     >
       <div className="tp-theme-wrapper">
         <div className="tp-theme-header text-center">
-          <h4 className="tp-theme-header-title">Liko Mode Settings</h4>
+          <h4 className="tp-theme-header-title">Webeka Réglages</h4>
         </div>
 
         <div className="tp-theme-dir mb-20">

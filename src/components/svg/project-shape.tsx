@@ -4,8 +4,8 @@ export default function ProjectShape() {
   return (
     <svg
       className="anim"
-      width="160"
-      height="161"
+      width="140"
+      height="140"
       viewBox="0 0 160 161"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

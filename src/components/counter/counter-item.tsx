@@ -3,57 +3,64 @@ import { useEffect, useRef, useState } from "react";
 type CounterProps = {
   min: number;
   max: number;
-}
+  durationMs?: number; // 👉 durée totale du comptage
+};
 
-export default function CounterItem({ min, max }: CounterProps) {
+export default function CounterItem({ min, max, durationMs = 5000 }: CounterProps) {
   const [counted, setCounted] = useState<number>(min);
-  const targetElement = useRef<HTMLSpanElement>(null); // Add type annotation for useRef
+  const targetRef = useRef<HTMLSpanElement>(null);
+  const rafIdRef = useRef<number | null>(null);
+  const runningRef = useRef(false);
+
+  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3); // optionnel mais plus agréable
 
   const startCountup = () => {
-    const intervalId = setInterval(() => {
-      setCounted((pre) => {
-        const tempCount = pre + Math.ceil(max / 20);
-        if (tempCount >= max) {
-          clearInterval(intervalId);
-          return max;
-        } else {
-          return tempCount;
-        }
-      });
-    }, 70);
+    if (runningRef.current) return;
+    runningRef.current = true;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const t = Math.min(1, elapsed / durationMs);
+      const value = Math.round(min + (max - min) * easeOutCubic(t));
+      setCounted(value);
+
+      if (t < 1) {
+        rafIdRef.current = requestAnimationFrame(tick);
+      } else {
+        runningRef.current = false;
+        rafIdRef.current = null;
+      }
+    };
+
+    rafIdRef.current = requestAnimationFrame(tick);
   };
 
   useEffect(() => {
-    function handleIntersection(entries: IntersectionObserverEntry[]) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setCounted(min);
-          startCountup();
-        }
-      });
-    }
+    const el = targetRef.current;
+    if (!el) return;
 
-    // Options for the Intersection Observer
-    const options: IntersectionObserverInit = {
-      root: null,
-      rootMargin: "0px", 
-      threshold: 0.5,
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCounted(min);
+            startCountup();
+            observer.unobserve(el); // 👉 déclenche une seule fois
+            observer.disconnect();
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.5 }
+    );
 
-    // Create an Intersection Observer and pass in the callback function and options
-    const observer = new IntersectionObserver(handleIntersection, options);
-
-    // Start observing the target element
-    if (targetElement.current) {
-      observer.observe(targetElement.current);
-    }
+    observer.observe(el);
 
     return () => {
-      setCounted(min);
-      observer.disconnect(); // Disconnect the observer when component unmounts
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+      observer.disconnect();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [min, max, durationMs]);
 
-  return <i ref={targetElement}>{counted}</i>;
+  return <i ref={targetRef}>{counted}</i>;
 }

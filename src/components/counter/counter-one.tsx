@@ -79,21 +79,21 @@ export default function CounterOne() {
               <div className="col-xl-4 col-lg-4 col-md-4 mb-30">
                 <div className="slide-funfact-item text-center">
                   <h4>
-                    <CounterItem min={0} max={235} />+
+                    <CounterItem min={0} max={235} /> +
                   </h4>
-                  <span>Projects Finished</span>
+                  <span>Sites créés</span>
                 </div>
               </div>
               <div className="col-xl-4 col-lg-4 col-md-4 mb-30">
                 <div className="slide-funfact-item text-center">
-                  <h4><CounterItem min={0} max={12} />+</h4>
-                  <span>Years of Experience</span>
+                  <h4><CounterItem min={0} max={0} /></h4>
+                  <span>Frais cachés</span>
                 </div>
               </div>
               <div className="col-xl-4 col-lg-4 col-md-4 mb-30">
                 <div className="slide-funfact-item text-center">
-                  <h4><CounterItem min={0} max={140} />+</h4>
-                  <span>Clients Worldwide</span>
+                  <h4><CounterItem min={0} max={72} /> h </h4>
+                  <span>Pour la mise en ligne</span>
                 </div>
               </div>
             </div>

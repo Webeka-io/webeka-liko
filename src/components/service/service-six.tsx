@@ -6,7 +6,7 @@ import ser_img_1 from "@/assets/img/webeka/01.png";
 import ser_img_2 from "@/assets/img/webeka/02.png";
 import ser_img_3 from "@/assets/img/webeka/03.png";
 import ser_img_4 from "@/assets/img/webeka/04.png";
-import { RightArrow, ShapeTwo } from "../svg";
+import { RightArrow, ProjectShape } from "../svg";
 import Link from "next/link";
 
 const service_data = [
@@ -104,14 +104,14 @@ export default function ServiceSix() {
                       </div>
                       <div className="sv-service-btn">
                         <Link
-                          className=" tp-btn-zikzak zikzak-inner p-relative"
-                          href="/service-details"
+                           className="tp-btn-zikzak p-relative"
+                            href="/portfolio-wrapper"
                         >
                           <span className="zikzak-content">
                             Je <br /> Me lance
                             <RightArrow clr="currentColor" />
                           </span>
-                          <ShapeTwo  />
+                          <ProjectShape  />
                         </Link>
                       </div>
                     </div>

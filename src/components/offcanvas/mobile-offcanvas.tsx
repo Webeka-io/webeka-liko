@@ -40,8 +40,8 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           </div>
           <div className="tp-offcanvas-main">
             <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Hello There!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+              <h3 className="tp-offcanvas-title"> Un site simple</h3>
+              <p>N'hésitez pas à nous contacter afin de donner vie à votre projet ! </p>
             </div>
             <div className="tp-main-menu-mobile d-xl-none">
               <MobileMenus/>
@@ -64,17 +64,14 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
 
               <ul>
                 <li>
-                  <a href="tel:1245654">+ 4 20 7700 1007</a>
+                  <a href="tel:1245654">07 53 34 39 97</a>
                 </li>
                 <li>
-                  <a href="mailto:hello@diego.com">hello@diego.com</a>
-                </li>
-                <li>
-                  <a href="#">Avenue de Roma 158b, Lisboa</a>
+                  <a href="mailto:hello@diego.com">contact@webeka.fr</a>
                 </li>
               </ul>
             </div>
-            <div className="tp-offcanvas-social">
+            {/*<div className="tp-offcanvas-social">
               <h3 className="tp-offcanvas-title sm">Follow Us</h3>
               <ul>
                 <li>
@@ -90,7 +87,7 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
                   <a href="#"><Youtube /></a>
                 </li>
               </ul>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

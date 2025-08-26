@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import product_data from "@/data/product-data";
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
 // Get max price
 export function maxPrice(): number {
@@ -9,6 +11,9 @@ export function maxPrice(): number {
   return max_price
 };
 
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 export function imageCompare() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -47,6 +52,8 @@ export function imageCompare() {
     onMoving: () => void;
     onMoveEnd: () => void;
   }
+
+  
 
   // Example beforeAfter function definition for illustration purposes
   function beforeAfter(element: HTMLElement, options: BeforeAfterOptions): void {

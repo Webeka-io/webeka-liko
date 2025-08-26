@@ -13,11 +13,10 @@ export default function FaqAreaTwo() {
             <div className="tp-price-inner-faq">
               <div className="tp-service-2-title-box pt-25 pb-120">
                 <h4 className="tp-service-2-title mb-20 tp_title_anim">
-                  Frequently Asked Question
+                  Questions fréquentes
                 </h4>
                 <p className="tp_title_anim">
-                  We believe in making life-long connections through great
-                  communication.
+                  Nous pensons que la communication est la clés de projets réussis
                 </p>
               </div>
               <div className="tp-service-2-shape-img text-center text-lg-start">

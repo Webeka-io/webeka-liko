@@ -12,7 +12,6 @@ import HeaderFour from "@/layouts/headers/header-four";
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
 import GalleryOne from "@/components/gallery/gallery-one";
 import AboutThree from "@/components/about/about-three";
-import BrandThree from "@/components/brand/brand-three";
 import ProjectFour from "@/components/project/project-four";
 import ContactOne from "@/components/contact/contact-one";
 import FooterFour from "@/layouts/footers/footer-four";
@@ -21,7 +20,7 @@ import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ServiceMain from "@/pages/service/service-2";
-
+import CounterOne from "@/components/counter/counter-one";
 
 
 
@@ -74,9 +73,9 @@ const HomeFourMain = () => {
             <ServiceMain />
             {/* service area */}       
 
-            {/* brand area start */}
-            <BrandThree />
-            {/* brand area end */}
+            {/* counter area start */}
+            <CounterOne />
+            {/* counter area end */}
 
             {/* project area start */}
             <ProjectFour />

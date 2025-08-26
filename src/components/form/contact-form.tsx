@@ -32,23 +32,23 @@ export default function ContactForm({btnCls=''}:IProps) {
   return (
     <form onSubmit={onSubmit}>
       <div className="cn-contactform-input mb-25">
-        <label>Name</label>
+        <label>Nom</label>
         <input id='name' {...register("name")} type="text" placeholder="John Doe" />
         <ErrorMsg msg={errors.name?.message!} />
       </div>
       <div className="cn-contactform-input mb-25">
-        <label>Subject</label>
-        <input id='subject' {...register("subject")} type="text" placeholder="Your@email.com" />
+        <label>Sujet</label>
+        <input id='subject' {...register("subject")} type="text" placeholder="Votre@email.com" />
         <ErrorMsg msg={errors.subject?.message!} />
       </div>
       <div className="cn-contactform-input mb-25">
         <label>Message</label>
-        <textarea id='message' {...register("message")} placeholder="Tell Us About Your Project"></textarea>
+        <textarea id='message' {...register("message")} placeholder="Décrivez votre secteur , vos couleurs , vos envie"></textarea>
         <ErrorMsg msg={errors.message?.message!} />
       </div>
       <div className="cn-contactform-btn">
         <button className={`tp-btn-black-md ${btnCls} w-100`} type="submit">
-          Send Message
+          Envoyer
         </button>
       </div>
     </form>

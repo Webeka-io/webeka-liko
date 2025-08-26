@@ -13,18 +13,17 @@ export default function FooterFour() {
             <div className="col-xl-4 col-lg-6 col-md-6 mb-60">
               <div className="tp-footer-3-widget-wrapper footer-col-3-1">
                 <div className="tp-footer-3-widget mb-40">
-                  <h4 className="tp-footer-3-title">Website map</h4>
+                  <h4 className="tp-footer-3-title">Carte du site</h4>
                   <div className="tp-footer-3-menu">
                     <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Landing</a></li>
-                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Accueil</a></li>
+                      <li><a href="#">Offre</a></li>
                       <li><a href="#">Contact</a></li>
+                      <li><a href="#">CGU</a></li>
                     </ul>
                   </div>
                 </div>
-                <div className="tp-footer-3-widget">
+                {/*<div className="tp-footer-3-widget">
                   <h4 className="tp-footer-3-title">Newsletter</h4>
                   <div className="tp-footer-3-input-box d-flex align-items-center">
                     <input type="text" placeholder="Enter Address..." />
@@ -53,7 +52,7 @@ export default function FooterFour() {
                   <p className="tp-footer-3-copyright">
                     {new Date().getFullYear()} Themepure <br /> © All rights reserved
                   </p>
-                </div>
+                </div>*/}
               </div>
             </div>
             <div className="col-xl-4 col-lg-6 col-md-6 mb-60">
@@ -61,17 +60,14 @@ export default function FooterFour() {
                 <div className="tp-footer-3-widget mb-30">
                   <h4 className="tp-footer-3-title">Contact</h4>
                   <div className="tp-footer-2-contact-item">
-                    <span>
-                      <a href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
-                      target="_blank">740 NEW SOUTH HEAD RD, TRIPLE BAY SWFW 3108, NEW YORK</a>
-                      </span>
+                   
                   </div>
                   <div className="tp-footer-2-contact-item">
-                    <span>P: <a href="tel:+725214456">+ 725 214 456</a></span>
-                    <span>E: <a href="mailto:contact@liko.com">contact@liko.com</a></span>
+                    <span>Tél : <a href="tel:+33753343997">07 53 34 39 97</a></span> <br />
+                    <span>Email : <a href="mailto:contact@liko.com">contact@webeka.fr</a></span>
                   </div>
                 </div>
-                <div className="tp-footer-3-widget">
+                {/*<div className="tp-footer-3-widget">
                   <h4 className="tp-footer-3-title">Follow</h4>
                   <div className="tp-footer-3-social">
                     <a href="#"><i className="fa-brands fa-twitter"></i></a>
@@ -79,7 +75,7 @@ export default function FooterFour() {
                     <a href="#"><i className="fa-brands fa-instagram"></i></a>
                     <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
                   </div>
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>

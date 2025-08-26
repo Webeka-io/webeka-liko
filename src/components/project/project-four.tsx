@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import { ProjectShape, RightArrow } from "../svg";
 // images
-import port_1 from "@/assets/img/home-03/portfolio/port-1.jpg";
-import port_2 from "@/assets/img/home-03/portfolio/port-2.jpg";
-import port_3 from "@/assets/img/home-03/portfolio/port-3.jpg";
-import port_4 from "@/assets/img/home-03/portfolio/port-4.jpg";
-import port_5 from "@/assets/img/home-03/portfolio/port-5.jpg";
-import port_6 from "@/assets/img/home-03/portfolio/port-6.jpg";
-import port_7 from "@/assets/img/home-03/portfolio/port-7.jpg";
-import port_8 from "@/assets/img/home-03/portfolio/port-8.jpg";
+import port_1 from "@/assets/img/home-03/portfolio/1.png";
+import port_2 from "@/assets/img/home-03/portfolio/2.png";
+import port_3 from "@/assets/img/home-03/portfolio/7.png";
+import port_4 from "@/assets/img/home-03/portfolio/8.png";
+import port_5 from "@/assets/img/home-03/portfolio/6.png";
+import port_6 from "@/assets/img/home-03/portfolio/5.png";
+import port_7 from "@/assets/img/home-03/portfolio/3.png";
+import port_8 from "@/assets/img/home-03/portfolio/4.png";
 import Link from "next/link";
 
 // portfolio data
@@ -19,29 +19,29 @@ const project_data = [
     id: 1,
     img_1: port_1,
     img_2: port_2,
-    meta: "Rendez-vous",
-    title: "Via Calendly ou Planity , Doctolib , Booking etc ...",
+    meta: "Juin 2025 .",
+    title: "Barbershop",
   },
   {
     id: 2,
     img_1: port_3,
     img_2: port_4,
-    meta: "Contact mobile",
-    title: "Via Whatsapp ou Téléphone",
+    meta: "Janvier 2025",
+    title: "Resaurant",
   },
   {
     id: 3,
     img_1: port_5,
     img_2: port_6,
-    meta: "Adresse",
-    title: "Via Google Map",
+    meta: "Mars 2025",
+    title: "Fleuriste",
   },
   {
     id: 4,
     img_1: port_7,
     img_2: port_8,
-    meta: "Autres widgets",
-    title: "Horaire , Météo , Musique ...",
+    meta: "SEP 2025",
+    title: "Vétérinaire",
   },
 ];
 
@@ -58,15 +58,15 @@ export default function ProjectFour({ style_2 = false }: IProps) {
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim">
-                <span> &nbsp; &nbsp; Nos</span> <span>Services</span>
+                  Je veux<span>Mon site</span>
                 </h4>
                 <div className="tp-project-3-btn-box">
                   <Link
                     className="tp-btn-zikzak p-relative"
                     href="/portfolio-wrapper"
                   >
-                    <span className="zikzak-content ">
-                      Prise <br /> De contact
+                    <span className="zikzak-content">
+                      Je<br />Commence
                       <RightArrow clr="#19191A" />
                     </span>
                     <ProjectShape />
@@ -92,26 +92,22 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                   </div>
                   <div className="col-xl-4 col-lg-4 col-md-12 order-1 order-lg-0">
                     <div className="tp-project-3-content text-center">
-                      <span className="tp-project-3-title-sm mb-10">{item.meta} </span>
-                      <br />
-                      <h4 className="tp-project-3-meta">
-                      
+                      <span className="tp-project-3-meta">{item.meta} </span>
+                      <h4 className="tp-project-3-title-sm">
                         <Link href="/portfolio-details-1">{item.title}</Link>
                       </h4>
-                      <br />
                       <Link
                         className="tp-btn-project-sm"
                         href="/portfolio-details-1"
                       >
-                        Je commence ici 
+                      Je commence
                       </Link>
-
                     </div>
                     <div className="tp-project-3-border color-1 text-center">
                       <span></span>
                     </div>
                   </div>
-                  <div className="col-xl-4 col-lg-4 col-md-6 order-0 order-lg-0">
+                  <div className="col-xl-4 col-lg-4 col-md-6 order-0 order-lg-0 d-none d-md-block">
                     <div className="tp-project-3-thumb pro-img-2">
                       <Image
                         src={item.img_2}

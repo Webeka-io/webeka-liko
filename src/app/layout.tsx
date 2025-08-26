@@ -8,6 +8,7 @@ import {
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+import WhatsAppButton from "@/components/widgets/WhatsAppButton"
 
 const gellery = localFont({
   src: [
@@ -82,8 +83,9 @@ export default function RootLayout({
         id="body"
         suppressHydrationWarning={true}
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
-      >
+      ><WhatsAppButton phoneE164="+33612345678" />
         <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+
       </body>
     </html>
   );

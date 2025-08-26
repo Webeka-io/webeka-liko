@@ -22,10 +22,10 @@ export default function HeaderFour() {
   return (
     <>
       <header>
-        <div id="header-sticky" className={`tp-header-3-area mt-35 z-index-5 ${sticky?'header-sticky':''}`}>
+        <div id="header-sticky" className={`tp-header-3-area z-index-5  ${sticky?'header-sticky':''}`}>
           <span className="menu-bg"></span>
           <div className="container container-1740">
-            <div className="row align-items-center">
+            <div className="row align-items-center ">
               <div className="col-xl-3 col-lg-6 col-md-6 col-6">
                 <div className="tp-header-logo tp-header-3-logo">
                   <Link className="logo-1" href="/">
@@ -36,8 +36,8 @@ export default function HeaderFour() {
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-6 col-lg-6 d-none d-xl-block">
-                <div className="tp-header-3-menu-wrap text-center">
+              <div className="col-xl-6 col-lg-6 d-none d-xl-block ">
+                <div className="tp-header-3-menu-wrap text-center ">
                   <div className="tp-header-3-menu-box d-inline-flex align-items-center justify-content-between">
                     <div className="tp-header-3-menu header-main-menu">
                       <nav className="tp-main-menu-content">
@@ -46,20 +46,13 @@ export default function HeaderFour() {
                         {/* header menus */}
                       </nav>
                     </div>
-                    <div className="tp-header-3-cart p-relative">
-                      <button className="cartmini-open-btn" onClick={() => setOpenCartMini(true)}>
-                        <span>
-                          <Cart clr="white" />
-                        </span>
-                        <em>0</em>
-                      </button>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
               <div className="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div className="tp-header-3-right d-flex align-items-center justify-content-end">
-                  <div className="tp-header-3-social d-none d-sm-block">
+                <div className="tp-header-3-right d-flex align-items-center justify-content-end pt-20px">
+                  {/*<div className="tp-header-3-social d-none d-sm-block">
                     <a href="#">
                       <i className="fa-brands fa-twitter"></i>
                     </a>
@@ -69,8 +62,8 @@ export default function HeaderFour() {
                     <a href="#">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
-                  </div>
-                  <button onClick={() => setOpenOffCanvas(true)} className="tp-header-3-bar tp-offcanvas-open-btn d-xl-none">
+                  </div>*/}
+                  <button onClick={() => setOpenOffCanvas(true)} className="tp-header-3-bar tp-offcanvas-open-btn d-xl-none ">
                     <i className="fa-solid fa-bars"></i>
                   </button>
                 </div>

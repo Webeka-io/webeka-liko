@@ -9,7 +9,7 @@ import shape_d_2 from '@/assets/img/home-03/gallery/gal-shape-dark-2.png';
 import g_1 from '@/assets/img/webeka/restaurant.jpg';
 import g_2 from '@/assets/img/webeka/kine.jpg';
 import g_3 from '@/assets/img/webeka/barber.jpg';
-import g_4 from '@/assets/img/webeka/ongles.jpg';
+import g_4 from '@/assets/img/webeka/fleuriste.jpg';
 import g_5 from '@/assets/img/webeka/veto.jpg';
 
 
