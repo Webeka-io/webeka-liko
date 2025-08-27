@@ -13,7 +13,13 @@ export default function HeroBannerFour() {
               <div className="tp-hero-3-circle-shape my-custom-circle">
                 <span></span>
               </div>
-              <h4 className="tp-hero-3-title tp_reveal_anim">
+              <h4 className="md : d-none d-md-block tp-hero-3-title tp_reveal_anim">
+                <span className="tp-reveal-line">Un site web</span> <br />
+                <span className="tp-reveal-line">Vraiment simple</span>
+              </h4>
+
+              {/* Mobile Title */}
+              <h4 className="d-block d-md-none tp-hero-3-title ">
                 <span className="tp-reveal-line">Un site web</span> <br />
                 <span className="tp-reveal-line">Vraiment simple</span>
               </h4>
@@ -23,7 +29,7 @@ export default function HeroBannerFour() {
               </span>
               
             {/* Mobile Avantages */}
-              <span className="mx-auto  w-75 ms-7 text-start d-block d-md-none tp-hero-3-category tp_reveal_anim ">
+              <span className="d-block d-md-none mx-auto  w-75 ms-7 text-start tp-hero-3-category  ">
                 • Création gratuite <br /> • 199€/an <br /> • Zéro complication
               </span>
 
