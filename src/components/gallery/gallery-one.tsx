@@ -40,7 +40,7 @@ export default function GalleryOne() {
                   {gallery_images.map((g, i) => (
 
                     <div key={i}>
-                      <div className="tp-gallery-item mr-30">
+                      <div className="tp-gallery-item mr-30 border-image-gallery-one">
                         <Image src={g} alt="gallery-img" style={{ height: 'auto' }} />
                       </div>
                     </div>
