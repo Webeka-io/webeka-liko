@@ -29,7 +29,7 @@ const  ThemeSetting = () => {
               onClick={() => setTheme("dark")}
               className={`tp-theme-dir-rtl ${theme === "dark" ? "active" : ""}`}
             >
-              Dark
+              Sombre
             </span>
             <input type="checkbox" id="tp-dir-toggler" checked={theme === "dark"} readOnly />
             <i className="tp-theme-dir-slide"></i>
@@ -39,7 +39,7 @@ const  ThemeSetting = () => {
                 theme === "light" ? "active" : ""
               }`}
             >
-              Light
+              Clair
             </span>
           </label>
         </div>
