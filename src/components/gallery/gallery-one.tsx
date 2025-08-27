@@ -21,7 +21,7 @@ const imgStyle:CSSProperties = {height: "auto"};
 
 export default function GalleryOne() {
   return (
-    <div className="tp-gallery-area fix p-relative">
+    <div className=" tp-gallery-area fix p-relative ">
       <div className="tp-gallery-shape-1">
         <Image className="img-1" src={shape_1} alt="shape" style={imgStyle} />
         <Image className="img-2" src={shape_d_1} alt="shape" style={imgStyle} />

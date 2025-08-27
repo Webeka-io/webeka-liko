@@ -11,7 +11,7 @@ export default function ContactOne() {
         <div className="col-xl-12">
           <div className="tp-cta-title-box p-relative">
             <h4 className="tp-cta-title cta-text">
-              Parlons
+              Parlons <br />
               <span>ensemble</span>
             </h4>
             <p className="tp_fade_bottom">
