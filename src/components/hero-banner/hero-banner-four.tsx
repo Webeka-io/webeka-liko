@@ -13,13 +13,7 @@ export default function HeroBannerFour() {
               <div className="tp-hero-3-circle-shape my-custom-circle">
                 <span></span>
               </div>
-              <h4 className="md : d-none d-md-block tp-hero-3-title tp_reveal_anim">
-                <span className="tp-reveal-line">Un site web</span> <br />
-                <span className="tp-reveal-line">Vraiment simple</span>
-              </h4>
-
-              {/* Mobile Title */}
-              <h4 className="d-block d-md-none tp-hero-3-title ">
+              <h4 className=" tp-hero-3-title tp_reveal_anim">
                 <span className="tp-reveal-line">Un site web</span> <br />
                 <span className="tp-reveal-line">Vraiment simple</span>
               </h4>

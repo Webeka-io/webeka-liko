@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import { ProjectShape, RightArrow } from "../svg";
 // images
-import port_1 from "@/assets/img/home-03/portfolio/1.png";
-import port_2 from "@/assets/img/home-03/portfolio/2.png";
-import port_3 from "@/assets/img/home-03/portfolio/7.png";
-import port_4 from "@/assets/img/home-03/portfolio/8.png";
-import port_5 from "@/assets/img/home-03/portfolio/6.png";
-import port_6 from "@/assets/img/home-03/portfolio/5.png";
-import port_7 from "@/assets/img/home-03/portfolio/3.png";
-import port_8 from "@/assets/img/home-03/portfolio/4.png";
+import port_1 from "@/assets/img/home-03/portfolio/1.webp";
+import port_2 from "@/assets/img/home-03/portfolio/2.webp";
+import port_3 from "@/assets/img/home-03/portfolio/7.webp";
+import port_4 from "@/assets/img/home-03/portfolio/8.webp";
+import port_5 from "@/assets/img/home-03/portfolio/6.webp";
+import port_6 from "@/assets/img/home-03/portfolio/5.webp";
+import port_7 from "@/assets/img/home-03/portfolio/3.webp";
+import port_8 from "@/assets/img/home-03/portfolio/4.webp";
 import Link from "next/link";
 
 // portfolio data

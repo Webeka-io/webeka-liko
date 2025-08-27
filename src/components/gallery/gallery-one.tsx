@@ -6,11 +6,11 @@ import shape_1 from '@/assets/img/home-03/gallery/gal-shape-1.png';
 import shape_d_1 from '@/assets/img/home-03/gallery/gal-shape-dark-1.png';
 import shape_2 from '@/assets/img/home-03/gallery/gal-shape-2.png';
 import shape_d_2 from '@/assets/img/home-03/gallery/gal-shape-dark-2.png';
-import g_1 from '@/assets/img/webeka/restaurant.jpg';
-import g_2 from '@/assets/img/webeka/kine.jpg';
-import g_3 from '@/assets/img/webeka/barber.jpg';
-import g_4 from '@/assets/img/webeka/fleuriste.jpg';
-import g_5 from '@/assets/img/webeka/veto.jpg';
+import g_1 from '@/assets/img/webeka/restaurant.webp';
+import g_2 from '@/assets/img/webeka/kine.webp';
+import g_3 from '@/assets/img/webeka/barber.webp';
+import g_4 from '@/assets/img/webeka/fleuriste.webp';
+import g_5 from '@/assets/img/webeka/veto.webp';
 
 
 const gallery_images = [

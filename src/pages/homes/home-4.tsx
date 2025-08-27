@@ -25,13 +25,7 @@ import CounterOne from "@/components/counter/counter-one";
 
 
 const HomeFourMain = () => {
-  useScrollSmooth();
-  useEffect(() => {
-    document.body.classList.add("tp-smooth-scroll");
-    return () => {
-      document.body.classList.remove("tp-smooth-scroll");
-    };
-  }, []);
+
 
   useGSAP(() => {
     const timer = setTimeout(() => {
@@ -61,9 +55,9 @@ const HomeFourMain = () => {
             <HeroBannerFour />
             {/* hero area end */}
 
-            {/* gallery area start */}
+            
             <GalleryOne />
-            {/* gallery area end */}
+            
 
             {/* about area start */}
             <AboutThree />
