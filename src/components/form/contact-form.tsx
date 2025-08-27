@@ -7,14 +7,15 @@ import ErrorMsg from '../error-msg';
 
 type FormData = {
   name: string;
-  subject: string;
+  email: string;
   message: string;
 };
 
+
 const schema = yup.object().shape({
-  name: yup.string().required().label("Name"),
-  subject: yup.string().required().label("subject"),
-  message: yup.string().required().label("Message"),
+  name: yup.string().required("Votre nom est requis").label("Nom"),
+  email: yup.string().required("Votre email est requis ").label("email"),
+  message: yup.string().required("Un message est requis").label("Message"),
 });
 
 // prop type 
@@ -65,9 +66,9 @@ export default function ContactForm({ btnCls = '' }: IProps) {
       </div>
 
       <div className="cn-contactform-input mb-25">
-        <label htmlFor="subject">Sujet</label>
-        <input id="subject" {...register("subject")} type="text" placeholder="Votre sujet" />
-        <ErrorMsg msg={errors.subject?.message!} />
+        <label htmlFor="email">Email</label>
+        <input id="email" {...register("email")} type="text" placeholder="Votre email" />
+        <ErrorMsg msg={errors.email?.message!} />
       </div>
 
       <div className="cn-contactform-input mb-25">
