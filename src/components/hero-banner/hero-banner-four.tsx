@@ -15,7 +15,7 @@ export default function HeroBannerFour() {
               </div>
               <h4 className="tp-hero-3-title tp_reveal_anim">
                 <span className="tp-reveal-line">Un site web</span> <br />
-                <span className="tp-reveal-line">Vraiment simple</span>
+                <span className="tp-reveal-line">Vraiment simple.</span>
               </h4>
 
               <span className=" md : d-none d-md-block tp-hero-3-category tp_reveal_anim ">
