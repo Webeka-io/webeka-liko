@@ -58,14 +58,14 @@ export default function ProjectFour({ style_2 = false }: IProps) {
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim">
-                  Je veux<span>Mon site</span>
+                  Je veux <br /> <span>Mon site</span>
                 </h4>
-                <div className="tp-project-3-btn-box">
+                <div className="md : d-none d-md-block tp-project-3-btn-box">
                   <Link
                     className="tp-btn-zikzak p-relative"
                     href="/contact"
                   >
-                    <span className="zikzak-content">
+                    <span className="md : d-none d-md-blockzikzak-content">
                       Je<br />Commence
                       <RightArrow clr="#19191A" />
                     </span>
