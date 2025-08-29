@@ -70,6 +70,18 @@ const marcellus = Marcellus({
 export const metadata: Metadata = {
   title: "Webeka.fr - Agence de création de sites Web",
   description: "Création de site simples",
+  openGraph: {
+    type: "website",
+    url: "https://webeka.fr",
+    images: [
+      {
+        url: "/og-default.webp", // peut être relatif grâce à metadataBase
+        width: 1200,
+        height: 630,
+        alt: "Aperçu Webeka.fr",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
