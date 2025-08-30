@@ -65,7 +65,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                     className="tp-btn-zikzak p-relative"
                     href="/contact"
                   >
-                    <span className="md : d-none d-md-blockzikzak-content">
+                    <span className="md : d-none d-md-block zikzak-content">
                       Je<br />Commence
                       <RightArrow clr="#19191A" />
                     </span>
