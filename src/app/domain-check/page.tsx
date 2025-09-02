@@ -1,6 +1,11 @@
 "use client";
-
+import Wrapper from "@/layouts/wrapper";
+import FooterFour from "@/layouts/footers/footer-four";
+import HeaderFour from "@/layouts/headers/header-four";
 import { useState } from "react";
+
+
+
 
 type RDAPInfo = {
   registered: boolean | null;
@@ -82,9 +87,20 @@ export default function DomainCheckPage() {
     }
   }
 
+ 
+
   return (
-    <main className="bg-light min-vh-100">
-      <div className="container py-5">
+     <Wrapper>
+
+      {/* header area start */}
+      <HeaderFour />
+      {/* header area end */}
+
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+    <main className=" min-vh-100">
+      <div className="container py-5 mb-150">
         <h1 className="display-6 fw-semibold">Vérification de nom de domaine</h1>
         <p className="text-muted">
           Entrez un domaine (ex. <code>mon-site.fr</code>) pour vérifier son format,
@@ -264,6 +280,14 @@ export default function DomainCheckPage() {
           </section>
         )}
       </div>
+               
     </main>
+    
+              {/* footer area */}
+              <FooterFour />
+              {/* footer area */}
+            </div>
+          </div>
+        </Wrapper>
   );
-}
+};

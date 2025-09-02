@@ -60,7 +60,7 @@ export function CGUPage() {
               (iii) l’intégration de fonctionnalités simples (ex. formulaire de contact, lien de prise de rendez-vous, bouton WhatsApp).
             </p>
             <p>
-              Les caractéristiques, tarifs et limites des services sont précisés sur la page <Link href="/#pricing">Tarifs</Link> et peuvent évoluer. Toute nouvelle
+              Les caractéristiques, tarifs et limites des services sont précisés sur la page <Link className="text-primary " href="/pricing">Offre</Link> et peuvent évoluer. Toute nouvelle
               souscription sera soumise aux conditions en vigueur au jour de la commande.
             </p>
           </section>
