@@ -298,7 +298,7 @@ export default function FormulaireBarber() {
             required
           >
             <option value="">— Sélectionner —</option>
-            <option value="sobre">Sobre / minimaliste</option>
+            <option value="sobre">Sobre</option>
             <option value="coloré">Coloré</option>
             <option value="élégant">Élégant</option>
             <option value="autre">Autre (à préciser ci-dessous)</option>
