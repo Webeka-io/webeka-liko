@@ -397,7 +397,7 @@ export default function FormulaireBarber() {
           />
         </div>
 
-        {/* Images */}$1<div className="mb-3">
+        {/* Images */}<div className="mb-3">
   <label htmlFor="email" className="form-label">Adresse e‑mail</label>
   <input
     id="email"
