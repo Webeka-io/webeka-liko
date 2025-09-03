@@ -313,6 +313,26 @@ export default function FormulaireBarber() {
           />
         </div>
 
+        {/* Couleur dominante */}
+        <div className="mb-3">
+          <label htmlFor="couleurDominante" className="form-label">
+            Avez-vous une couleur dominante que vous aimez utiliser ? <span className="text-danger">*</span>
+          </label>
+          <input
+            id="couleurDominante"
+            type="text"
+            className={`form-control ${errors.couleurDominante ? "is-invalid" : ""}`}
+            placeholder="Ex : Les couleurs de mon image de marque sont le rouge et le noir"
+            value={couleurDominante}
+            onChange={(e) => setCouleurDominante(e.target.value)}
+            required
+          />
+          {errors.couleurDominante && (
+            <div className="invalid-feedback">{errors.couleurDominante}</div>
+          )}
+        </div>
+
+
         {/* Service principal */}
         <div className="mb-3">
           <label htmlFor="servicePrincipal" className="form-label">
@@ -356,32 +376,13 @@ export default function FormulaireBarber() {
           <input
             type="text"
             className="form-control mt-2"
-            placeholder="Précisez si besoin (ex. numéro WhatsApp, lien Planity…)"
+            placeholder="Ex : Nous utilisons principalement WhatsApp pour les réservations"
             value={contactPrecision}
             onChange={(e) => setContactPrecision(e.target.value)}
           />
-          <div className="form-text">Ex : Nous utilisons principalement WhatsApp pour les réservations</div>
         </fieldset>
 
-        {/* Couleur dominante */}
-        <div className="mb-3">
-          <label htmlFor="couleurDominante" className="form-label">
-            Avez-vous une couleur dominante que vous aimez utiliser ? <span className="text-danger">*</span>
-          </label>
-          <input
-            id="couleurDominante"
-            type="text"
-            className={`form-control ${errors.couleurDominante ? "is-invalid" : ""}`}
-            placeholder="Ex : Les couleurs de mon image de marque sont le rouge et le noir"
-            value={couleurDominante}
-            onChange={(e) => setCouleurDominante(e.target.value)}
-            required
-          />
-          {errors.couleurDominante && (
-            <div className="invalid-feedback">{errors.couleurDominante}</div>
-          )}
-        </div>
-
+    
         {/* Réseaux sociaux */}
         <div className="mb-3">
           <label htmlFor="reseauxSociaux" className="form-label">
@@ -397,48 +398,6 @@ export default function FormulaireBarber() {
           />
         </div>
 
-        {/* Images */}<div className="mb-3">
-  <label htmlFor="email" className="form-label">Adresse e‑mail</label>
-  <input
-    id="email"
-    type="email"
-    className={`form-control ${errors.email ? "is-invalid" : ""}`}
-    placeholder="ex : contact@barbershop.fr"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-  />
-  {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-</div>
-<div className="mb-3">
-  <label htmlFor="telephone" className="form-label">Téléphone</label>
-  <input
-    id="telephone"
-    type="tel"
-    className={`form-control ${errors.telephone ? "is-invalid" : ""}`}
-    placeholder="ex : +33 6 12 34 56 78"
-    value={telephone}
-    onChange={(e) => setTelephone(e.target.value)}
-  />
-  {errors.telephone && <div className="invalid-feedback">{errors.telephone}</div>}
-</div>
-<FileDrop
-  id="images"
-          label="Avez-vous des images à insérer ? (sinon je peux en créer)"
-          helper="Vous pouvez glisser plusieurs photos. Formats : .jpg, .png, .webp"
-          multiple
-          accept="image/*"
-          files={images}
-          error={imagesError}
-          onFiles={(files) => {
-            const valid = files;
-            setImages(valid);
-            if (valid.some((f) => f.size > MAX_FILE_SIZE)) {
-              setErrors((e) => ({ ...e, images: "Une ou plusieurs images dépassent 10 MB." }));
-            } else {
-              setErrors((e) => ({ ...e, images: null }));
-            }
-          }}
-        />
 
         {/* Domaine */}
         <div className="mb-3">
