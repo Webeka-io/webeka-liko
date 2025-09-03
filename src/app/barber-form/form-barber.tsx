@@ -245,7 +245,7 @@ export default function FormulaireBarber() {
         </div>
       )}
 
-      <form className="needs-validation" noValidate onSubmit={onSubmit} encType="multipart/form-data">
+      <form className="needs-validation h6" noValidate onSubmit={onSubmit} encType="multipart/form-data">
         {/* Nom exact */}
         <div className="mb-3">
           <label htmlFor="nomExact" className="form-label">
