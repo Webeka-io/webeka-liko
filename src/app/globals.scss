@@ -56,6 +56,23 @@
   z-index: -1;
 }
 
+.tp-hero-3-circle-shape2 {
+  position: absolute;
+  top:75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.tp-hero-3-circle-shape2 span {
+  height: 480px;
+  width: 460px;
+  display: inline-block;
+  filter: blur(35px);
+  border-radius: 62% 47% 82% 35%/45% 45% 80% 66%;
+  background: linear-gradient(220deg, rgba(148, 254, 98, 0.5) 0.77%, rgba(255, 226, 122, 0.5) 55.4%, rgba(234, 94, 94, 0.5) 100%);
+}
+
 .menu-bg {
   position: absolute;
   top: 20px;

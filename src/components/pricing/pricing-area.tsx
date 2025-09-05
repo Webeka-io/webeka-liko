@@ -11,7 +11,7 @@ export default function PricingArea() {
         <div className="row">
           <div className="col-xl-12">
             <div className="tp-hero-3-content-box text-center p-relative mt-10percent">
-              <div className="tp-hero-3-circle-shape my-custom-circle">
+              <div className="tp-hero-3-circle-shape2 my-custom-circle">
                 <span></span>
               </div>
 
