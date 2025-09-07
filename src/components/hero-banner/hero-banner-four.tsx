@@ -19,12 +19,12 @@ export default function HeroBannerFour() {
               </h4>
 
               <span className=" md : d-none d-md-block tp-hero-3-category tp_reveal_anim ">
-                Création gratuite • 199€/an • Zéro complication
+                Création gratuite • 1 er mois offert • Sans engagement
               </span>
               
             {/* Mobile Avantages */}
-              <span className="d-block d-md-none mx-auto  w-75 ms-7 text-start tp-hero-3-category  ">
-                • Création gratuite <br /> • 199€/an <br /> • Zéro complication
+              <span className="d-block d-md-none mx-auto w-75  ms-7 text-start tp-hero-3-category  ">
+                • Création gratuite <br />• 1 er mois offert <br />• Sans engagement
               </span>
 
           

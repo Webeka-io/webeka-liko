@@ -15,7 +15,7 @@ export default function ContactOne() {
               <span>ensemble</span>
             </h4>
             <p className="tp_fade_bottom">
-             Un site professionnel  <span className="text-decoration-underline">dès 199€/an</span>, sans prise de tête.
+             Un site professionnel , sans prise de tête.
               Contactez-nous dès aujourd’hui et recevez votre site en quelques jours.
             </p>
             <div className="tp-cta-icon">

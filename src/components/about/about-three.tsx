@@ -43,7 +43,7 @@ export default function AboutThree() {
                 Nous créons des sites webs de qualités et abordables pour les commerces de proximités.
               </p>
               <p className="mb-45 tp_fade_bottom">
-                Un site vitrine moderne et personnalisé pour votre commerce, <span className="text-decoration-underline">dès 199€/an</span>.
+                Un site vitrine moderne et personnalisé pour votre commerce.
                 Sans frais cachés. Sans complications. Juste un site qui vous apporte des clients.
               </p>
               <Link className="tp-btn-black-2 " href="/contact">
