@@ -56,7 +56,7 @@ const HomeFourMain = () => {
             {/* hero area end */}
 
             
-            <GalleryOne />
+      
             
 
             {/* about area start */}
