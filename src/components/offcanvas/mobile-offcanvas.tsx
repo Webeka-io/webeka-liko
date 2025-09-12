@@ -52,7 +52,7 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
 
               <ul>
                 <li>
-                  <a href="tel:1245654">07 53 34 39 97</a>
+                  <a href="tel:1245654">06 03 26 11 37</a>
                 </li>
                 <li>
                   <a href="mailto:hello@diego.com">contact@webeka.fr</a>

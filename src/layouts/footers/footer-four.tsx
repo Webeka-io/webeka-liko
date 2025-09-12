@@ -63,7 +63,7 @@ export default function FooterFour() {
                    
                   </div>
                   <div className="tp-footer-2-contact-item">
-                    <span>Tél : <a href="tel:+33753343997">07 53 34 39 97</a></span> <br />
+                    <span>Tél : <a href="tel:+33753343997">06 03 26 11 37</a></span> <br />
                     <span>Email : <a href="mailto:contact@liko.com">contact@webeka.fr</a></span>
                   </div>
                 </div>

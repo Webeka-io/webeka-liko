@@ -96,7 +96,7 @@ export default function RootLayout({
         id="body"
         suppressHydrationWarning={true}
         className=  {`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
-      ><WhatsAppButton phoneE164="+33753343997" />
+      ><WhatsAppButton phoneE164="+33603261137" />
         <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
         <Analytics />
       </body>
