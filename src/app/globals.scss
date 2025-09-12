@@ -451,3 +451,43 @@
   border-bottom: solid 5px white
 
 }
+
+.tp-project-3-border.color-blue span {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 166, 244, 0.9) 0%,    /* bleu vif */
+    rgba(64, 186, 245, 0.8) 33%,
+    rgba(128, 216, 247, 0.7) 66%,
+    rgba(200, 240, 255, 0.6) 100% /* bleu ciel très clair */
+  );
+}
+
+.tp-project-3-border.color-green span {
+  background: linear-gradient(
+    90deg,
+    rgba(17, 61, 60, 0.9) 0%,   /* vert profond */
+    rgba(34, 102, 88, 0.8) 33%,
+    rgba(46, 139, 87, 0.7) 66%,
+    rgba(144, 238, 144, 0.6) 100% /* vert clair */
+  );
+}
+
+.tp-project-3-border.color-yellow span {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 210, 140, 0.9) 0%,   /* jaune pastel doré */
+    rgba(252, 220, 160, 0.8) 33%,
+    rgba(253, 230, 180, 0.7) 66%,
+    rgba(255, 245, 220, 0.6) 100%  /* crème doux */
+  );
+}
+
+.tp-project-3-border.color-azure span {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 96, 160, 0.9) 0%,    /* bleu nuit azur */
+    rgba(0, 128, 192, 0.8) 33%,  /* bleu azur */
+    rgba(0, 166, 244, 0.7) 66%,  /* ton bleu principal */
+    rgba(128, 216, 247, 0.6) 100% /* bleu clair lumineux */
+  );
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ProjectShape, RightArrow } from "../svg";
+
 // images
 import port_1 from "@/assets/img/home-03/portfolio/1.webp";
 import port_2 from "@/assets/img/home-03/portfolio/2.webp";
@@ -11,7 +13,6 @@ import port_5 from "@/assets/img/home-03/portfolio/6.webp";
 import port_6 from "@/assets/img/home-03/portfolio/5.webp";
 import port_7 from "@/assets/img/home-03/portfolio/3.webp";
 import port_8 from "@/assets/img/home-03/portfolio/4.webp";
-import Link from "next/link";
 
 // portfolio data
 const project_data = [
@@ -21,6 +22,7 @@ const project_data = [
     img_2: port_2,
     meta: "",
     title: "Dentiste",
+    borderClass: "color-blue", // exemple : bleu clair
   },
   {
     id: 2,
@@ -28,6 +30,7 @@ const project_data = [
     img_2: port_4,
     meta: "",
     title: "Vétérinaire",
+    borderClass: "color-green", // exemple : vert
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const project_data = [
     img_2: port_6,
     meta: "",
     title: "Immobilier",
+    borderClass: "color-azure", // exemple : rose coucher de soleil
   },
   {
     id: 4,
@@ -42,6 +46,7 @@ const project_data = [
     img_2: port_8,
     meta: "",
     title: "Avocat",
+    borderClass: "color-green", // exemple : jaune
   },
 ];
 
@@ -49,25 +54,31 @@ const project_data = [
 type IProps = {
   style_2?: boolean;
 };
+
 export default function ProjectFour({ style_2 = false }: IProps) {
   return (
-    <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"}`}>
+    <div
+      className={`tp-project-3-area ${
+        style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"
+      }`}
+    >
       <div className="container container-1720">
         {!style_2 && (
           <div className="row justify-content-center">
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim ">
-                  <span className="text-center">Nos <br /> Projets</span>
+                  <span className="text-center">
+                    Nos <br /> Projets
+                  </span>
                 </h4>
-               
               </div>
             </div>
           </div>
         )}
         <div className="row">
           <div className="col-xl-12">
-            {project_data.map((item, i) => (
+            {project_data.map((item) => (
               <div key={item.id} className="tp-project-3-wrap">
                 <div className="row">
                   <div className="col-xl-4 col-lg-4 col-md-6">
@@ -85,14 +96,13 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                       <h4 className="tp-project-3-title-sm">
                         <Link href="/portfolio-details-1">{item.title}</Link>
                       </h4>
-                      <Link
-                        className="tp-btn-project-sm"
-                        href="/portfolio"
-                      >
-                      VOIR LES PROJETS
+                      <Link className="tp-btn-project-sm" href="/portfolio">
+                        VOIR LES PROJETS
                       </Link>
                     </div>
-                    <div className="tp-project-3-border color-1 text-center">
+                    <div
+                      className={`tp-project-3-border ${item.borderClass} text-center`}
+                    >
                       <span></span>
                     </div>
                   </div>
