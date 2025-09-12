@@ -24,19 +24,19 @@ export default function PricingArea() {
               </Link>
 
               <h4 className="tp-hero-3-title tp_reveal_anim pt-30px">
-                <span className="tp-reveal-line">1 mois offert</span> <br />
+
                 <span className="tp-reveal-line">Sans engagement</span> <br />
 
               </h4>
 
               {/* Desktop subtitle */}
               <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim">
-                Essai 30 jours. Abonnement tout inclus. Zéro surprise.
+                Abonnement tout inclus. Zéro surprise.
               </span>
 
               {/* Mobile subtitle */}
               <span className="mx-auto w-75 ms-7 text-center d-block d-md-none tp-hero-3-category-2 tp_reveal_anim">
-                Essai 30 jours. Abonnement tout inclus. Zéro surprise.
+                Abonnement tout inclus. Zéro surprise.
               </span>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function PricingArea() {
 
                 {/* Hint discrète “domaine” (sans prix) */}
                 <p className="tp-hero-3-category-3 text-muted mt-3 mb-0">
-                  Domaine relié à l’activation de l’abonnement. Essai sur sous-domaine.
+                 
                 </p>
 
                 {/* CTA */}

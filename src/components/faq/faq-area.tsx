@@ -13,53 +13,48 @@ type IFaq = {
 
 // faq data (sans prix)
 export const faq_data: IFaq[] = [
+  
   {
     id: 1,
-    question: "La création du site est-elle incluse dans l’abonnement ?",
+    question: "Que comprend l'abonnement mensuel ?",
     answer:
-      "Oui. La mise en place de votre site vitrine (sur la base d’un template personnalisé avec vos textes, couleurs et photos) est incluse. Aucun frais d’installation caché. Le 1er mois est offert et sans engagement.",
+      "L'abonnement inclut l'hébergement du site, les mises à jour techniques, la maintenance, les sauvegardes et les modifications courantes (textes, images, horaires)."
   },
   {
     id: 2,
-    question: "Quel est le délai moyen de mise en ligne ?",
+    question: "Est-ce que le nom de domaine m'appartient ?",
     answer:
-      "Généralement 48–72 h ouvrées après réception de vos contenus (logo, textes, photos, horaires, liens). Si tout n’est pas prêt, nous publions une version provisoire et complétons ensuite.",
+      "Oui, le nom de domaine est enregistré au nom du client. Vous en restez propriétaire à 100 %, même en cas de résiliation."
   },
   {
     id: 3,
-    question: "Comment fonctionne l’essai de 30 jours ?",
+    question: "Puis-je demander des modifications sur mon site ?",
     answer:
-      "Votre site est mis en ligne sur un sous-domaine pendant l’essai. Vous testez tout (mobile, appels, itinéraire, prise de rendez-vous). Vous pouvez arrêter à tout moment durant ces 30 jours. Le nom de domaine est relié à l’activation de l’abonnement.",
+      "Oui, vous pouvez demander des modifications simples (textes, images, horaires, coordonnées). Pour des changements plus importants, un devis spécifique pourra être proposé."
   },
   {
     id: 4,
-    question: "Que comprend la maintenance continue ?",
+    question: "Y a-t-il un engagement de durée ?",
     answer:
-      "Hébergement, certificat SSL (HTTPS), mises à jour techniques, sauvegardes, correctifs, et petites modifications de contenu (textes, images, horaires, liens).",
+      "Non, notre offre est sans durée minimale d'engagement. Vous pouvez arrêter à tout moment, avec un préavis d’un mois."
   },
   {
     id: 5,
-    question: "Intégrez-vous la prise de rendez-vous en ligne ?",
+    question: "Sous combien de temps mon site sera-t-il prêt ?",
     answer:
-      "Oui. Nous intégrons un bouton ou un module vers vos outils : Doctolib, Planity, Calendly, Google Calendar… ainsi que WhatsApp et l’appel en 1 clic. Les clics clés (Appeler, RDV, Itinéraire) peuvent être suivis.",
+      "En moyenne, le site est livré sous 7 à 14 jours après réception de vos contenus (photos, textes, coordonnées, logo)."
   },
   {
     id: 6,
-    question: "Qui possède le nom de domaine ?",
+    question: "Est-ce que mon site sera optimisé pour Google ?",
     answer:
-      "Vous. Nous pouvons l’acheter et le configurer à votre nom, puis le relier au site. Pendant l’essai, le site reste sur un sous-domaine ; à l’activation de l’abonnement, nous branchons votre domaine.",
+      "Oui, nous intégrons les optimisations SEO de base : structure, balises, vitesse, compatibilité mobile et fiche Google Business Profile."
   },
   {
     id: 7,
-    question: "Quelles modifications sont incluses ?",
+    question: "Mon site sera-t-il adapté aux mobiles ?",
     answer:
-      "Les changements simples (textes, photos, horaires, liens) sont inclus. Pour des ajouts importants (nouvelles sections, nouvelles pages, refonte), nous proposons un chiffrage rapide avant validation.",
-  },
-  {
-    id: 8,
-    question: "Puis-je passer d’un site “salon” à un site “dentaire” (ou inversement) ?",
-    answer:
-      "Oui. Nous adaptons la structure, les intégrations (Planity/Doctolib) et les mentions. La transition se fait sans interruption de service.",
+      "Absolument. Tous les sites que nous créons sont responsives, c'est-à-dire adaptés aux ordinateurs, tablettes et smartphones."
   },
 ];
 
