@@ -87,7 +87,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                       </h4>
                       <Link
                         className="tp-btn-project-sm"
-                        href="/contact"
+                        href="/portfolio"
                       >
                       VOIR LES PROJETS
                       </Link>
