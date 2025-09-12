@@ -13,7 +13,8 @@ import PerspectivePortfolioSlider from "@/components/portfolio/slider/perspectiv
 import { revelAnimationOne } from "@/utils/title-animation";
 import ThemeSetting from "@/components/theme-setting";
 
-const HomeEightMain = () => {
+const 
+HomeEightMain = () => {
   useScrollSmooth();
   useEffect(() => {
     document.body.classList.add("tp-magic-cursor");

@@ -55,10 +55,6 @@ const HomeFourMain = () => {
             <HeroBannerFour />
             {/* hero area end */}
 
-            
-      
-            
-
             {/* about area start */}
             <AboutThree />
             {/* about area end */}

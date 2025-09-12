@@ -3,38 +3,27 @@ import Link from "next/link";
 import { mobile_menu_data } from "@/data/menu-data";
 
 export default function MobileMenusTwo() {
-  const [navTitle, setNavTitle] = React.useState<string>("");
-
-  //openMobileMenu
-  const openMobileMenu = (menu: string) => {
-    if (navTitle === menu) {
-      setNavTitle("");
-    } else {
-      setNavTitle(menu);
-    }
-  };
   return (
     <nav className="tp-main-menu-content">
       <ul>
-        {mobile_menu_data.map((menu) => (
-          <li key={menu.id} className="has-dropdown">
-            <a className="pointer">
-              {menu.title}
-              <button
-                className="dropdown-toggle-btn"
-                onClick={() => openMobileMenu(menu.title)}
+        {mobile_menu_data.map((menu: any) => {
+          // On supporte plusieurs clés possibles pour l'URL
+          const href: string = menu.href ?? menu.link ?? menu.url ?? "#";
+          const isExternal = /^https?:\/\//i.test(href);
+
+          return (
+            <li key={menu.id}>
+              <Link
+                href={href}
+                className="tp-mobile-nav-link d-block py-2"
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
               >
-                <i className="fa-light fa-plus"></i>
-              </button>
-            </a>
-            <ul
-              className="tp-submenu submenu"
-              style={{ display: navTitle === menu.title ? "block" : "none" }}
-            >
-              
-            </ul>
-          </li>
-        ))}
+                {menu.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

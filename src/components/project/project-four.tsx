@@ -19,29 +19,29 @@ const project_data = [
     id: 1,
     img_1: port_1,
     img_2: port_2,
-    meta: "Juin 2025 .",
-    title: "Barbershop",
+    meta: "",
+    title: "Dentiste",
   },
   {
     id: 2,
     img_1: port_3,
     img_2: port_4,
-    meta: "Janvier 2025",
-    title: "Resaurant",
+    meta: "",
+    title: "Vétérinaire",
   },
   {
     id: 3,
     img_1: port_5,
     img_2: port_6,
-    meta: "Mars 2025",
-    title: "Fleuriste",
+    meta: "",
+    title: "Immobilier",
   },
   {
     id: 4,
     img_1: port_7,
     img_2: port_8,
-    meta: "SEP 2025",
-    title: "Vétérinaire",
+    meta: "",
+    title: "Avocat",
   },
 ];
 
@@ -57,21 +57,10 @@ export default function ProjectFour({ style_2 = false }: IProps) {
           <div className="row justify-content-center">
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
-                <h4 className="tp-section-title-200 tp_reveal_anim">
-                  Je veux <br /> <span>Mon site</span>
+                <h4 className="tp-section-title-200 tp_reveal_anim ">
+                  <span className="text-center">Nos <br /> Projets</span>
                 </h4>
-                <div className="md : d-none d-md-block tp-project-3-btn-box">
-                  <Link
-                    className="tp-btn-zikzak p-relative"
-                    href="/contact"
-                  >
-                    <span className="md : d-none d-md-block zikzak-content">
-                      Je<br />Commence
-                      <RightArrow clr="#19191A" />
-                    </span>
-                    <ProjectShape />
-                  </Link>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -100,7 +89,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                         className="tp-btn-project-sm"
                         href="/contact"
                       >
-                      Je commence
+                      VOIR LES PROJETS
                       </Link>
                     </div>
                     <div className="tp-project-3-border color-1 text-center">

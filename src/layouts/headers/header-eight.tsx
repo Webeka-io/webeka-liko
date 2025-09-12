@@ -31,7 +31,7 @@ export default function HeaderEight({style_2,container='1840'}: IProps) {
               </div>
               <div className="col-md-6 col-6">
                 <div className="tp-header-6-menu-box tp-offcanvas-open-btn d-flex align-items-center justify-content-end tp-header-bar">
-                  <span>Menu</span>
+                  <span></span>
                   <button onClick={() => setOpenOffcanvas(true)} className="tp-header-6-menubar">
                     <span></span>
                     <span></span>

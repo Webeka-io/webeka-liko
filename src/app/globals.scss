@@ -305,10 +305,12 @@
 /* Positionner en bas de l'écran */
 .bounce-arrow-wrapper {
   position: absolute;
-  bottom: 9rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
 }
+
+
 
 /* Animation */
 @keyframes bounce {
@@ -342,4 +344,110 @@
   .bounce-arrow-wrapper span {
     font-size: 1.25rem !important; /* texte plus grand */
   }
+
+  .bounce-arrow-wrapper {
+  position: absolute;
+  bottom: 9rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+}
+
+.tp-section-title-200 span {
+  padding-left: 0px;
+}
+
+.bounce-arrow-wrapper1 {
+  position: absolute;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1200px;
+  }
+  .container-1630 {
+    max-width: 1630px;
+  }
+  .container-1400 {
+    max-width: 1400px;
+  }
+  .container-1480 {
+    max-width: 1480px;
+  }
+  .container-1740 {
+    max-width: 1740px;
+  }
+  .container-1770 {
+    max-width: 1770px;
+  }
+  .container-1330 {
+    max-width: 1330px;
+  }
+  .container-1380 {
+    max-width: 1380px;
+  }
+  .container-1800 {
+    max-width: 1800px;
+  }
+  .container-1300 {
+    max-width: 1300px;
+  }
+  .container-1720 {
+    max-width: 1720px;
+  }
+  .container-1480 {
+    max-width: 1480px;
+  }
+  .container-1430 {
+    max-width: 1430px;
+  }
+  .container-1870 {
+    max-width: 1870px;
+  }
+  .container-1775 {
+    max-width: 1775px;
+  }
+  .container-1840 {
+    max-width: 1840px;
+  }
+  .container-1650 {
+    max-width: 1650px;
+  }
+  .container-1560 {
+    max-width: 1560px;
+  }
+  .container-1500 {
+    max-width: 1500px;
+  }
+  .container-1530 {
+    max-width: 1530px;
+  }
+  .container-1550 {
+    max-width: 1550px;
+  }
+}
+.container-1685 {
+  max-width: 1685px;
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1920px) {
+  .container-1685 {
+    padding: 0px 25px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.border-wi {
+
+  border-bottom: solid 5px white
+
 }

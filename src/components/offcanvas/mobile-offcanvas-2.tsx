@@ -31,7 +31,7 @@ export default function MobileOffcanvasTwo({openOffcanvas,setOpenOffcanvas}:IPro
             <div className="tp-offcanvas-2-close d-md-none text-end">
               <button onClick={() => setOpenOffcanvas(false)} className="tp-offcanvas-2-close-btn tp-offcanvas-2-close-btn">
                 <span className="text">
-                  <span>close</span>
+                  <span>Fermer</span>
                 </span>
                 <span className="d-inline-block">
                   <span>
@@ -49,7 +49,7 @@ export default function MobileOffcanvasTwo({openOffcanvas,setOpenOffcanvas}:IPro
           <div className="tp-offcanvas-2-close text-end">
             <button onClick={() => setOpenOffcanvas(false)} className="tp-offcanvas-2-close-btn">
               <span className="text">
-                <span>close</span>
+                <span>Fermer</span>
               </span>
 
               <span className="d-inline-block">
@@ -62,23 +62,23 @@ export default function MobileOffcanvasTwo({openOffcanvas,setOpenOffcanvas}:IPro
           <div className="tp-offcanvas-2-right-inner d-flex flex-column justify-content-between h-100">
             <div className="tpoffcanvas__right-info">
               <div className="tpoffcanvas__tel">
-                <a href="tel:61404093954">+61404093 954</a>
+                <a href="tel:61404093954">06 03 26 11 37</a>
               </div>
               <div className="tpoffcanvas__mail">
                 <a href="mailto:hellocontact@diego.com">
-                  hello contact@diego.com
+                   contact@webeka.fr
                 </a>
               </div>
               <div className="tpoffcanvas__text">
-                <p>If in doubt. reach out.</p>
+                <p></p>
               </div>
             </div>
             <div className="tpoffcanvas__social-link">
               <ul>
-                <li><a href="#">Dribbble</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Linkedin</a></li>
-                <li><a href="#">Behance</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
               </ul>
             </div>
           </div>
