@@ -8,7 +8,7 @@ import { ArrowBg, RightArrowTwo,FirstBracket, FirstBracketTwo } from "../svg";
 export default function AboutThree() {
 
   return (
-    <div className="tp-about-3-area pt-70">
+    <div className="tp-about-3-area pt-100">
       <div className="container">
         <div className="row">
           <div className="col-xl-11">

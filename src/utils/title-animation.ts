@@ -403,7 +403,19 @@ function revelAnimationOne() {
     return;
   }
 
-  {
+  if (IS_MOBILE()) {
+    // Mobile: pas de SplitText -> reveal simple
+    anims.forEach((el) => {
+      gsap.set(el, { y: 24, autoAlpha: 0 });
+      gsap.to(el, {
+        scrollTrigger: { trigger: el, start: "top 90%", once: true },
+        duration: 0.5,
+        y: 0,
+        autoAlpha: 1,
+        ease: "power1.out",
+      });
+    });
+  } else {
     // Desktop: inchangé
     anims.forEach((areveal: any) => {
       let duration_value: any = 1.5;
