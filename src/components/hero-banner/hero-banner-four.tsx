@@ -25,7 +25,7 @@ export default function HeroBannerFour() {
               </span>
               
             {/* Mobile Avantages */}
-              <span className="d-block d-md-none mx-auto w-75  ms-7 text-start tp-hero-3-category  ">
+              <span className="d-block d-md-none mx-auto w-75  ms-7 text-start tp-hero-3-category tp_reveal_anim ">
                 • Création rapide <br />• 1 er mois offert <br />• Sans engagement
               </span>
 
