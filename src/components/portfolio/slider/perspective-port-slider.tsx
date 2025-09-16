@@ -24,10 +24,10 @@ type PortfolioItem = {
 };
 
 const portfolio_data: PortfolioItem[] = [
-  { id: 1, title: "", category: "", image: port_1, imageSm: port_5, imageLg: port_1, link: "https://www.webeka.io/maquette-1"  },
-  { id: 2, title: "", category: "", image: port_2, imageSm: port_6, imageLg: port_2, link: "https://www.webeka.io/maquette-2" },
-  { id: 3, title: "", category: "", image: port_3, imageSm: port_8, imageLg: port_3, link: "https://www.webeka.io/maquette-3" },
-  { id: 4, title: "", category: "", image: port_4, imageSm: port_7, imageLg: port_4, link: "https://www.webeka.io/maquette-4" },
+  { id: 1, title: "", category: "", image: port_1, imageSm: port_5, imageLg: port_1, link: "https://www.webeka.io/maquettes/1-dentiste"  },
+  { id: 2, title: "", category: "", image: port_2, imageSm: port_6, imageLg: port_2, link: "https://www.webeka.io/maquettes/2-veterinaire" },
+  { id: 3, title: "", category: "", image: port_3, imageSm: port_8, imageLg: port_3, link: "https://www.webeka.io/maquettes/3-immobilier" },
+  { id: 4, title: "", category: "", image: port_4, imageSm: port_7, imageLg: port_4, link: "https://www.webeka.io/maquettes/4-avocat" },
 ];
 
 export default function PerspectivePortfolioSlider() {
@@ -127,7 +127,7 @@ export default function PerspectivePortfolioSlider() {
             <div className="col-xl-6 col-lg-6 col-md-6 col-6">
               <div className="tp-portfolio-9-scroll text-end">
                 <a onClick={scrollTop} href="#">
-                 
+                  (Scroll)
                 </a>
               </div>
             </div>
