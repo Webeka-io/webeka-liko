@@ -63,9 +63,7 @@ const HomeFourMain = () => {
             <ServiceMain />
             {/* service area */}    
 
-             {/* marquee text */}
-            <LineTextTwo />
-            {/* marquee text */}   
+           
 
             {/* project area start */}
             <ProjectFour />

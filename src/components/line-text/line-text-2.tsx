@@ -3,12 +3,12 @@ import Marquee from "react-fast-marquee";
 
 // marquee text
 const marquee_text = [
-  "sans engagement",
-  "transparence",
-  "simplicité",
-  "référencement",
-  "web design",
-  "mobile friendly",
+  "nos projets",
+  "nos projets",
+  "nos projets",
+  "nos projets",
+  "nos projets",
+  "nos projets",
 ];
 
 export default function LineTextTwo() {
