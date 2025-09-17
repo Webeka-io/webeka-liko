@@ -20,7 +20,7 @@ import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ServiceMain from "@/pages/service/service-2";
-import CounterOne from "@/components/counter/counter-one";
+import LineTextTwo from "@/components/line-text/line-text-2";
 
 
 
@@ -61,7 +61,11 @@ const HomeFourMain = () => {
 
             {/* service area */}
             <ServiceMain />
-            {/* service area */}       
+            {/* service area */}    
+
+             {/* marquee text */}
+            <LineTextTwo />
+            {/* marquee text */}   
 
             {/* project area start */}
             <ProjectFour />

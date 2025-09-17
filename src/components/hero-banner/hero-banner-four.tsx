@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowBg, RightArrowTwo } from "../svg";
 import Link from "next/link";
 import { BounceArrowIcon } from "../BounceArrow/BounceArrow";
+import BrandSlider from "../brand/brand-slider";
 
 
 export default function HeroBannerFour() {
@@ -25,9 +26,26 @@ export default function HeroBannerFour() {
               </span>
               
             {/* Mobile Avantages */}
-              <span className="d-block d-md-none mx-auto w-75  ms-7 text-start tp-hero-3-category  ">
-                • Création rapide <br />• 1 er mois offert <br />• Sans engagement
-              </span>
+            <div className="d-block d-md-none text-center">
+  <div className="d-inline-block text-start tp-hero-3-category">
+    <div className="d-flex">
+      <span className="me-2">•</span>
+      <span>Création rapide</span>
+    </div>
+    <div className="d-flex">
+      <span className="me-2">•</span>
+      <span>1er mois offert</span>
+    </div>
+    <div className="d-flex">
+      <span className="me-2">•</span>
+      <span>Sans engagement</span>
+    </div>
+  </div>
+</div>
+
+
+
+
 
           
               <Link className="tp-btn-black-2" href="/contact">
@@ -38,6 +56,7 @@ export default function HeroBannerFour() {
                 </span>
               </Link>
             </div>
+            <BrandSlider />
 
             {/* Flèches animées */}
               <BounceArrowIcon text="Explorer" />

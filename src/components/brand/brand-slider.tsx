@@ -18,7 +18,7 @@ const brand_images = [b_1, b_2, b_3, b_4, b_5, b_6, b_7, b_8,  b_1, b_2, b_3, b_
 
 export default function BrandSlider() {
   return (
-    <div className="tp-brand-slider-active fix ">
+    <div className="tp-brand-slider-active fix pt-30">
       <Marquee
         speed={100}
         loop={0}

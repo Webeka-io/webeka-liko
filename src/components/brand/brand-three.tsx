@@ -10,6 +10,7 @@ export default function BrandThree() {
             <div className="">
               <BrandSlider />
             </div>
+            
           </div>
         </div>
       </div>

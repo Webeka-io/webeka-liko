@@ -267,7 +267,7 @@
 }
 
 .tp-hero-3-ptb {
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 70px;
 }
 
@@ -299,7 +299,8 @@
   background-color: var(--tp-common-black);
   color: var(--tp-common-white);
   border: 2px solid transparent;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 /* Positionner en bas de l'écran */
@@ -347,7 +348,7 @@
 
   .bounce-arrow-wrapper {
   position: absolute;
-  bottom: 9rem;
+  bottom: 7rem;
   left: 50%;
   transform: translateX(-50%);
 }
