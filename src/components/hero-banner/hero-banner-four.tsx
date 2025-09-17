@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowBg, RightArrowTwo } from "../svg";
 import Link from "next/link";
 import { BounceArrowIcon } from "../BounceArrow/BounceArrow";
-import BrandSlider from "../brand/brand-slider";
+
 
 
 export default function HeroBannerFour() {
@@ -56,7 +56,7 @@ export default function HeroBannerFour() {
                 </span>
               </Link>
             </div>
-            <BrandSlider />
+          
 
             {/* Flèches animées */}
               <BounceArrowIcon text="Explorer" />
