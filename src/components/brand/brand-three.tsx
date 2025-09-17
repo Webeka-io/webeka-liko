@@ -7,7 +7,7 @@ export default function BrandThree() {
       <div className="container container-1400">
         <div className="row">
           <div className="col-xl-12">
-            <div className="">
+            <div className="pt-50">
               <BrandSlider />
             </div>
             
