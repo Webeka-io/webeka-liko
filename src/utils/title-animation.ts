@@ -1,34 +1,27 @@
+// animations.ts
 import { gsap, Power2 } from "gsap";
 import $ from "jquery";
 import { ScrollTrigger, SplitText } from "@/plugins";
 import type { ScrollTrigger as ST } from "gsap/ScrollTrigger";
 
-// --- Gate loader ------------------------------------------------------------
-declare global { interface Window { __LOADER_DONE__?: boolean } }
-const LOADER_EVENT = 'app:loader:done';
-
-function afterLoader(run: () => void) {
-  if (typeof window === 'undefined') return;
-  if (window.__LOADER_DONE__) run();
-  else window.addEventListener(LOADER_EVENT, run, { once: true });
-}
-
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-/* ===== Helpers ===== */
+/* =========================
+   Helpers / Config globale
+   ========================= */
 const IS_MOBILE = () =>
   typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches;
+
 const REDUCED = () =>
-  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// ⚙️ Facteurs d’allongement (tu peux ajuster)
-const MOBILE_DURATION_FACTOR = 2;     // x2 plus long
-const MOBILE_STAGGER_FACTOR  = 1.5;   // x1.5 sur les staggers
-
-const mDur = (base: number) => base * MOBILE_DURATION_FACTOR;
+// ➜ facteurs d’allongement mobile
+const MOBILE_DURATION_FACTOR = 2;   // x2 plus long sur mobile
+const MOBILE_STAGGER_FACTOR  = 1.5; // x1.5 pour les staggers
+const mDur  = (base: number) => base * MOBILE_DURATION_FACTOR;
 const mStag = (base: number) => base * MOBILE_STAGGER_FACTOR;
 
-// Config globale
 let _configured = false;
 function configureGSAP() {
   if (_configured) return;
@@ -40,75 +33,103 @@ function configureGSAP() {
   gsap.ticker.lagSmoothing(500, 33);
 }
 
-/* ===== Hero titles ===== */
-function heroTitleAnim() {
-  afterLoader(() => {
-    configureGSAP();
-    const heroArea = document.querySelector(".tp-hero-2-area");
-    if (!heroArea) return;
+/* =========================
+   Attente du loader (ton event)
+   ========================= */
+const LOADER_EVENT = "app:loader:done";
 
-    if (REDUCED()) {
-      gsap.set([".tp-hero-2-title.text-1", ".tp-hero-2-title.text-2", ".tp-hero-2-content"], {
-        x: 0,
-        autoAlpha: 1,
-        clearProps: "all",
-      });
+function waitForLoaderDone(timeoutMs = 12000): Promise<void> {
+  return new Promise((resolve) => {
+    if (typeof window === "undefined") {
+      resolve();
       return;
     }
-
-    if (IS_MOBILE()) {
-      gsap.set(".tp-hero-2-title.text-1", { x: 40, autoAlpha: 0 });
-      gsap.to(".tp-hero-2-title.text-1", {
-        scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
-        duration: mDur(0.45),
-        x: 0,
-        autoAlpha: 1,
-        ease: "power1.out",
-      });
-
-      gsap.set(".tp-hero-2-title.text-2", { x: -40, autoAlpha: 0 });
-      gsap.to(".tp-hero-2-title.text-2", {
-        scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
-        duration: mDur(0.45),
-        x: 0,
-        autoAlpha: 1,
-        ease: "power1.out",
-        delay: 0.05,
-      });
-
-      gsap.set(".tp-hero-2-content", { x: -50, autoAlpha: 0 });
-      gsap.to(".tp-hero-2-content", {
-        scrollTrigger: { trigger: heroArea, start: "top 90%", once: true },
-        duration: mDur(0.5),
-        x: 0,
-        autoAlpha: 1,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-    } else {
-      gsap.set(".tp-hero-2-title.text-1", { x: 300 });
-      gsap.to(".tp-hero-2-title.text-1", {
-        scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
-        duration: 1.7,
-        x: 0,
-      });
-      gsap.set(".tp-hero-2-title.text-2", { x: -300 });
-      gsap.to(".tp-hero-2-title.text-2", {
-        scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
-        duration: 1.7,
-        x: 0,
-      });
-      gsap.set(".tp-hero-2-content", { x: -500 });
-      gsap.to(".tp-hero-2-content", {
-        scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
-        duration: 2,
-        x: 0,
-      });
+    // si le flag est déjà posé par ton loader
+    if ((window as any).__LOADER_DONE__) {
+      resolve();
+      return;
     }
+    const onDone = () => {
+      window.removeEventListener(LOADER_EVENT, onDone as EventListener);
+      resolve();
+    };
+    window.addEventListener(LOADER_EVENT, onDone as EventListener, { once: true });
+    // garde-fou si jamais l’event ne part pas
+    setTimeout(() => {
+      window.removeEventListener(LOADER_EVENT, onDone as EventListener);
+      resolve();
+    }, timeoutMs);
   });
 }
 
-/* ===== Hero background ===== */
+/* =========================
+   Animations
+   ========================= */
+
+function heroTitleAnim() {
+  configureGSAP();
+  const heroArea = document.querySelector(".tp-hero-2-area");
+  if (!heroArea) return;
+
+  if (REDUCED()) {
+    gsap.set(
+      [".tp-hero-2-title.text-1", ".tp-hero-2-title.text-2", ".tp-hero-2-content"],
+      { x: 0, autoAlpha: 1, clearProps: "all" }
+    );
+    return;
+  }
+
+  if (IS_MOBILE()) {
+    gsap.set(".tp-hero-2-title.text-1", { x: 40, autoAlpha: 0 });
+    gsap.to(".tp-hero-2-title.text-1", {
+      scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
+      duration: mDur(0.45),
+      x: 0,
+      autoAlpha: 1,
+      ease: "power1.out",
+    });
+
+    gsap.set(".tp-hero-2-title.text-2", { x: -40, autoAlpha: 0 });
+    gsap.to(".tp-hero-2-title.text-2", {
+      scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
+      duration: mDur(0.45),
+      x: 0,
+      autoAlpha: 1,
+      ease: "power1.out",
+      delay: 0.05,
+    });
+
+    gsap.set(".tp-hero-2-content", { x: -50, autoAlpha: 0 });
+    gsap.to(".tp-hero-2-content", {
+      scrollTrigger: { trigger: heroArea, start: "top 90%", once: true },
+      duration: mDur(0.5),
+      x: 0,
+      autoAlpha: 1,
+      ease: "power1.out",
+      delay: 0.1,
+    });
+  } else {
+    gsap.set(".tp-hero-2-title.text-1", { x: 300 });
+    gsap.to(".tp-hero-2-title.text-1", {
+      scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
+      duration: 1.7,
+      x: 0,
+    });
+    gsap.set(".tp-hero-2-title.text-2", { x: -300 });
+    gsap.to(".tp-hero-2-title.text-2", {
+      scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
+      duration: 1.7,
+      x: 0,
+    });
+    gsap.set(".tp-hero-2-content", { x: -500 });
+    gsap.to(".tp-hero-2-content", {
+      scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
+      duration: 2,
+      x: 0,
+    });
+  }
+}
+
 function heroBgAnimation() {
   configureGSAP();
   const heroBg = document.querySelector(".tp-hero-bg-single");
@@ -126,7 +147,6 @@ function heroBgAnimation() {
   }
 }
 
-/* ===== Boutons bounce ===== */
 function bounceAnimation() {
   configureGSAP();
   const bounce = document.querySelectorAll(".tp-btn-bounce");
@@ -151,8 +171,7 @@ function bounceAnimation() {
     });
   } else {
     gsap.from(bounce, { y: -100, opacity: 0 });
-    let mybtn = gsap.utils.toArray(bounce);
-    mybtn.forEach((btn: any) => {
+    gsap.utils.toArray(bounce).forEach((btn: any) => {
       const $this = $(btn);
       gsap.to(btn, {
         scrollTrigger: { trigger: $this.closest(".tp-btn-trigger"), start: "top center", markers: false },
@@ -163,8 +182,7 @@ function bounceAnimation() {
       });
     });
     gsap.from(bounce, { y: -100, opacity: 0 });
-    let mybtn2 = gsap.utils.toArray(bounce);
-    mybtn2.forEach((btn: any) => {
+    gsap.utils.toArray(bounce).forEach((btn: any) => {
       const $this = $(btn);
       gsap.to(btn, {
         scrollTrigger: { trigger: $this.closest(".tp-btn-trigger"), start: "bottom bottom", markers: false },
@@ -178,7 +196,6 @@ function bounceAnimation() {
   }
 }
 
-/* ===== Char animation (SplitText lourd) ===== */
 function charAnimation() {
   configureGSAP();
   const targets = gsap.utils.toArray(".tp-char-animation") as HTMLElement[];
@@ -226,7 +243,6 @@ function charAnimation() {
   }
 }
 
-/* ===== Fades (batch & once sur mobile) ===== */
 function fadeAnimation() {
   configureGSAP();
 
@@ -401,7 +417,6 @@ function fadeAnimation() {
   }
 }
 
-/* ===== Reveal (SplitText) 1 ===== */
 function revelAnimationOne() {
   configureGSAP();
   const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim");
@@ -461,7 +476,6 @@ function revelAnimationOne() {
   }
 }
 
-/* ===== Reveal 2 ===== */
 function revelAnimationTwo() {
   configureGSAP();
   const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim-2");
@@ -521,7 +535,6 @@ function revelAnimationTwo() {
   }
 }
 
-/* ===== Zoom ===== */
 function zoomAnimation() {
   configureGSAP();
 
@@ -568,52 +581,77 @@ function zoomAnimation() {
   }
 }
 
-/* ===== Title (SplitText) ===== */
 function titleAnimation() {
-  afterLoader(() => {
-    configureGSAP();
+  configureGSAP();
 
-    const titles = gsap.utils.toArray(".tp_title_anim") as HTMLElement[];
-    if (!titles.length) return;
+  const titles = gsap.utils.toArray(".tp_title_anim") as HTMLElement[];
+  if (!titles.length) return;
 
-    if (REDUCED()) {
-      gsap.set(titles, { autoAlpha: 1, clearProps: "all" });
-      return;
-    }
+  if (REDUCED()) {
+    gsap.set(titles, { autoAlpha: 1, clearProps: "all" });
+    return;
+  }
 
-    if (IS_MOBILE()) {
-      titles.forEach((el) => {
-        gsap.set(el, { y: 16, autoAlpha: 0 });
-        gsap.to(el, {
-          scrollTrigger: { trigger: el, start: "top 92%", once: true },
-          duration: mDur(0.5),
-          y: 0,
-          autoAlpha: 1,
-          ease: "power1.out",
-        });
+  if (IS_MOBILE()) {
+    titles.forEach((el) => {
+      gsap.set(el, { y: 16, autoAlpha: 0 });
+      gsap.to(el, {
+        scrollTrigger: { trigger: el, start: "top 92%", once: true },
+        duration: mDur(0.5),
+        y: 0,
+        autoAlpha: 1,
+        ease: "power1.out",
       });
-    } else {
-      titles.forEach((splitTextLine: any) => {
-        const tl = gsap.timeline({
-          scrollTrigger: { trigger: splitTextLine, start: "top 90%", end: "bottom 60%", scrub: false, markers: false, toggleActions: "play none none none" },
-        });
-        const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
-        gsap.set(splitTextLine, { perspective: 400 });
-        itemSplitted.split({ type: "lines" });
-        tl.from(itemSplitted.lines, {
-          duration: 1,
-          delay: 0.3,
-          opacity: 0,
-          rotationX: -80,
-          force3D: true,
-          transformOrigin: "top center -50",
-          stagger: 0.1,
-        });
+    });
+  } else {
+    titles.forEach((splitTextLine: any) => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: splitTextLine, start: "top 90%", end: "bottom 60%", scrub: false, markers: false, toggleActions: "play none none none" },
       });
-    }
-  });
+      const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+      gsap.set(splitTextLine, { perspective: 400 });
+      itemSplitted.split({ type: "lines" });
+      tl.from(itemSplitted.lines, {
+        duration: 1,
+        delay: 0.3,
+        opacity: 0,
+        rotationX: -80,
+        force3D: true,
+        transformOrigin: "top center -50",
+        stagger: 0.1,
+      });
+    });
+  }
 }
 
+/* =========================
+   Bootstrap & Export
+   ========================= */
+function startAllAnimations() {
+  heroTitleAnim();
+  heroBgAnimation();
+  bounceAnimation();
+  fadeAnimation();
+  charAnimation();
+  revelAnimationTwo();
+  revelAnimationOne();
+  zoomAnimation();
+  titleAnimation();
+  ScrollTrigger.refresh(); // sécu après init
+}
+
+let _bootstrapped = false;
+export async function initPageAnimationsAfterLoader() {
+  if (_bootstrapped || typeof window === "undefined") return;
+  _bootstrapped = true;
+  await waitForLoaderDone();   // <-- attend *ton* event/flag
+  startAllAnimations();
+}
+
+// Auto-boot si import côté client
+if (typeof window !== "undefined") {
+  initPageAnimationsAfterLoader();
+}
 
 export {
   heroTitleAnim,
