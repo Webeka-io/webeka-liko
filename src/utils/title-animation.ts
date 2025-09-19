@@ -1,27 +1,17 @@
-// animations.ts
 import { gsap, Power2 } from "gsap";
 import $ from "jquery";
 import { ScrollTrigger, SplitText } from "@/plugins";
-import type { ScrollTrigger as ST } from "gsap/ScrollTrigger";
+import type { ScrollTrigger as ST } from "gsap/ScrollTrigger"; // en haut du fichier (type-only)
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-/* =========================
-   Helpers / Config globale
-   ========================= */
+/* ===== Helpers ===== */
 const IS_MOBILE = () =>
   typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches;
-
 const REDUCED = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// ➜ facteurs d’allongement mobile
-const MOBILE_DURATION_FACTOR = 2;   // x2 plus long sur mobile
-const MOBILE_STAGGER_FACTOR  = 1.5; // x1.5 pour les staggers
-const mDur  = (base: number) => base * MOBILE_DURATION_FACTOR;
-const mStag = (base: number) => base * MOBILE_STAGGER_FACTOR;
-
+// Config globale (une seule fois)
 let _configured = false;
 function configureGSAP() {
   if (_configured) return;
@@ -33,57 +23,27 @@ function configureGSAP() {
   gsap.ticker.lagSmoothing(500, 33);
 }
 
-/* =========================
-   Attente du loader (ton event)
-   ========================= */
-const LOADER_EVENT = "app:loader:done";
-
-function waitForLoaderDone(timeoutMs = 12000): Promise<void> {
-  return new Promise((resolve) => {
-    if (typeof window === "undefined") {
-      resolve();
-      return;
-    }
-    // si le flag est déjà posé par ton loader
-    if ((window as any).__LOADER_DONE__) {
-      resolve();
-      return;
-    }
-    const onDone = () => {
-      window.removeEventListener(LOADER_EVENT, onDone as EventListener);
-      resolve();
-    };
-    window.addEventListener(LOADER_EVENT, onDone as EventListener, { once: true });
-    // garde-fou si jamais l’event ne part pas
-    setTimeout(() => {
-      window.removeEventListener(LOADER_EVENT, onDone as EventListener);
-      resolve();
-    }, timeoutMs);
-  });
-}
-
-/* =========================
-   Animations
-   ========================= */
-
+/* ===== Hero titles ===== */
 function heroTitleAnim() {
   configureGSAP();
   const heroArea = document.querySelector(".tp-hero-2-area");
   if (!heroArea) return;
 
   if (REDUCED()) {
-    gsap.set(
-      [".tp-hero-2-title.text-1", ".tp-hero-2-title.text-2", ".tp-hero-2-content"],
-      { x: 0, autoAlpha: 1, clearProps: "all" }
-    );
+    gsap.set([".tp-hero-2-title.text-1", ".tp-hero-2-title.text-2", ".tp-hero-2-content"], {
+      x: 0,
+      autoAlpha: 1,
+      clearProps: "all",
+    });
     return;
   }
 
   if (IS_MOBILE()) {
+    // Mobile: reveal simple, court, une seule fois
     gsap.set(".tp-hero-2-title.text-1", { x: 40, autoAlpha: 0 });
     gsap.to(".tp-hero-2-title.text-1", {
       scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
-      duration: mDur(0.45),
+      duration: 0.45,
       x: 0,
       autoAlpha: 1,
       ease: "power1.out",
@@ -92,7 +52,7 @@ function heroTitleAnim() {
     gsap.set(".tp-hero-2-title.text-2", { x: -40, autoAlpha: 0 });
     gsap.to(".tp-hero-2-title.text-2", {
       scrollTrigger: { trigger: heroArea, start: "top 92%", once: true },
-      duration: mDur(0.45),
+      duration: 0.45,
       x: 0,
       autoAlpha: 1,
       ease: "power1.out",
@@ -102,13 +62,14 @@ function heroTitleAnim() {
     gsap.set(".tp-hero-2-content", { x: -50, autoAlpha: 0 });
     gsap.to(".tp-hero-2-content", {
       scrollTrigger: { trigger: heroArea, start: "top 90%", once: true },
-      duration: mDur(0.5),
+      duration: 0.5,
       x: 0,
       autoAlpha: 1,
       ease: "power1.out",
       delay: 0.1,
     });
   } else {
+    // Desktop: inchangé (valeurs d’origine)
     gsap.set(".tp-hero-2-title.text-1", { x: 300 });
     gsap.to(".tp-hero-2-title.text-1", {
       scrollTrigger: { trigger: heroArea, start: "top center", markers: false },
@@ -130,6 +91,7 @@ function heroTitleAnim() {
   }
 }
 
+/* ===== Hero background ===== */
 function heroBgAnimation() {
   configureGSAP();
   const heroBg = document.querySelector(".tp-hero-bg-single");
@@ -141,12 +103,13 @@ function heroBgAnimation() {
   }
 
   if (IS_MOBILE()) {
-    gsap.from(heroBg, { scale: 1.06, duration: mDur(0.6), ease: "power1.out", force3D: true });
+    gsap.from(heroBg, { scale: 1.06, duration: 0.6, ease: "power1.out", force3D: true });
   } else {
     gsap.from(heroBg, { scale: 1.3, duration: 1.5 });
   }
 }
 
+/* ===== Boutons bounce ===== */
 function bounceAnimation() {
   configureGSAP();
   const bounce = document.querySelectorAll(".tp-btn-bounce");
@@ -158,20 +121,23 @@ function bounceAnimation() {
   }
 
   if (IS_MOBILE()) {
+    // Mobile: pas de bounce lourd ni doublon, reveal court et unique
     bounce.forEach((btn: any) => {
       const trigger = btn.closest(".tp-btn-trigger") || btn;
       gsap.set(btn, { y: -24, opacity: 0 });
       gsap.to(btn, {
         scrollTrigger: { trigger, start: "top 92%", once: true },
-        duration: mDur(0.4),
+        duration: 0.4,
         ease: "power2.out",
         y: 0,
         opacity: 1,
       });
     });
   } else {
+    // Desktop: comportement existant
     gsap.from(bounce, { y: -100, opacity: 0 });
-    gsap.utils.toArray(bounce).forEach((btn: any) => {
+    let mybtn = gsap.utils.toArray(bounce);
+    mybtn.forEach((btn: any) => {
       const $this = $(btn);
       gsap.to(btn, {
         scrollTrigger: { trigger: $this.closest(".tp-btn-trigger"), start: "top center", markers: false },
@@ -182,7 +148,8 @@ function bounceAnimation() {
       });
     });
     gsap.from(bounce, { y: -100, opacity: 0 });
-    gsap.utils.toArray(bounce).forEach((btn: any) => {
+    let mybtn2 = gsap.utils.toArray(bounce);
+    mybtn2.forEach((btn: any) => {
       const $this = $(btn);
       gsap.to(btn, {
         scrollTrigger: { trigger: $this.closest(".tp-btn-trigger"), start: "bottom bottom", markers: false },
@@ -196,6 +163,7 @@ function bounceAnimation() {
   }
 }
 
+/* ===== Char animation (SplitText lourd) ===== */
 function charAnimation() {
   configureGSAP();
   const targets = gsap.utils.toArray(".tp-char-animation") as HTMLElement[];
@@ -207,17 +175,19 @@ function charAnimation() {
   }
 
   if (IS_MOBILE()) {
+    // Mobile: pas de SplitText -> fade/slide simple, une seule fois
     targets.forEach((el) => {
       gsap.set(el, { y: 16, autoAlpha: 0 });
       gsap.to(el, {
         scrollTrigger: { trigger: el, start: "top 92%", once: true },
-        duration: mDur(0.45),
+        duration: 0.45,
         y: 0,
         autoAlpha: 1,
         ease: "power1.out",
       });
     });
   } else {
+    // Desktop: inchangé
     targets.forEach((splitTextLine: any) => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -243,42 +213,47 @@ function charAnimation() {
   }
 }
 
+/* ===== Fades (batch & once sur mobile) ===== */
 function fadeAnimation() {
   configureGSAP();
 
   if (REDUCED()) {
-    gsap.set(
-      [".tp_fade_bottom", ".tp_fade_top", ".tp_fade_left", ".tp_fade_right", ".tp_fade_anim"],
-      { x: 0, y: 0, opacity: 1, clearProps: "all" }
-    );
+    gsap.set([".tp_fade_bottom", ".tp_fade_top", ".tp_fade_left", ".tp_fade_right", ".tp_fade_anim"], {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      clearProps: "all",
+    });
     return;
   }
 
   if (IS_MOBILE()) {
+    // Mobile: reveals courts, batchés, une seule fois
     const m = (sel: string, from: gsap.TweenVars) => {
       const nodes = gsap.utils.toArray(sel);
       if (!nodes.length) return;
       gsap.set(nodes, from);
       ScrollTrigger.batch(nodes as Element[], {
-        start: "top 92%",
-        once: true,
-        onEnter: (els: Element[], _triggers?: ST[]) => {
-          gsap.to(els, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            duration: mDur(0.45),
-            ease: "power1.out",
-            stagger: mStag(0.05),
-          });
-        },
-      });
+  start: "top 92%",
+  once: true,
+  onEnter: (els: Element[], _triggers?: ST[]) => {
+    gsap.to(els, {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 0.45,
+      ease: "power1.out",
+      stagger: 0.05,
+    });
+  },
+});
     };
     m(".tp_fade_bottom", { y: 40, opacity: 0 });
     m(".tp_fade_top", { y: -40, opacity: 0 });
     m(".tp_fade_left", { x: -40, opacity: 0 });
     m(".tp_fade_right", { x: 40, opacity: 0 });
 
+    // .tp_fade_anim : on respecte les data-* de base, mais en version light
     const fadeArrayup = gsap.utils.toArray(".tp_fade_anim") as HTMLElement[];
     fadeArrayup.forEach((t) => {
       const from = (t.getAttribute("data-fade-from") || "bottom").toLowerCase();
@@ -301,12 +276,12 @@ function fadeAnimation() {
         y: 0,
         opacity: 1,
         ease: "power1.out",
-        duration: mDur(0.45),
+        duration: 0.45,
         delay: dly,
       });
     });
   } else {
-    // Desktop inchangé
+    // Desktop: logique existante inchangée
     if ($(".tp_fade_bottom").length > 0) {
       gsap.set(".tp_fade_bottom", { y: 100, opacity: 0 });
       const fadeArray = gsap.utils.toArray(".tp_fade_bottom");
@@ -417,6 +392,7 @@ function fadeAnimation() {
   }
 }
 
+/* ===== Reveal (SplitText) 1 ===== */
 function revelAnimationOne() {
   configureGSAP();
   const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim");
@@ -428,54 +404,40 @@ function revelAnimationOne() {
   }
 
   if (IS_MOBILE()) {
+    // Mobile: simple reveal après 3s
     anims.forEach((el) => {
-      gsap.set(el, { y: 24, autoAlpha: 0 });
+      gsap.set(el, { y: 24, autoAlpha: 0 }); // ⬅️ caché au départ
       gsap.to(el, {
-        scrollTrigger: { trigger: el, start: "top 90%", once: true },
-        duration: mDur(0.5),
+        duration: 0.5,
         y: 0,
         autoAlpha: 1,
         ease: "power1.out",
+        delay: 2, // ⬅️ délai de 3 secondes
       });
     });
   } else {
+    // Desktop: SplitText avec délai
     anims.forEach((areveal: any) => {
-      let duration_value: any = 1.5;
-      let onscroll_value: any = 1;
-      let stagger_value: any = 0.02;
-      let data_delay: any = 0.05;
-
-      if (areveal.getAttribute("data-duration")) duration_value = areveal.getAttribute("data-duration");
-      if (areveal.getAttribute("data-on-scroll")) onscroll_value = areveal.getAttribute("data-on-scroll");
-      if (areveal.getAttribute("data-stagger")) stagger_value = areveal.getAttribute("data-stagger");
-      if (areveal.getAttribute("data-delay")) data_delay = areveal.getAttribute("data-delay");
+      let duration_value: any = areveal.getAttribute("data-duration") || 1.5;
+      let stagger_value: any = areveal.getAttribute("data-stagger") || 0.02;
+      let data_delay: any = areveal.getAttribute("data-delay") || 0.05;
 
       areveal.split = new SplitText(areveal, { type: "lines,words,chars", linesClass: "tp-reveal-line" });
 
-      if (onscroll_value == 1) {
-        areveal.anim = gsap.from(areveal.split.chars, {
-          scrollTrigger: { trigger: areveal, start: "top 85%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
-          duration: duration_value,
-          delay: data_delay,
-          ease: "circ.out",
-          y: 200,
-          stagger: stagger_value,
-          opacity: 0,
-        });
-      } else {
-        areveal.anim = gsap.from(areveal.split.chars, {
-          duration: duration_value,
-          delay: data_delay,
-          ease: "circ.out",
-          y: 200,
-          stagger: stagger_value,
-          opacity: 0,
-        });
-      }
+      gsap.from(areveal.split.chars, {
+        duration: duration_value,
+        delay: 2, // ⬅️ délai de 3 secondes
+        ease: "circ.out",
+        y: 200,
+        stagger: stagger_value,
+        opacity: 0,
+      });
     });
   }
 }
 
+
+/* ===== Reveal 2 ===== */
 function revelAnimationTwo() {
   configureGSAP();
   const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim-2");
@@ -491,7 +453,7 @@ function revelAnimationTwo() {
       gsap.set(el, { y: 24, autoAlpha: 0 });
       gsap.to(el, {
         scrollTrigger: { trigger: el, start: "top 90%", once: true },
-        duration: mDur(0.5),
+        duration: 0.5,
         y: 0,
         autoAlpha: 1,
         ease: "power1.out",
@@ -535,6 +497,7 @@ function revelAnimationTwo() {
   }
 }
 
+/* ===== Zoom ===== */
 function zoomAnimation() {
   configureGSAP();
 
@@ -545,12 +508,13 @@ function zoomAnimation() {
   }
 
   if (IS_MOBILE()) {
+    // Mobile: pas de wrap ni gros zoom
     const nodes = document.querySelectorAll(".anim-zoomin");
     nodes.forEach((el: any) => {
       gsap.set(el, { autoAlpha: 0, scale: 1.02 });
       gsap.to(el, {
         scrollTrigger: { trigger: el, start: "top 92%", once: true },
-        duration: mDur(0.45),
+        duration: 0.45,
         autoAlpha: 1,
         scale: 1,
         ease: "power1.out",
@@ -558,6 +522,7 @@ function zoomAnimation() {
       });
     });
   } else {
+    // Desktop: inchangé
     if ($(".anim-zoomin").length > 0) {
       $(".anim-zoomin").each(function () {
         $(this).wrap('<div class="anim-zoomin-wrap"></div>');
@@ -581,6 +546,7 @@ function zoomAnimation() {
   }
 }
 
+/* ===== Title (SplitText) ===== */
 function titleAnimation() {
   configureGSAP();
 
@@ -597,7 +563,7 @@ function titleAnimation() {
       gsap.set(el, { y: 16, autoAlpha: 0 });
       gsap.to(el, {
         scrollTrigger: { trigger: el, start: "top 92%", once: true },
-        duration: mDur(0.5),
+        duration: 0.5,
         y: 0,
         autoAlpha: 1,
         ease: "power1.out",
@@ -622,35 +588,6 @@ function titleAnimation() {
       });
     });
   }
-}
-
-/* =========================
-   Bootstrap & Export
-   ========================= */
-function startAllAnimations() {
-  heroTitleAnim();
-  heroBgAnimation();
-  bounceAnimation();
-  fadeAnimation();
-  charAnimation();
-  revelAnimationTwo();
-  revelAnimationOne();
-  zoomAnimation();
-  titleAnimation();
-  ScrollTrigger.refresh(); // sécu après init
-}
-
-let _bootstrapped = false;
-export async function initPageAnimationsAfterLoader() {
-  if (_bootstrapped || typeof window === "undefined") return;
-  _bootstrapped = true;
-  await waitForLoaderDone();   // <-- attend *ton* event/flag
-  startAllAnimations();
-}
-
-// Auto-boot si import côté client
-if (typeof window !== "undefined") {
-  initPageAnimationsAfterLoader();
 }
 
 export {

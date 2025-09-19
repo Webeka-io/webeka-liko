@@ -522,3 +522,42 @@
   color: var(--tp-common-white); /* texte blanc */
 }
 
+.tp-project-3-title-sm {
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.9px;
+  color: black;
+  font-family: var(--tp-ff-marcellus);
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tp-project-3-title-sm {
+    font-size: 65px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tp-project-3-title-sm {
+    font-size: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .tp-project-3-title-sm {
+    font-size: 40px;
+  }
+}
+
+.rfm-marquee-container {
+  overflow-y: hidden;
+  position: relative;
+
+  /* Masque dégradé qui rend les bords transparents */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
