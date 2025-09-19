@@ -20,7 +20,7 @@ export default function BrandSlider() {
   return (
     <div className="tp-brand-slider-active fix ">
       <Marquee
-        speed={60}
+        speed={100}
         loop={0}
         className="brand-wrapper mx-auto"
       >

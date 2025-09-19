@@ -497,3 +497,28 @@
   position: absolute;
   right: 100%;
 }
+
+.tp-btn-project-sm {
+  height: 32px;
+  line-height: 32px;
+  border-radius: 20px;
+  padding: 0 22px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--tp-common-black); /* texte noir */
+  border: 1px solid rgba(0, 0, 0, 0.12); /* bordure noire très légère */
+  background-color: var(--tp-common-white); /* fond blanc */
+}
+
+.tp-btn-project-sm:hover {
+  background-color: var(--tp-common-black); /* fond noir */
+  border-color: var(--tp-common-black);
+  color: var(--tp-common-white); /* texte blanc */
+}
+

@@ -20,7 +20,7 @@ import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ServiceMain from "@/pages/service/service-2";
-import LineTextTwo from "@/components/line-text/line-text-2";
+import LoadingScreen from "@/components/loading/LoadingScreen";
 
 
 
@@ -40,8 +40,16 @@ const HomeFourMain = () => {
 
 
   
-  return (
+   return (
     <Wrapper>
+      {/* Loader (white/black) */}
+     <LoadingScreen
+  background="#ffffff"
+  color="#111111"
+  title={'Webeka.fr'}
+  blurHeightVH={24}
+  blurStrength={18}
+/>
 
       {/* header area start */}
       <HeaderFour />

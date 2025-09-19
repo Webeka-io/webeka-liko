@@ -59,7 +59,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
   return (
     <div
       className={`tp-project-3-area ${
-        style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"
+        style_2 ? "pt-60 pw-project-style" : "pt-130 white-bg"
       }`}
     >
       <div className="container container-1720">
@@ -68,7 +68,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim ">
-                  <span className="text-center">
+                  <span className="text-center text-black">
                     Nos <br /> Projets
                   </span>
                 </h4>
