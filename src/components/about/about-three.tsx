@@ -18,7 +18,7 @@ export default function AboutThree() {
                   <FirstBracket />
                 </span>
                 <span className="tp-subtitle-text tp_text_invert">
-                  Notre objectif
+                  Notre promesse
                 </span>
                 <span>
                   <FirstBracketTwo />

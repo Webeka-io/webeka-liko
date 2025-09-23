@@ -43,13 +43,14 @@ const HomeFourMain = () => {
    return (
     <Wrapper>
       {/* Loader (white/black) */}
-     <LoadingScreen
-  background="#ffffff"
-  color="#111111"
-  title={'Webeka.fr'}
-  blurHeightVH={24}
-  blurStrength={18}
-/>
+      <LoadingScreen
+        background="#ffffff"
+        color="#111111"
+        title={'Webeka.fr'}
+        // tu peux aussi écrire: 'Un site web\nVraiment simple'
+        minDuration={1400}
+        letterStagger={0.03}
+      />
 
       {/* header area start */}
       <HeaderFour />

@@ -395,42 +395,88 @@ function fadeAnimation() {
 /* ===== Reveal (SplitText) 1 ===== */
 function revelAnimationOne() {
   configureGSAP();
-  const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim");
-  if (!anims.length) return;
 
+  const anims = document.querySelectorAll<HTMLElement>(".tp_reveal_anim");
+  const logos = document.querySelectorAll<HTMLElement>(".logo-wrap");
+
+  if (!anims.length && !logos.length) return;
+
+  // Accessibilité : pas d’anim si l’utilisateur préfère réduire
   if (REDUCED()) {
-    gsap.set(anims, { autoAlpha: 1, y: 0, clearProps: "all" });
+    if (anims.length) gsap.set(anims, { autoAlpha: 1, y: 0, clearProps: "all" });
+    if (logos.length) gsap.set(logos, { autoAlpha: 1, y: 0, clearProps: "all" });
     return;
   }
 
+  // ------- MOBILE -------
   if (IS_MOBILE()) {
-    // Mobile: simple reveal après 3s
-    anims.forEach((el) => {
-      gsap.set(el, { y: 24, autoAlpha: 0 }); // ⬅️ caché au départ
-      gsap.to(el, {
-        duration: 0.5,
-        y: 0,
-        autoAlpha: 1,
-        ease: "power1.out",
-        delay: 2, // ⬅️ délai de 3 secondes
+    // Texte (révélation simple, même délai que desktop pour rester synchro)
+    if (anims.length) {
+      anims.forEach((el) => {
+        gsap.set(el, { y: 24, autoAlpha: 0 });
+        gsap.to(el, {
+          duration: 0.5,
+          y: 0,
+          autoAlpha: 1,
+          ease: "power1.out",
+          delay: 2, // même timing que desktop
+        });
       });
-    });
-  } else {
-    // Desktop: SplitText avec délai
-    anims.forEach((areveal: any) => {
-      let duration_value: any = areveal.getAttribute("data-duration") || 1.5;
-      let stagger_value: any = areveal.getAttribute("data-stagger") || 0.02;
-      let data_delay: any = areveal.getAttribute("data-delay") || 0.05;
+    }
 
-      areveal.split = new SplitText(areveal, { type: "lines,words,chars", linesClass: "tp-reveal-line" });
+    // Logo (fade/slide simple avec le même délai)
+    if (logos.length) {
+      logos.forEach((logo) => {
+        gsap.set(logo, { y: 24, autoAlpha: 0 });
+        gsap.to(logo, {
+          duration: 0.5,
+          y: 0,
+          autoAlpha: 1,
+          ease: "power1.out",
+          delay: 2, // synchro avec le texte
+        });
+      });
+    }
+    return;
+  }
+
+  // ------- DESKTOP -------
+  // Texte (SplitText + reveal)
+  if (anims.length) {
+    anims.forEach((areveal: any) => {
+      const duration_value = Number(areveal.getAttribute("data-duration") || 1.5);
+      const stagger_value = Number(areveal.getAttribute("data-stagger") || 0.02);
+      // On force le délai à 2s pour rester synchro avec le logo
+      // (tu peux le rendre configurable si besoin)
+      // const data_delay = Number(areveal.getAttribute("data-delay") || 0.05);
+
+      areveal.split = new SplitText(areveal, {
+        type: "lines,words,chars",
+        linesClass: "tp-reveal-line",
+      });
 
       gsap.from(areveal.split.chars, {
         duration: duration_value,
-        delay: 2, // ⬅️ délai de 3 secondes
+        delay: 2, // synchro avec le logo
         ease: "circ.out",
         y: 200,
         stagger: stagger_value,
         opacity: 0,
+      });
+    });
+  }
+
+  // Logo (anim dédiée, même delay)
+  if (logos.length) {
+    logos.forEach((logo) => {
+      gsap.from(logo, {
+        duration: 1,
+        delay: 2,        // synchro avec le texte
+        ease: "circ.out",
+        y: 100,
+        autoAlpha: 0,
+        // Astuce : si le logo est en "fill", le wrapper doit être positionné
+        // et avoir des dimensions. Tu as déjà `position-relative` dans ton JSX.
       });
     });
   }

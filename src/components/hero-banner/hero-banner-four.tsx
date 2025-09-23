@@ -17,12 +17,12 @@ export default function HeroBannerFour() {
                 <span></span>
               </div>
               <h4 className=" tp-hero-3-title tp_reveal_anim">
-                <span className="tp-reveal-line">Un site web</span> <br />
-                <span className="tp-reveal-line">Vraiment simple</span>
+                <span className="tp-reveal-line">Un Site Web</span> <br />
+                <span className="tp-reveal-line">Vraiment Simple</span>
               </h4>
 
               <span className=" md : d-none d-md-block tp-hero-3-category tp_reveal_anim ">
-                Création rapide • 1 er mois offert • Sans engagement
+                Site premium • Création rapide • Sans engagement
               </span>
               
             {/* Mobile Avantages */}
@@ -30,11 +30,11 @@ export default function HeroBannerFour() {
   <div className="d-inline-block text-start tp-hero-3-category">
     <div className="d-flex">
       <span className="me-2">•</span>
-      <span>Création rapide</span>
+      <span>Site premium</span>
     </div>
     <div className="d-flex">
       <span className="me-2">•</span>
-      <span>1er mois offert</span>
+      <span>Création rapide</span>
     </div>
     <div className="d-flex">
       <span className="me-2">•</span>
