@@ -45,7 +45,7 @@ const HomeFourMain = () => {
       <LoadingScreen
         background="#ffffff"
         color="#111111"
-        title={'Webeka.fr'}
+        title={'Dentiste\nWebeka.fr'}
         // tu peux aussi écrire: 'Un site web\nVraiment simple'
         minDuration={1400}
         letterStagger={0.03}
@@ -70,8 +70,6 @@ const HomeFourMain = () => {
             {/* service area */}
             <ServiceMain />
             {/* service area */}    
-
-           
 
             {/* project area start */}
             <ProjectFour />

@@ -4,20 +4,20 @@ import Link from "next/link";
 import { ProjectShape, RightArrow } from "../svg";
 
 // remplace tes visuels par des mockups de sites dentaires si tu en as
-import port_1 from "@/assets/img/home-03/portfolio/1.webp";
-import port_2 from "@/assets/img/home-03/portfolio/2.webp";
-import port_3 from "@/assets/img/home-03/portfolio/7.webp";
-import port_4 from "@/assets/img/home-03/portfolio/8.webp";
-import port_5 from "@/assets/img/home-03/portfolio/6.webp";
-import port_6 from "@/assets/img/home-03/portfolio/5.webp";
-import port_7 from "@/assets/img/home-03/portfolio/3.webp";
-import port_8 from "@/assets/img/home-03/portfolio/4.webp";
+import port_1 from "@/assets/img/home-03/portfolio/dentiste/1 .webp";
+import port_2 from "@/assets/img/home-03/portfolio/dentiste/2 .webp";
+import port_3 from "@/assets/img/home-03/portfolio/dentiste/3 .webp";
+import port_4 from "@/assets/img/home-03/portfolio/dentiste/4 .webp";
+import port_5 from "@/assets/img/home-03/portfolio/dentiste/5 .webp";
+import port_6 from "@/assets/img/home-03/portfolio/dentiste/6 .webp";
+import port_7 from "@/assets/img/home-03/portfolio/dentiste/7 .webp";
+import port_8 from "@/assets/img/home-03/portfolio/dentiste/8 .webp";
 
 const project_data = [
   { id: 1, img_1: port_1, img_2: port_2, meta: "", title: " Dentina", borderClass: "color-blue" },
-  { id: 2, img_1: port_3, img_2: port_4, meta: "", title: "Implantologie & Esthétique du sourire", borderClass: "color-green" },
-  { id: 3, img_1: port_5, img_2: port_6, meta: "", title: "Équipe, hygiène & matériels", borderClass: "color-azure" },
-  { id: 4, img_1: port_7, img_2: port_8, meta: "", title: "Prendre rendez-vous (Doctolib intégré)", borderClass: "color-green" },
+  { id: 2, img_1: port_3, img_2: port_4, meta: "", title: "Médicia", borderClass: "color-rose" },
+  { id: 3, img_1: port_5, img_2: port_6, meta: "", title: "Dentoi", borderClass: "color-vert" },
+  { id: 4, img_1: port_7, img_2: port_8, meta: "", title: "Dentify", borderClass: "color-azure" },
 ];
 
 type IProps = { style_2?: boolean; };

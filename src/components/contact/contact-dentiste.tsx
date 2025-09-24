@@ -12,7 +12,7 @@ export default function ContactOne() {
           <div className="tp-cta-title-box p-relative">
             <h4 className="tp-cta-title cta-text">
               Parlons <br />
-              <span>de votre cabinet</span>
+              <span>Enssemble</span>
             </h4>
 
             <p className="tp_fade_bottom">
