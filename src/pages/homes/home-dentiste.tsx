@@ -5,9 +5,10 @@ import useScrollSmooth from '@/hooks/use-scroll-smooth';
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from '@/plugins';
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
+import LoadingScreen from "@/components/loading/LoadingScreen";
 
 // internal imports
-import HeaderEight from "@/layouts/headers/header-eight";
+import HeaderFour from "@/layouts/headers/header-dentiste";
 import { perspective } from "@/utils/perspective-anim";
 import PerspectivePortfolioSlider from "@/components/portfolio/slider/perspective-port-slider dentiste";
 import { revelAnimationOne } from "@/utils/title-animation";
@@ -47,9 +48,18 @@ HomeEightMain = () => {
       </div>
       {/* magic cursor end */}
 
+ {/* Loader (white/black) */}
+      <LoadingScreen
+        background="#ffffff"
+        color="#111111"
+        title={'Dentiste\nWebeka.fr'}
+        // tu peux aussi écrire: 'Un site web\nVraiment simple'
+        minDuration={1400}
+        letterStagger={0.03}
+      />
 
       {/* header area start */}
-      <HeaderEight />
+      <HeaderFour />
       {/* header area end */}
 
       <div id="smooth-wrapper">

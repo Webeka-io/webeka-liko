@@ -31,7 +31,7 @@ const HomeFourMain = () => {
       fadeAnimation();
       revelAnimationOne();
       projectThreeAnimation();
-      ctaAnimation();
+      ctaAnimation(); 
       textInvert();
     }, 100);
     return () => clearTimeout(timer);
