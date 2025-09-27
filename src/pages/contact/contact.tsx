@@ -16,7 +16,7 @@ import { fadeAnimation, revelAnimationOne, } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ContactTwo from "@/components/contact/contact-two";
-
+import LoadingScreen from "@/components/loading/LoadingScreen";
 import { charAnimation } from "@/utils/title-animation";
 
 
@@ -43,6 +43,16 @@ const ContactMain = () => {
 
   return (
     <Wrapper>
+
+       <LoadingScreen
+              background="#ffffff"
+              color="#111111"
+              title={'Webeka.fr'}
+              // tu peux aussi écrire: 'Un site web\nVraiment simple'
+              minDuration={1400}
+              letterStagger={0.03}
+            />
+
       {/* header area start */}
       <HeaderFour />
       {/* header area end */}

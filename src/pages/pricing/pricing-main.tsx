@@ -19,6 +19,7 @@ import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import FaqAreaTwo from "@/components/faq/faq-area-2";
 import PricingArea from "@/components/pricing/pricing-area";
+import LoadingScreen from "@/components/loading/LoadingScreen";
 
 
 
@@ -47,6 +48,15 @@ const HomeFourMain = () => {
   
   return (
     <Wrapper>
+
+       <LoadingScreen
+              background="#ffffff"
+              color="#111111"
+              title={'Webeka.fr'}
+              // tu peux aussi écrire: 'Un site web\nVraiment simple'
+              minDuration={1400}
+              letterStagger={0.03}
+            />
 
       {/* header area start */}
       <HeaderFour />

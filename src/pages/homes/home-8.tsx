@@ -5,6 +5,7 @@ import useScrollSmooth from '@/hooks/use-scroll-smooth';
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from '@/plugins';
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
+import LoadingScreen from "@/components/loading/LoadingScreen";
 
 // internal imports
 import HeaderEight from "@/layouts/headers/header-eight";
@@ -40,6 +41,16 @@ HomeEightMain = () => {
 
   return (
     <div>
+
+       <LoadingScreen
+              background="#ffffff"
+              color="#111111"
+              title={'Webeka.fr'}
+              // tu peux aussi écrire: 'Un site web\nVraiment simple'
+              minDuration={1400}
+              letterStagger={0.03}
+            />
+
 
       {/* magic cursor start */}
       <div id="magic-cursor">

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 const CartPage = () => {
   return (
+    
     <CGUPage/>
   );
 };
