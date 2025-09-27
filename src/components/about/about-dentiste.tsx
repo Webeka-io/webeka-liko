@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import shape from '@/assets/img/home-03/about/ab-shape-img-dentiste.png';
 import { ArrowBg, RightArrowTwo, FirstBracket, FirstBracketTwo } from "../svg";
-
+ 
 export default function AboutThree() {
   return (
     <div className="tp-about-3-area">
