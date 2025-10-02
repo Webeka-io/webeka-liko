@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowBg, RightArrowTwo } from "../svg";
 import Link from "next/link";
 import { BounceArrowIcon } from "../BounceArrow/BounceArrow";
-import BrandSlider from "../brand/brand-slider";
+import BrandSlider from "../brand/brand-slider-dentiste";
 import Image from "next/image";
 import logoSourire from "@/assets/img/dentiste/logo_sourire.png"
 

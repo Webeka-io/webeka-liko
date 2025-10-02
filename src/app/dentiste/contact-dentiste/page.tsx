@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import ContactMain from "@/pages/contact/contact";
+import ContactMain from "@/pages/contact/contact-dentiste";
 
 export const metadata: Metadata = {
   title: "Webeka.fr - Contact",
