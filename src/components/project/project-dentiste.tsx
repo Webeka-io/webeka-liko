@@ -26,19 +26,6 @@ export default function ProjectFour({ style_2 = false }: IProps) {
   return (
     <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 white-bg"}`}>
       <div className="container container-1720">
-        {!style_2 && (
-          <div className="row justify-content-center">
-            <div className="col-xl-7">
-              <div className="tp-project-3-title-box p-relative mb-150">
-                <h4 className="tp-section-title-200 tp_reveal_anim ">
-                  <span className="text-center text-black">
-                     Nos <br /> Idées
-                  </span>
-                </h4>
-              </div>
-            </div>
-          </div>
-        )}
 
         <div className="row">
           <div className="col-xl-12">
