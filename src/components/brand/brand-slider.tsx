@@ -4,24 +4,14 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 // brand images
-import b_1 from "@/assets/img/home-01/brand/brand-1.png";
 
-const brand_images = [b_1];
+
+
 
 export default function BrandSlider() {
   return (
     <div className="tp-brand-slider-active fix ">
-      <Marquee
-        speed={70}
-        loop={0}
-        className="brand-wrapper mx-auto"
-      >
-        {brand_images.map((b, i) => (
-          <div key={i} className="tp-brand-item" style={{ height: "auto",width: "220px" }}>
-            <Image src={b} alt="" />
-          </div>
-        ))}
-      </Marquee>
+      
       {/* <Swiper
         {...slider_setting}
         modules={[Autoplay, FreeMode]}
