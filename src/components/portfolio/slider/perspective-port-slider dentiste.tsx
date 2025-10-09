@@ -26,8 +26,8 @@ type PortfolioItem = {
 const portfolio_data: PortfolioItem[] = [
   { id: 1, title: "", category: "", image: port_1, imageSm: port_5, imageLg: port_1, link: "https://www.webeka.io/prospection/dentiste/maquette"  },
   { id: 2, title: "", category: "", image: port_2, imageSm: port_6, imageLg: port_2, link: "https://www.webeka.io/prospection/dentiste-1/maquette" },
-  { id: 3, title: "", category: "", image: port_3, imageSm: port_7, imageLg: port_3, link: "https://www.webeka.io/prospection/dentiste-2/maquette" },
-  { id: 4, title: "", category: "", image: port_4, imageSm: port_8, imageLg: port_4, link: "https://www.webeka.io/prospection/dentiste-3/maquette" },
+  { id: 3, title: "", category: "", image: port_3, imageSm: port_7, imageLg: port_3, link: "https://www.webeka.io/prospection/dentiste-3/maquette" },
+  { id: 4, title: "", category: "", image: port_4, imageSm: port_8, imageLg: port_4, link: "https://www.webeka.io/prospection/dentiste-2/maquette" },
 ];
 
 export default function PerspectivePortfolioSlider() {
