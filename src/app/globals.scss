@@ -883,3 +883,13 @@
   display: flex;             /* optionnel : permet de centrer le contenu */
   align-items: center;       /* centre verticalement */
 }
+
+.mtbrand {
+  margin-top: 30px; /* mobile par défaut */
+}
+
+@media (min-width: 1024px) {
+  .mtbrand {
+    margin-top: 0px; /* sur PC (écran large) */
+  }
+}
