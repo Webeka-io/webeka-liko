@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import ThemeSetting from "@/components/theme-setting";
+{/*import ThemeSetting from "@/components/theme-setting"; */}
 import { setupGSAP } from "@/utils/gsap-setup";
 import { ScrollTrigger } from "@/plugins";
 import Router from "next/router";
@@ -38,7 +38,7 @@ const Wrapper = ({ children, showBackToTop = true }: WrapperProps) => {
     <>
       {children}
       {/* {showBackToTop && <BackToTop />} */}
-      <ThemeSetting />
+       {/* <ThemeSetting /> */}
     </>
   );
 };
