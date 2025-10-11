@@ -25,7 +25,7 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <Link className="tp-btn-black-2" href="/contact">
+              <Link className="tp-btn-black-2" href="/contact-dentiste">
                 Offre tout inclus{' '}
                 <span className="p-relative">
                   <RightArrowTwo />
