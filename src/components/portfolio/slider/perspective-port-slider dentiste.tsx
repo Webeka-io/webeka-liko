@@ -127,7 +127,7 @@ export default function PerspectivePortfolioSlider() {
             <div className="col-xl-6 col-lg-6 col-md-6 col-6">
               <div className="tp-portfolio-9-scroll text-end">
                 <a onClick={scrollTop} href="#">
-                  (Scroll)
+                  
                 </a>
               </div>
             </div>
