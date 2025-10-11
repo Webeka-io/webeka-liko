@@ -214,7 +214,7 @@ export default function PricingArea() {
 
                 {/* Inclus */}
                 <div
-                  className="rounded-3 mt-3"
+                  className="rounded-3 mt-3 "
                   style={{
                     background: '#f7f7f7',
                     padding: '14px 12px',
@@ -222,7 +222,7 @@ export default function PricingArea() {
                 >
                   <div
                     className="text-center mb-2"
-                    style={{ fontSize: 15, fontWeight: 600 }}
+                    style={{ fontSize: 20, fontWeight: 600 }}
                   >
                     + Inclus
                   </div>
@@ -231,13 +231,13 @@ export default function PricingArea() {
                     style={{ gap: 12 }}
                   >
                     <div className="flex-fill text-center">
-                      <TrendingUp size={18} />
+                      <TrendingUp size={20} />
                       <div className="mt-1" style={{ fontSize: 13 }}>
                         Optimisation Google
                       </div>
                     </div>
                     <div className="flex-fill text-center">
-                      <Shield size={18} />
+                      <Shield size={20} />
                       <div className="mt-1" style={{ fontSize: 13 }}>
                         Sécurité renforcée
                       </div>
