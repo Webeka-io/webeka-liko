@@ -56,7 +56,7 @@ export default function FooterFour() {
               </div>
             </div>
             <div className="col-xl-4 col-lg-6 col-md-6 mb-60">
-              <div className="tp-footer-3-widget-wrapper footer-col-3-3">
+              <div className="tp-footer-3-widget-wrapper footer-col-3-1">
                 <div className="tp-footer-3-widget mb-30">
                   <h4 className="tp-footer-3-title">Contact</h4>
                   <div className="tp-footer-2-contact-item">
