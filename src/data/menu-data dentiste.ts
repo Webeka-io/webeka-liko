@@ -1,5 +1,5 @@
 // @/data/menu-data.ts
-import { IMenuDT } from "@/types/menu-d-t";
+import { IMenuDT } from "@/types/menu-d-t"; 
 
 const menu_data: IMenuDT[] = [
   { id: 1, title: "Accueil", link: "/dentiste" },

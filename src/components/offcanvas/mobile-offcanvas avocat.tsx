@@ -8,7 +8,7 @@ import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.jpg";
 import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.jpg";
 import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.jpg";
 import gallery_4 from "@/assets/img/menu/offcanvas/offcanvas-4.jpg";
-import MobileMenus from "./mobile-menus dentiste";  
+import MobileMenus from "./mobile-menus avocat";  
 
 const gallery_images = [gallery_1, gallery_2, gallery_3, gallery_4];
 

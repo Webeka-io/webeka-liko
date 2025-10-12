@@ -1,7 +1,7 @@
 // app/components/MobileMenus.tsx (ou où tu veux)
 import React from "react";
 import Link from "next/link";
-import menu_data, { mobile_menu_data } from "@/data/menu-data dentiste"; // adapte le chemin si besoin
+import menu_data, { mobile_menu_data } from "@/data/menu-data avocat"; // adapte le chemin si besoin
 
 export default function MobileMenus() {
   // Priorité au jeu de données mobile si présent

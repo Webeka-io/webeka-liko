@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import HomeEightMain from '@/pages/homes/home-dentiste';
+import HomeEightMain from '@/pages/homes/home-avocat';
 
 export const metadata: Metadata = {
   title: "Webeka.fr - Création de site simple",

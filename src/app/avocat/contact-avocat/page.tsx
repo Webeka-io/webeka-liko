@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import ContactMain from "@/pages/contact/contact";
+import ContactMain from "@/pages/contact/contact-avocat";
 
 export const metadata: Metadata = {
   title: "Webeka.fr - Contact",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <ContactMain/>
+    <ContactMain/> 
   );
 };
 

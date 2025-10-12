@@ -4,10 +4,10 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 // brand images
-import b_1 from "@/assets/img/home-01/brand/brand-1.png";
+import b_1 from "@/assets/img/home-01/brand/brand-6.png";
 import b_2 from "@/assets/img/home-01/brand/brand-2.png";
 import b_3 from "@/assets/img/home-01/brand/brand-3.png";
-import b_4 from "@/assets/img/home-01/brand/brand-4.png";
+import b_4 from "@/assets/img/home-01/brand/brand-7.png";
 
 
 

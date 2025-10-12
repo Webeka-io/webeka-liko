@@ -8,9 +8,9 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import LoadingScreen from "@/components/loading/LoadingScreen";
 
 // internal imports
-import HeaderFour from "@/layouts/headers/header-dentiste";
+import HeaderFour from "@/layouts/headers/header-avocat";
 import { perspective } from "@/utils/perspective-anim";
-import PerspectivePortfolioSlider from "@/components/portfolio/slider/perspective-port-slider dentiste";
+import PerspectivePortfolioSlider from "@/components/portfolio/slider/perspective-port-slider avocat";
 import { revelAnimationOne } from "@/utils/title-animation";
 import ThemeSetting from "@/components/theme-setting";
 
@@ -52,7 +52,7 @@ HomeEightMain = () => {
       <LoadingScreen
         background="#ffffff"
         color="#111111"
-        title={'Dentiste\nWebeka.fr'}
+        title={'Avocat\nWebeka.fr'}
         // tu peux aussi écrire: 'Un site web\nVraiment simple'
         minDuration={1400}
         letterStagger={0.03}

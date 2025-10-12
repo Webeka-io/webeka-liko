@@ -1,7 +1,7 @@
 import React, { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import menu_data from "@/data/menu-data dentiste"; 
+import menu_data from "@/data/menu-data avocat"; 
 
 const imgStyle:CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
 const HeaderMenus = () => {
