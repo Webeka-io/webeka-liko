@@ -25,7 +25,7 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <Link className="tp-btn-black-2" href="/contact-avocat">
+              <Link className="tp-btn-black-2" href="/contact-dentiste">
                 Offre tout inclus{' '}
                 <span className="p-relative">
                   <RightArrowTwo />
@@ -52,20 +52,25 @@ export default function PricingArea() {
           <div className="col-md-7 col-lg-6 col-xl-5">
             <div
               className="card shadow border-0 rounded-4"
-              style={{ overflow: 'hidden', borderRadius: 24 }}
+              style={{
+                overflow: 'hidden',
+                borderRadius: 24,
+              }}
             >
               {/* Top ribbon */}
               <div
                 className="w-100 text-center"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02))',
+                  background:
+                    'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02))',
                   padding: '22px 16px',
                 }}
               >
                 <span
                   className="badge rounded-pill"
                   style={{
-                    background: 'linear-gradient(135deg, #111 0%, #333 100%)',
+                    background:
+                      'linear-gradient(135deg, #111 0%, #333 100%)',
                     color: '#fff',
                     fontWeight: 700,
                     fontSize: 20,
@@ -76,7 +81,12 @@ export default function PricingArea() {
                 </span>
                 <div
                   className="mt-3"
-                  style={{ color: '#4b5563', fontSize: 17, letterSpacing: 0.2, fontWeight: 500 }}
+                  style={{
+                    color: '#4b5563',
+                    fontSize: 17,
+                    letterSpacing: 0.2,
+                    fontWeight: 500,
+                  }}
                 >
                   Hébergement & maintenance inclus
                 </div>
@@ -87,17 +97,38 @@ export default function PricingArea() {
                 <div className="my-2">
                   <div
                     className="fw-bold"
-                    style={{ fontSize: '44px', lineHeight: 1.1, letterSpacing: -0.5 }}
+                    style={{
+                      fontSize: '44px',
+                      lineHeight: 1.1,
+                      letterSpacing: -0.5,
+                    }}
                   >
                     400&nbsp;€
-                    <span className="text-muted" style={{ fontSize: 17, marginLeft: 6, fontWeight: 500 }}>
+                    <span
+                      className="text-muted"
+                      style={{
+                        fontSize: 17,
+                        marginLeft: 6,
+                        fontWeight: 500,
+                      }}
+                    >
                       à la création
                     </span>
                   </div>
-                  <div className="mt-2" style={{ fontSize: 20, color: '#111' }}>
+                  <div
+                    className="mt-2"
+                    style={{ fontSize: 20, color: '#111' }}
+                  >
                     puis <strong style={{ fontSize: 22 }}>75&nbsp;€ / mois</strong>
                   </div>
-                  <div className="mt-2" style={{ color: '#111', fontSize: 17, fontWeight: 600 }}>
+                  <div
+                    className="mt-2"
+                    style={{
+                      color: '#111',
+                      fontSize: 17,
+                      fontWeight: 600,
+                    }}
+                  >
                     sans engagement, tout inclus
                   </div>
                 </div>
@@ -105,27 +136,30 @@ export default function PricingArea() {
                 <hr className="my-4" style={{ opacity: 0.15 }} />
 
                 {/* Avantages */}
-                <ul className="list-unstyled text-start mx-auto" style={{ maxWidth: 520 }}>
+                <ul
+                  className="list-unstyled text-start mx-auto"
+                  style={{ maxWidth: 520 }}
+                >
                   {[
                     {
                       icon: <BadgePlus size={20} />,
                       title: 'Design personnalisé au cabinet',
-                      sub: 'Couleurs, typographies, visuels et présentation adaptés à votre image',
+                      sub: 'Photos, couleurs, spécialités (implantologie, orthodontie, esthétique)',
                     },
                     {
                       icon: <Smartphone size={20} />,
-                      title: 'Mobile-first & rapide',
-                      sub: 'Expérience optimale sur smartphone, tablette et ordinateur',
+                      title: 'Mobile-first & Rapide',
+                      sub: 'Expérience patient optimale sur smartphone',
                     },
                     {
                       icon: <CalendarCheck size={20} />,
-                      title: 'Prise de contact & rendez-vous',
-                      sub: 'Formulaire, appel en 1 clic, intégrations Justifit / Calendly / Google Maps',
+                      title: 'Intégration Doctolib & Contact',
+                      sub: 'RDV en 1 clic, téléphone cliquable, Google Maps',
                     },
                     {
                       icon: <FileCheck2 size={20} />,
-                      title: 'Conformité & mentions légales',
-                      sub: 'RGPD, mentions légales et obligations déontologiques intégrées',
+                      title: 'Conformité & Mentions Obligatoires',
+                      sub: 'Ordre, informations & RGPD intégrés',
                     },
                     {
                       icon: <CheckCircle size={20} />,
@@ -136,17 +170,41 @@ export default function PricingArea() {
                     <li
                       key={idx}
                       className="d-flex"
-                      style={{ gap: 12, padding: '12px 0', alignItems: 'flex-start' }}
+                      style={{
+                        gap: 12,
+                        padding: '12px 0',
+                        alignItems: 'flex-start',
+                      }}
                     >
                       <div
                         className="d-inline-flex align-items-center justify-content-center rounded-circle"
-                        style={{ width: 32, height: 32, border: '1px solid #111', flex: '0 0 auto' }}
+                        style={{
+                          width: 32,
+                          height: 32,
+                          border: '1px solid #111',
+                          flex: '0 0 auto',
+                        }}
                       >
                         {item.icon}
                       </div>
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>{item.title}</div>
-                        <div className="text-muted" style={{ fontSize: 15, lineHeight: 1.55, color: '#6b7280' }}>
+                        <div
+                          style={{
+                            fontWeight: 700,
+                            fontSize: 17,
+                            marginBottom: 4,
+                          }}
+                        >
+                          {item.title}
+                        </div>
+                        <div
+                          className="text-muted"
+                          style={{
+                            fontSize: 15,
+                            lineHeight: 1.55,
+                            color: '#6b7280',
+                          }}
+                        >
                           {item.sub}
                         </div>
                       </div>
@@ -155,21 +213,33 @@ export default function PricingArea() {
                 </ul>
 
                 {/* Inclus */}
-                <div className="rounded-3 mt-3 " style={{ background: '#f7f7f7', padding: '14px 12px' }}>
-                  <div className="text-center mb-2" style={{ fontSize: 20, fontWeight: 600 }}>
+                <div
+                  className="rounded-3 mt-3 "
+                  style={{
+                    background: '#f7f7f7',
+                    padding: '14px 12px',
+                  }}
+                >
+                  <div
+                    className="text-center mb-2"
+                    style={{ fontSize: 20, fontWeight: 600 }}
+                  >
                     + Inclus
                   </div>
-                  <div className="d-flex justify-content-between text-muted" style={{ gap: 12 }}>
+                  <div
+                    className="d-flex justify-content-between text-muted"
+                    style={{ gap: 12 }}
+                  >
                     <div className="flex-fill text-center">
                       <TrendingUp size={20} />
                       <div className="mt-1" style={{ fontSize: 13 }}>
-                        Optimisation Google 
+                        Optimisation Google
                       </div>
                     </div>
                     <div className="flex-fill text-center">
                       <Shield size={20} />
                       <div className="mt-1" style={{ fontSize: 13 }}>
-                        Sécurité renforcée 
+                        Sécurité renforcée
                       </div>
                     </div>
                     <div className="flex-fill text-center">
@@ -184,7 +254,7 @@ export default function PricingArea() {
                 {/* CTA */}
                 <Link
                   className="d-inline-flex align-items-center justify-content-center w-100 mt-4"
-                  href="/contact-avocat"
+                  href="/contact"
                   style={{
                     background: '#111',
                     color: '#fff',
@@ -197,12 +267,15 @@ export default function PricingArea() {
                     transition: 'transform .15s ease, box-shadow .15s ease',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px)';
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 12px 28px rgba(0,0,0,.22)';
+                    (e.currentTarget as HTMLAnchorElement).style.transform =
+                      'translateY(-1px)';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                      '0 12px 28px rgba(0,0,0,.22)';
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLAnchorElement).style.transform = '';
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 24px rgba(0,0,0,.15)';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                      '0 10px 24px rgba(0,0,0,.15)';
                   }}
                 >
                   Demander une démo{' '}

@@ -18,7 +18,7 @@ import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import FaqAreaTwo from "@/components/faq/faq-area-2";
-import PricingArea from "@/components/pricing/pricing-area dentiste"; 
+import PricingArea from "@/components/pricing/pricing-area avocat"; 
 import LoadingScreen from "@/components/loading/LoadingScreen";
 
 
