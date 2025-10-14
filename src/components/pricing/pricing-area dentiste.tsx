@@ -11,6 +11,7 @@ import {
   FileCheck2,
   Smartphone,
   BadgePlus,
+  WifiPen,
 } from 'lucide-react';
 
 export default function PricingArea() {
@@ -165,6 +166,11 @@ export default function PricingArea() {
                       icon: <CheckCircle size={20} />,
                       title: 'Modifications incluses',
                       sub: 'Textes, images, horaires – sous 48–72 h',
+                    },
+                    {
+                      icon: <WifiPen size={20} />,
+                      title: 'Publication mensuelle',
+                      sub: 'Nous publions des articles tout les mois pour maintenir un bon référencement',
                     },
                   ].map((item, idx) => (
                     <li
