@@ -20,8 +20,8 @@ export default function HeroBannerFour() {
 
                <h4 className="tp-hero-3-title tp_reveal_anim">
   <span className="tp-reveal-line">Un Site Web</span><br />
-  <span className="tp-reveal-line d-inline-flex align-items-center justify-content-center gap-4">
-    Plaidant
+  <span className="tp-reveal-line d-inline-flex align-items-center justify-content-center">
+    Crédible
     <span className="logo-wrap d-inline-block position-relative align-middle ms-2">
       <Image
         src={logoJustice}

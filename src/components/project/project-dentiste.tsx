@@ -24,7 +24,7 @@ type IProps = { style_2?: boolean; };
 
 export default function ProjectFour({ style_2 = false }: IProps) {
   return (
-    <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 white-bg"}`}>
+    <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 site-bg-warm"}`}>
       <div className="container container-1720">
 
         <div className="row">

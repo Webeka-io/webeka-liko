@@ -1382,3 +1382,14 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
+/* Fond chaleureux global */
+.site-bg-warm {
+  background: #FAF7F4;         /* blanc cassé chaud */
+  color-scheme: light;         /* bons contrastes natifs (inputs, etc.) */
+}
+
+/* Si tu as un mode sombre, on garde un fond propre */
+.dark .site-bg-warm,
+[data-theme="dark"] .site-bg-warm {
+  background: #0b0b0b;         /* option: ajuste selon ta charte */
+}

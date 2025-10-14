@@ -47,6 +47,8 @@ export const metadata: Metadata = {
 };
 
 /* ==================== LAYOUT ==================== */
+/* ...imports identiques... */
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -55,7 +57,7 @@ export default function RootLayout({
       <body
         id="body"
         suppressHydrationWarning
-        className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
+        className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable} site-bg-warm`}
       >
         {/* ✅ Bouton WhatsApp flottant */}
         <WhatsAppButton phoneE164="+33603261137" />
@@ -66,8 +68,8 @@ export default function RootLayout({
         {/* ✅ Analytics */}
         <Analytics />
 
+        {/* Effet verre diffusé (si tu le gardes) */}
         <div className="page-glass-feather" aria-hidden="true" />
-
       </body>
     </html>
   );
