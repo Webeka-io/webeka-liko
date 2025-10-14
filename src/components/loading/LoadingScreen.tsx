@@ -19,6 +19,11 @@ type Props = {
   revealDurationSec?: number;  // durée révélation (s)
   clipGuardPx?: number;        // desktop: px masqués en bas du titre (anti chevauchement)
   mobileGuardMb?: number;      // mobile: margin-bottom temporaire (évite chevauchement sans clip)
+
+  /** 🆕 Logo au-dessus du slogan */
+  logoSrc?: string;
+  logoAlt?: string;
+  logoWidth?: number;          // px
 };
 
 export default function LoadingScreen({
@@ -34,12 +39,18 @@ export default function LoadingScreen({
   revealDurationSec = 1.25,
   clipGuardPx = 18,      // desktop
   mobileGuardMb = 28,    // mobile
+
+  // 🆕 Logo
+  logoSrc,
+  logoAlt = 'Webeka',
+  logoWidth = 112,
 }: Props) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const barRef = useRef<HTMLSpanElement | null>(null);
   const titleRef = useRef<HTMLDivElement | null>(null);
-  const titleWrapRef = useRef<HTMLDivElement | null>(null); // ex-titleClipRef
+  const titleWrapRef = useRef<HTMLDivElement | null>(null);
   const blurRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLDivElement | null>(null); // 🆕
 
   const lines = useMemo(() => title.split('\n'), [title]);
 
@@ -49,6 +60,8 @@ export default function LoadingScreen({
     const titleEl = titleRef.current;
     const titleWrapEl = titleWrapRef.current;
     const blurEl = blurRef.current;
+    const logoEl = logoRef.current; // 🆕
+
     if (!wrap || !bar || !titleEl || !titleWrapEl || !blurEl) return;
 
     const isMobile = typeof window !== 'undefined'
@@ -70,14 +83,15 @@ export default function LoadingScreen({
       } catch {}
     };
 
-    // anti-flash SSR → visible juste avant l’anim
+    // anti-flash SSR
     gsap.set(titleWrapEl, { visibility: 'visible' });
+    if (logoEl) gsap.set(logoEl, { visibility: 'visible' }); // 🆕
 
     if (reduce) {
       gsap.set(bar, { transformOrigin: 'left center', scaleX: 1 });
       gsap.set(blurEl, { opacity: 0 });
-      // no clip in reduced motion
       gsap.set(titleWrapEl, { WebkitClipPath: 'none', clipPath: 'none' });
+      if (logoEl) gsap.set(logoEl, { opacity: 1, y: 0, scale: 1 }); // 🆕
       tl.set(wrap, { display: 'none', onComplete: notifyDone });
       return () => { tl.kill(); };
     }
@@ -97,16 +111,24 @@ export default function LoadingScreen({
     });
     gsap.set(blurEl, { opacity: 0, y: 20 });
 
+    // 🆕 Logo initial state
+    if (logoEl) {
+      gsap.set(logoEl, {
+        opacity: 0,
+        y: 20,
+        scale: 0.96,
+        willChange: 'transform, opacity',
+        visibility: 'hidden',
+      });
+    }
+
     if (isMobile) {
-      // ✅ MOBILE : aucun clip → impossible de couper le texte
-      // On crée simplement de l'espace au-dessus de la barre pendant l’anim
       gsap.set(titleWrapEl, {
         WebkitClipPath: 'none',
         clipPath: 'none',
         marginBottom: mobileGuardMb,
       });
     } else {
-      // ✅ DESKTOP : clip net anti-chevauchement
       gsap.set(titleWrapEl, {
         WebkitClipPath: `inset(0 0 ${clipGuardPx}px 0)`,
         clipPath: `inset(0 0 ${clipGuardPx}px 0)`,
@@ -117,9 +139,22 @@ export default function LoadingScreen({
     // --- 1) Barre de progression ---
     tl.to(bar, { scaleX: 1, duration: barDur, ease: 'power1.inOut' }, 0);
 
-    // --- 2) Bande floue in/out ---
+    // --- 2) Bande floue ---
     tl.to(blurEl, { opacity: 1, y: 0, duration: 0.5 }, 0.1)
       .to(blurEl, { opacity: 0, y: 10, duration: 0.35 }, '>-0.15');
+
+    // 🆕 2bis) Révélation du logo (juste avant le texte)
+    if (logoEl) {
+      tl.set(logoEl, { visibility: 'visible' }, 0);
+      tl.to(logoEl, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power3.out',
+        delay: revealDelaySec * 0.6, // commence un peu avant le texte
+      }, 0);
+    }
 
     // --- 3) Révélation des lettres ---
     const revealTotal = revealDelaySec + revealDurationSec;
@@ -135,14 +170,12 @@ export default function LoadingScreen({
 
     // --- 3bis) Fin d’anim : on relâche proprement ---
     if (isMobile) {
-      // Sur mobile, on réduit l’espace temporaire (sans jamais couper le texte)
       tl.to(titleWrapEl, {
-        marginBottom: clipGuardPx, // revient à la valeur “normale”
+        marginBottom: clipGuardPx,
         duration: 0.25,
         ease: 'power1.out',
       }, revealTotal - 0.05);
     } else {
-      // Sur desktop, on retire le clip pour ne plus rien couper après l’anim
       tl.to(titleWrapEl, {
         WebkitClipPath: 'inset(0 0 0 0)',
         clipPath: 'inset(0 0 0 0)',
@@ -151,7 +184,7 @@ export default function LoadingScreen({
       }, revealTotal - 0.05);
     }
 
-    // --- 4) Fermeture du loader ---
+    // --- 4) Fermeture ---
     const totalWait = Math.max(revealTotal, barDur);
     tl.to(wrap, { yPercent: -100, duration: 0.65, ease: 'power2.inOut' }, totalWait + 0.1)
       .set(wrap, { display: 'none', onComplete: notifyDone });
@@ -186,7 +219,7 @@ export default function LoadingScreen({
       aria-live="polite"
       aria-busy="true"
     >
-      {/* Panneau blanc avec dégradé vers transparent en bas */}
+      {/* Panneau blanc avec dégradé */}
       <div
         aria-hidden="true"
         style={{
@@ -202,14 +235,36 @@ export default function LoadingScreen({
 
       {/* Contenu central */}
       <div style={{ textAlign: 'center', width: 'min(92vw, 1000px)', position: 'relative', zIndex: 1 }}>
-        {/* Wrapper du titre (clippé sur desktop, non clippé sur mobile) */}
+        {/* 🆕 Logo au-dessus du titre */}
+        {logoSrc && (
+          <div
+            ref={logoRef}
+            style={{
+              visibility: 'hidden',
+              margin: '0 auto 16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            aria-hidden="true"
+          >
+            {/* img simple pour compat max, remplaçable par <Image/> si tu veux */}
+            <img
+              src={logoSrc}
+              alt={logoAlt}
+              width={logoWidth}
+              height={Math.round(logoWidth * 0.3)}
+              style={{ display: 'block', height: 'auto' }}
+            />
+          </div>
+        )}
+
+        {/* Wrapper du titre */}
         <div
           ref={titleWrapRef}
           style={{
             display: 'inline-block',
-            // anti-flash SSR → visible seulement quand GSAP prend la main
-            visibility: 'hidden',
-            // pas de transform ici : on évite d'interférer avec la marge mobile
+            visibility: 'hidden', // anti-flash SSR
           }}
         >
           <div

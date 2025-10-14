@@ -9,7 +9,7 @@ import logoSourire from "@/assets/img/dentiste/logo_sourire.png"
 
 export default function HeroBannerFour() {
   return (
-    <div className="tp-hero-3-area tp-hero-3-ptb fix">
+    <div className=" tp-hero-3-area tp-hero-3-ptb fix">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
@@ -61,8 +61,8 @@ export default function HeroBannerFour() {
 
 
           
-              <Link className="tp-btn-black-2" href="/contact">
-                Créer mon site{" "}
+              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10">
+                Réserver un appel{" "}
                 <span className="p-relative">
                   <RightArrowTwo />
                   <ArrowBg />

@@ -26,7 +26,7 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <Link className="tp-btn-black-2" href="/contact-dentiste">
+              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10">
                 Offre tout inclus{' '}
                 <span className="p-relative">
                   <RightArrowTwo />
@@ -284,7 +284,7 @@ export default function PricingArea() {
                       '0 10px 24px rgba(0,0,0,.15)';
                   }}
                 >
-                  Demander une démo{' '}
+                Prendre un rendez-vous gratuit{' '}
                   <span className="ms-2 d-inline-flex align-items-center">
                     <RightArrowTwo />
                   </span>

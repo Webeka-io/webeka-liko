@@ -135,6 +135,29 @@
   margin-bottom: 20px;
 }
 
+.tp-btn-black-3 {
+  height: 60px;
+  line-height: 55px;
+  border-radius: 40px;
+  padding: 0 18px 0 24px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  z-index: 9;
+  overflow: hidden;
+  display: inline-block;
+  text-transform: capitalize;
+  position: relative;
+  transition: all 0.3s;
+  background-color: var(--tp-common-black);
+  color: var(--tp-common-white);
+  border: 2px solid transparent;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+
+
 .tp-hero-3-category-2 {
   font-size: 20px;
   font-weight: 400;
@@ -1322,4 +1345,40 @@
 .tp-reveal-line {
   overflow: hidden;
   padding-bottom: 18px;
+}
+
+.page-glass-feather {
+  /* Positionnement fixe et plein écran en bas */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  
+  /* HAUTEUR MISE À JOUR */
+  height: 70px; /* Moins haut */
+  width: 100%;
+  
+  /* Couleur de base et opacité du verre (ajustée pour plus de subtilité) */
+  background-color: rgba(255, 255, 255, 0.03); /* Encore plus transparent (0.05 -> 0.03) */
+
+  /* Effet de flou du verre */
+  /* J'ai légèrement réduit le flou pour un effet plus subtil si besoin */
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+
+  /* Effet de diffusion douce vers le haut (le fondu) - MISE À JOUR */
+  /* Transition plus rapide sur une hauteur plus courte */
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,   /* Pleinement visible en bas */
+    rgba(0, 0, 0, 0.8) 50%,/* Débute l'estompe au milieu */
+    rgba(0, 0, 0, 0) 100%  /* Devient totalement transparent en haut */
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
