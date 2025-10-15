@@ -224,7 +224,7 @@
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
   margin-bottom: 0px;
-  margin-top:50px;
+  margin-top:0px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -324,8 +324,8 @@
 }
 
 .tp-hero-3-ptb {
-  padding-top: 100px;
   padding-bottom: 70px;
+  padding-top: 150px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
