@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import {
-  Syne,
-  Aladin,
-  Big_Shoulders_Display,
-  Marcellus,
-} from "next/font/google";
+import { Syne, Aladin, Big_Shoulders_Display, Marcellus } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+
 import WhatsAppButton from "@/components/widgets/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/next";
+import SiteWideBanner from "@/components/site_banner/SiteWideBanner";
+
+// ✅ NEW: Provider global de la modale d’offre
+import { OfferModalProvider } from "@/components/offer_modal/OfferModalContext";
 
 /* ==================== FONTS ==================== */
 const gellery = localFont({
@@ -35,23 +35,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://webeka.fr",
-    images: [
-      {
-        url: "/og-default.webp",
-        width: 1200,
-        height: 630,
-        alt: "Aperçu Webeka.fr",
-      },
-    ],
+    images: [{ url: "/og-default.webp", width: 1200, height: 630, alt: "Aperçu Webeka.fr" }],
   },
 };
 
 /* ==================== LAYOUT ==================== */
-/* ...imports identiques... */
-
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <body
@@ -59,17 +48,23 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable} site-bg-warm`}
       >
-        {/* ✅ Bouton WhatsApp flottant */}
-        <WhatsAppButton phoneE164="+33603261137" />
+        {/* 💬 Provider global -> permet d’ouvrir la même modale depuis tous les CTA */}
+        <OfferModalProvider>
+          {/* 🔔 Banderole globale (ouvre la modale) */}
+          <SiteWideBanner />
 
-        {/* ✅ Thème + contenu principal */}
-        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+          {/* ✅ Bouton WhatsApp flottant */}
+          <WhatsAppButton phoneE164="+33603261137" />
 
-        {/* ✅ Analytics */}
-        <Analytics />
+          {/* ✅ Thème + contenu principal */}
+          <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
 
-        {/* Effet verre diffusé (si tu le gardes) */}
-        <div className="page-glass-feather" aria-hidden="true" />
+          {/* ✅ Analytics */}
+          <Analytics />
+
+          {/* ✅ Effet verre diffusé (optionnel) */}
+          <div className="page-glass-feather" aria-hidden="true" />
+        </OfferModalProvider>
       </body>
     </html>
   );

@@ -22,7 +22,8 @@ export default function ContactOne() {
               <Image src={cta} alt="cta-img" />
             </div>
             <div className="tp-cta-btn-box">
-              <Link className="tp-btn-zikzak p-relative mr-10" href="/contact">
+              <Link className="tp-btn-zikzak p-relative mr-10" href="/contact-dentiste" data-offer-modal
+>
                 <span className="zikzak-content">
                   Je <br /> Commence
                   <RightArrow clr="#19191A" />

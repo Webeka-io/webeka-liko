@@ -6,6 +6,7 @@ import { BounceArrowIcon } from "../BounceArrow/BounceArrow";
 import BrandSlider from "../brand/brand-slider-dentiste";
 import Image from "next/image";
 import logoSourire from "@/assets/img/dentiste/logo_sourire.png"
+import OfferButton from '@/components/offer_modal/OfferButton'
 
 export default function HeroBannerFour() {
   return (
@@ -61,7 +62,7 @@ export default function HeroBannerFour() {
 
 
           
-              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10">
+              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10" data-offer-modal>
                 Réserver un appel{" "}
                 <span className="p-relative">
                   <RightArrowTwo />

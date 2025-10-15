@@ -108,6 +108,8 @@ export default function ServiceSix() {
                         <Link
                            className="tp-btn-zikzak p-relative"
                             href="https://calendly.com/webeka-contact/30min?month=2025-10"
+                            data-offer-modal
+
                         >
                           <span className="zikzak-content">
                             Nous <br /> Contacter

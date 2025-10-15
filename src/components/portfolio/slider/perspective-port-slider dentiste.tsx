@@ -47,10 +47,10 @@ export default function PerspectivePortfolioSlider() {
                   const isLast = index === portfolio_data.length - 1;
 
                   return (
-                    <div key={item.id} className="tp-slide">
+                    <div key={item.id} className="tp-slide pt-30 ">
                       <div className="tp-slide-inner">
                         {/* ------------------ IMAGE RESPONSIVE ------------------ */}
-                        <div className="tp-image position-relative overflow-hidden">
+                        <div className="tp-image position-relative overflow-hidden bg-white">
                           <picture>
                             {item.imageLg && (
                               <source media="(min-width: 1200px)" srcSet={item.imageLg.src} />

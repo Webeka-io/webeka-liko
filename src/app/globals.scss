@@ -114,27 +114,6 @@
   padding-top: 20px;
 }
 
-.tp-btn-black-2 {
-  height: 60px;
-  line-height: 55px;
-  border-radius: 40px;
-  padding: 0 18px 0 24px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-  z-index: 9;
-  overflow: hidden;
-  display: inline-block;
-  text-transform: capitalize;
-  position: relative;
-  transition: all 0.3s;
-  background-color: var(--tp-common-black);
-  color: var(--tp-common-white);
-  border: 2px solid transparent;
-  margin-top: 35px;
-  margin-bottom: 20px;
-}
-
 .tp-btn-black-3 {
   height: 60px;
   line-height: 55px;
@@ -244,7 +223,8 @@
   letter-spacing: -5.6px;
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
-  margin-bottom: 35px;
+  margin-bottom: 0px;
+  margin-top:50px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -255,12 +235,44 @@
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tp-hero-3-title {
     font-size: 95px;
+    margin-top:20px;
   }
 }
 @media (max-width: 767px) {
   .tp-hero-3-title {
     font-size: 55px;
     letter-spacing: -4.6px;
+  }
+}
+
+.tp-hero-3-title1 {
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -5.6px;
+  color: var(--tp-common-black);
+  font-family: var(--tp-ff-marcellus);
+  margin-bottom: 0px;
+  
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tp-hero-3-title1 {
+    font-size: 115px;
+    margin-top:100px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tp-hero-3-title1 {
+    font-size: 95px;
+    margin-top:100px;
+  }
+}
+@media (max-width: 767px) {
+  .tp-hero-3-title1 {
+    font-size: 55px;
+    letter-spacing: -4.6px;
+    margin-top:100px;
   }
 }
 
@@ -284,7 +296,7 @@
 }
 @media (max-width: 767px) {
   .tm-hero-title-big {
-    font-size: 90px;
+    font-size: 70px;
     letter-spacing: -5px;
   }
 }
@@ -1392,4 +1404,189 @@
 .dark .site-bg-warm,
 [data-theme="dark"] .site-bg-warm {
   background: #0b0b0b;         /* option: ajuste selon ta charte */
+}
+
+/* Banner non-sticky */
+.site-banner {
+  position: relative;          /* nécessaire pour l’overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 44px;
+  padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.site-banner:hover { background: #181818; }
+
+/* Overlay cliquable qui couvre toute la banderole */
+.site-banner__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+}
+
+/* Le Marquee n’intercepte pas les clics */
+.site-banner__marquee {
+  width: 100%;
+  pointer-events: none;       /* <— clé pour rendre la bannière cliquable */
+  position: relative;
+  z-index: 1;
+}
+
+.site-banner__item {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+  padding-right: 48px;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .site-banner__item { font-size: 13px; padding-right: 24px; }
+}
+
+/* ===== Banner cliquable (ouvre le popup) ===== */
+.site-banner {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  background: #0f0f0f; color: #fff;
+  min-height: 44px;
+  padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  overflow: hidden;
+  transition: background .3s ease;
+}
+.site-banner:hover { background: #181818; }
+
+.site-banner__overlay-btn {
+  position: absolute; inset: 0; z-index: 2;
+  background: transparent; border: 0; cursor: pointer;
+}
+
+.site-banner__marquee { width: 100%; pointer-events: none; position: relative; z-index: 1; }
+.site-banner__item {
+  display: inline-block;
+  font-weight: 600; font-size: 14px; letter-spacing: .02em;
+  opacity: .95; padding-right: 48px; color: #fff;
+}
+@media (max-width: 640px) {
+  .site-banner__item { font-size: 13px; padding-right: 24px; }
+}
+
+/* ===== Modal offre ===== */
+.offer-modal__backdrop {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.offer-modal__dialog {
+  width: min(720px, 94vw);
+  background: #fff; color: #111;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.offer-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 20px; border-bottom: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, #fff, #fafafa);
+}
+.offer-modal__title {
+  font-size: 20px; font-weight: 700; letter-spacing: .01em; margin: 0;
+}
+.offer-modal__close {
+  height: 32px; width: 32px; border-radius: 10px; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.06); transition: background .2s ease, transform .2s ease;
+}
+.offer-modal__close:hover { background: rgba(0,0,0,.12); transform: translateY(-1px); }
+
+.offer-modal__body { padding: 18px 20px 8px; }
+.offer-modal__badge {
+  display: inline-block; padding: 6px 12px; border-radius: 999px;
+  background: #fff4e6; color: #d86b00; font-weight: 700; font-size: 13px; margin: 0 0 12px;
+}
+.offer-modal__list {
+  margin: 0; padding-left: 18px; line-height: 1.6;
+}
+.offer-modal__list li { margin-bottom: 8px; }
+.offer-modal__note {
+  margin-top: 12px; font-size: 13px; color: #6b6b6b;
+}
+
+.offer-modal__actions {
+  display: flex; gap: 10px; padding: 16px 20px 20px; border-top: 1px solid rgba(0,0,0,.06);
+  justify-content: flex-end; flex-wrap: wrap;
+}
+.offer-modal__btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 15px;
+  text-decoration: none; transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+.offer-modal__btn--primary {
+  background: #111; color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.offer-modal__btn--primary:hover { background: #0d0d0d; transform: translateY(-1px); }
+.offer-modal__btn--ghost {
+  background: #fff; color: #111; border: 1px solid rgba(0,0,0,.12);
+}
+.offer-modal__btn--ghost:hover { background: #f6f6f6; transform: translateY(-1px); }
+
+/* Dark support (si tu utilises .dark ou data-theme="dark") */
+.dark .offer-modal__dialog {
+  background: #111; color: #f5f5f5; border: 1px solid rgba(255,255,255,.08);
+}
+.dark .offer-modal__header { background: linear-gradient(180deg, #161616, #111); border-bottom-color: rgba(255,255,255,.1); }
+.dark .offer-modal__close { background: rgba(255,255,255,.08); color: #fff; }
+.dark .offer-modal__close:hover { background: rgba(255,255,255,.14); }
+.dark .offer-modal__badge { background: #2a1e12; color: #ffb266; }
+.dark .offer-modal__actions { border-top-color: rgba(255,255,255,.08); }
+.dark .offer-modal__btn--primary { background: #fff; color: #111; }
+.dark .offer-modal__btn--primary:hover { background: #f2f2f2; }
+.dark .offer-modal__btn--ghost { background: #111; color: #fff; border-color: rgba(255,255,255,.16); }
+.dark .offer-modal__btn--ghost:hover { background: #1a1a1a; }
+
+
+.calendly-inline-widget {
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 767px) {
+  .calendly-inline-widget {
+    height: 750px !important;
+  }
+}
+
+.tm-hero-ptb {
+  padding-top: 200px;
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tm-hero-ptb {
+    padding-top: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .tm-hero-ptb {
+    padding-top: 140px;
+  }
 }

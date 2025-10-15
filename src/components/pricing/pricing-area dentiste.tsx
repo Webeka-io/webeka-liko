@@ -26,19 +26,11 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10">
-                Offre tout inclus{' '}
-                <span className="p-relative">
-                  <RightArrowTwo />
-                  <ArrowBg />
-                </span>
-              </Link>
-
-              <h4 className="tp-hero-3-title tp_reveal_anim pt-30px">
+              <h4 className="tp-hero-3-title1 tp_reveal_anim pt-30px pb-10">
                 <span className="tp-reveal-line">Sans engagement</span>
               </h4>
 
-              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim">
+              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim pt-20">
                 Abonnement tout inclus. Zéro surprise.
               </span>
               <span className="mx-auto w-75 ms-7 text-center d-block d-md-none tp-hero-3-category-2 tp_reveal_anim">
@@ -78,7 +70,7 @@ export default function PricingArea() {
                     padding: '10px 16px',
                   }}
                 >
-                  1<sup>er</sup> mois offert
+                  Satisfaction Garantie
                 </span>
                 <div
                   className="mt-3"
@@ -261,6 +253,8 @@ export default function PricingArea() {
                 <Link
                   className="d-inline-flex align-items-center justify-content-center w-100 mt-4"
                   href="/contact"
+                  data-offer-modal
+
                   style={{
                     background: '#111',
                     color: '#fff',

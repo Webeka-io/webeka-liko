@@ -25,7 +25,8 @@ export default function ContactOne() {
             </div>
 
             <div className="tp-cta-btn-box">
-              <Link className="tp-btn-zikzak p-relative mr-10" href="/contact">
+              <Link className="tp-btn-zikzak p-relative mr-10" href="/contact" data-offer-modal
+>
                 <span className="zikzak-content">
                   Je <br /> commence
                   <RightArrow clr="#19191A" />

@@ -50,7 +50,7 @@ export default function AboutThree() {
                 Votre expertise est mieux présentée , vos patients vous trouvent et prennent rendez-vous plus facilement.
               </p>
 
-              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10">
+              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10" data-offer-modal>
                 Nous contacter
                 <span className="p-relative"><RightArrowTwo /><ArrowBg /></span>
               </Link>
