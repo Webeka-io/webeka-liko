@@ -105,7 +105,7 @@ export default function PricingArea() {
                         fontWeight: 500,
                       }}
                     >
-                      à la création
+                      si satisfaction
                     </span>
                   </div>
                   <div
@@ -162,7 +162,7 @@ export default function PricingArea() {
                     {
                       icon: <WifiPen size={20} />,
                       title: 'Publication mensuelle',
-                      sub: 'Nous publions des articles tout les mois pour maintenir un bon référencement',
+                      sub: 'Nous publions un article tout les mois pour maintenir un bon référencement',
                     },
                   ].map((item, idx) => (
                     <li
@@ -278,7 +278,7 @@ export default function PricingArea() {
                       '0 10px 24px rgba(0,0,0,.15)';
                   }}
                 >
-                Prendre un rendez-vous gratuit{' '}
+                Prendre un rendez-vous {' '}
                   <span className="ms-2 d-inline-flex align-items-center">
                     <RightArrowTwo />
                   </span>

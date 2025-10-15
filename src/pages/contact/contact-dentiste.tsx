@@ -62,10 +62,7 @@ const ContactMain = () => {
         <div id="smooth-content">
           <div
             className="inner-bg"
-            style={{
-              backgroundImage:
-                "url(/assets/img/home-01/team/team-details-bg.png)",
-            }}
+
           >
             <main>
               {/* hero area start */}
@@ -75,7 +72,7 @@ const ContactMain = () => {
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
                         <span className="tm-hero-subtitle">Webeka</span>
-                        <h4 className="tm-hero-title-big tp-char-animation">
+                        <h4 className="tm-hero-title-big tp_reveal_anim">
                           Contact
                         </h4>
                       </div>

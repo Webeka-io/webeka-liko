@@ -76,7 +76,7 @@ const ContactMain = () => {
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
                         <span className="tm-hero-subtitle">Webeka</span>
-                        <h4 className="tm-hero-title-big tp-char-animation">
+                        <h4 className="tm-hero-title-big tp_reveal_anim">
                           Réservation
                         </h4>
                       </div>
