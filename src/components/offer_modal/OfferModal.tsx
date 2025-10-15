@@ -42,16 +42,16 @@ export default function OfferModal({ onClose }: { onClose: () => void }) {
         <div className="offer-modal__body">
           <p className="offer-modal__badge">🔥 15 premiers clients — satisfaction avant paiement</p>
           <ul className="offer-modal__list">
-            <li>Création complète du site <strong>offerte</strong> (maquette + mise en ligne).</li>
+            <li>Création complète du site <strong>offerte</strong> (maquette vivante).</li>
             <li>Vous ne payez <strong>que si vous êtes satisfait</strong> du résultat.</li>
             <li>Abonnement préférentiel : <strong>75 €/mois</strong> tout inclus (hébergement, maintenance, mises à jour).</li>
-            <li>Option : <strong>1 article SEO / mois</strong> (automatisé via Webflow + Make).</li>
-            <li>Publication <strong>hebdo</strong> Google Business / réseaux (en option).</li>
+            <li>Référencement : <strong>1 article SEO / mois</strong>.</li>
+            <li>Publication <strong>hebdo</strong> Google Business / réseaux ( en option ).</li>
           </ul>
 
           <div className="offer-modal__note">
               Offre limitée aux 15 premiers clients{" "}
-              <strong style={{ color: "#e63946", fontWeight: 700 }}>(plus que 11 places)</strong>.
+              <strong style={{ color: "#e63946", fontWeight: 700 }}>( plus que 11 places )</strong>.
               Après validation, l’abonnement démarre à 75 €/mois.
           </div>
 
