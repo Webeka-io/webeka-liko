@@ -22,7 +22,7 @@ export default function HeaderFour() {
   return (
     <>
       <header>
-        <div id="header-sticky" className={`tp-header-3-area z-index-5  ${sticky?'header-sticky':''}`}>
+        <div id="header-sticky" className={`tp-header-3-area  ${sticky?'header-sticky':''}`}>
           <span className="menu-bg"></span>
           <div className="container container-1740">
             <div className="row align-items-center ">
