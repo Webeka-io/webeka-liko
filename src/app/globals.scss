@@ -75,7 +75,23 @@
   );
 }
 
+.menu-bg {
+  position: absolute;
+  top: 20px;
+  display: inline-block;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background: rgba(46, 46, 46, 0.9);
+  border-radius: 100px;
+  z-index: -1;
+}
 
+.tp-header-3-menu-box {
+  display: inline-block;
+  padding: 0px 15px;
+  padding-right: 30px;
+  padding-top: 20px;
+}
 
 .tp-btn-black-3 {
   height: 60px;
@@ -1385,6 +1401,88 @@
   background: #0b0b0b;         /* option: ajuste selon ta charte */
 }
 
+/* Banner non-sticky */
+.site-banner {
+  position: relative;          /* nécessaire pour l’overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 44px;
+  padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.site-banner:hover { background: #181818; }
+
+/* Overlay cliquable qui couvre toute la banderole */
+.site-banner__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+}
+
+/* Le Marquee n’intercepte pas les clics */
+.site-banner__marquee {
+  width: 100%;
+  pointer-events: none;       /* <— clé pour rendre la bannière cliquable */
+  position: relative;
+  z-index: 1;
+}
+
+.site-banner__item {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+  padding-right: 48px;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .site-banner__item { font-size: 13px; padding-right: 24px; }
+}
+
+/* ===== Banner cliquable (ouvre le popup) ===== */
+.site-banner {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  background: #0f0f0f; color: #fff;
+  min-height: 44px;
+  padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  overflow: hidden;
+  transition: background .3s ease;
+}
+.site-banner:hover { background: #181818; }
+
+.site-banner__overlay-btn {
+  position: absolute; inset: 0; z-index: 2;
+  background: transparent; border: 0; cursor: pointer;
+}
+
+.site-banner__marquee { width: 100%; pointer-events: none; position: relative; z-index: 1; }
+.site-banner__item {
+  display: inline-block;
+  font-weight: 600; font-size: 14px; letter-spacing: .02em;
+  opacity: .95; padding-right: 48px; color: #fff;
+}
+@media (max-width: 640px) {
+  .site-banner__item { font-size: 13px; padding-right: 24px; }
+}
+
 /* ===== Modal offre ===== */
 .offer-modal__backdrop {
   position: fixed; inset: 0; z-index: 1000;
@@ -1540,6 +1638,7 @@
 .tp-header-3-area.header-sticky {
   background: none;
   backdrop-filter: none;
+  top: 0px;
 
 }
 
