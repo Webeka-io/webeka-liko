@@ -35,10 +35,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Dossiers créés par Next.js
-.next/
-out/
-.vercel/
-
-# Dépendances (à ne jamais versionner)
-node_modules/
