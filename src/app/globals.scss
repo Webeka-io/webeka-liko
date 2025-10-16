@@ -1526,95 +1526,68 @@
   
 }
 
-/* ===== Variables globales ===== */
-:root{
-  --banner-h: 44px;   /* hauteur par défaut de la bannière (desktop) */
-  --header-h: 88px;   /* hauteur visuelle de ton header */
+.tp-header-3-area {
+  position: fixed;     /* 🔥 le header reste toujours en haut */
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;       /* au-dessus du hero */
+  background: transparent; /* pour voir le hero en dessous */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Si tu n’affiches pas de bannière sur une page: ajoute .no-banner sur <html> */
-.no-banner { --banner-h: 0px; }
+/* Quand tu scroll (sticky state activé via JS) */
+.tp-header-3-area.header-sticky {
+  background: none;
+  backdrop-filter: none;
 
-/* ===== Bannière fixée tout en haut ===== */
-.site-banner{
-  position: fixed;      /* 🔥 overlay en haut de page */
-  top: 0; left: 0; width: 100%;
-  z-index: 1100;        /* au-dessus du header */
-  display: flex; align-items: center; justify-content: center;
-  min-height: var(--banner-h);
+}
+
+/* --- Bannière fixée tout en haut --- */
+.site-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100; /* au-dessus du header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 44px;
   padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
-  background: #0f0f0f; color: #fff;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   overflow: hidden;
-  transition: background .3s ease, height .2s ease, transform .2s ease;
+  transition: background 0.3s ease;
 }
 
-.site-banner:hover { background: #181818; }
-
-/* Overlay cliquable (ouvre la modale d’offre, etc.) */
-.site-banner__overlay-btn{
-  position: absolute; inset: 0; z-index: 2;
-  background: transparent; border: 0; cursor: pointer;
+.site-banner:hover {
+  background: #181818;
 }
 
-/* Contenu (marquee) ne capte pas les clics */
-.site-banner__marquee{ width: 100%; pointer-events: none; position: relative; z-index: 1; }
-.site-banner__item{
-  display: inline-block; font-weight: 600; font-size: 14px; letter-spacing: .02em;
-  opacity: .95; padding-right: 48px; color: #fff;
-}
-@media (max-width: 640px){
-  .site-banner__item{ font-size: 13px; padding-right: 24px; }
+/* Contenu du texte (si tu utilises une animation type marquee) */
+.site-banner__marquee {
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
 }
 
-/* État masqué (fermeture) — anime la disparition sans CLS */
-.site-banner.is-hidden{
-  height: 0; min-height: 0; padding-top: 0; padding-bottom: 0;
-  border-bottom: 0; box-shadow: none;
-  transform: translateY(-100%);
+.site-banner__item {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+  padding-right: 48px;
+  color: #fff;
 }
 
-/* ===== Header fixé sous la bannière ===== */
-.tp-header-3-area{
-  position: fixed;      /* 🔥 header overlay */
-  top: var(--banner-h); /* ⬅️ se cale sous la bannière */
-  left: 0; width: 100%;
-  height: var(--header-h);
-  z-index: 1000;        /* sous la bannière mais au-dessus du hero */
-  background: transparent;
-  transition: background .3s ease, backdrop-filter .3s ease, top .2s ease;
+@media (max-width: 640px) {
+  .site-banner__item {
+    font-size: 13px;
+    padding-right: 24px;
+  }
 }
-
-/* Style quand on scrolle (si tu ajoutes .header-sticky via JS) */
-.tp-header-3-area.header-sticky{
-  background: rgba(255,255,255,.9);
-  backdrop-filter: blur(8px);
-}
-
-/* ===== Contenu : réserver l’espace… sauf pour le HERO ===== */
-/* Par défaut, les pages réservent la place header+bannière */
-.page-content{ padding-top: calc(var(--banner-h) + var(--header-h)); }
-
-/* Pour laisser le HERO passer “sous” header+bannière : 
-   - Met le hero dans .tp-hero-3-area
-   - Et n’applique pas le padding-top à ce bloc */
-.tp-hero-3-area{ margin-top: 0 !important; position: relative; z-index: 1; }
-
-/* Si tu enchaînes d’autres sections, enveloppe-les dans .after-hero */
-.after-hero{ padding-top: calc(var(--banner-h) + var(--header-h)); }
-
-/* Nettoyage des doublons et conflits que tu avais */
-.tp-header-3-menu-wrap{ position: relative; }
-.menu-bg{
-  position: absolute; left: 50%; transform: translateX(-50%);
-  top: 0; height: 56px; border-radius: 100px; z-index: 0;
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-  background: rgba(46,46,46,.9);
-}
-.tp-header-3-menu-box{ position: relative; z-index: 1; }
-
-/* Évite tout display none/inline-block contradictoire sur .tp-header-3-right en sticky */
-/* Garde une hauteur fixe de header pour empêcher tout saut */
-.tp-header-3-area .tp-header-3-right{ display: flex; align-items: center; }
