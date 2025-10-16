@@ -16,7 +16,7 @@ import {
 
 export default function PricingArea() {
   return (
-    <div className="tp-hero-3-area  fix">
+    <div className="tp-hero-3-area tp-hero-3-ptb2 fix">
       <div className="container">
         {/* Header */}
         <div className="row">

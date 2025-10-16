@@ -10,7 +10,7 @@ import OfferButton from '@/components/offer_modal/OfferButton'
 
 export default function HeroBannerFour() {
   return (
-    <div className=" tp-hero-3-area  fix">
+    <div className=" tp-hero-3-area tp-hero-3-ptb1 fix">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
