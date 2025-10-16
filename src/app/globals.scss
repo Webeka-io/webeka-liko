@@ -11,6 +11,27 @@
   padding-left: 0;
 }
 
+.tp-header-3-area.header-sticky .tp-header-3-right {
+  display: inline-block !important;
+}
+
+.tp-header-3-bar {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  color: var(--tp-common-black);
+  border: 1px solid var(--tp-common-black);
+  transition: 0.3s;
+  margin-left: 15px;
+  border-radius: 50%;
+  background : white;
+  position: fixed;
+  right: 10px;
+  
+}
 
 .pt-20px {
   padding-top: 20px !important;
