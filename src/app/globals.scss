@@ -1711,3 +1711,30 @@
     padding-right: 24px;
   }
 }
+
+/* Valeur par défaut */
+.pt-dynamic {
+  padding-top: 0px;
+}
+
+/* Quand la hauteur de l’écran atteint 1000px */
+@media (min-height: 1000px) {
+  .pt-dynamic {
+    padding-top: 150px;
+  }
+}
+
+/* Quand la hauteur de l’écran atteint 1100px */
+@media (min-height: 1100px) {
+  .pt-dynamic {
+    padding-top: 200px;
+  }
+}
+
+/* Quand la hauteur de l’écran atteint 1200px ou plus */
+@media (min-height: 1200px) {
+  .pt-dynamic {
+    padding-top: 250px;
+  }
+}
+

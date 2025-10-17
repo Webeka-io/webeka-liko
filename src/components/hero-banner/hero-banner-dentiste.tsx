@@ -13,7 +13,7 @@ export default function HeroBannerFour() {
     <div className=" tp-hero-3-area tp-hero-3-ptb1 fix">
       <div className="container">
         <div className="row">
-          <div className="col-xl-12">
+          <div className="col-xl-12 pt-dynamic">
             <div className="tp-hero-3-content-box text-center p-relative">
               <div className="tp-hero-3-circle-shape my-custom-circle">
                 <span></span>
