@@ -113,7 +113,7 @@ function OfferModal({ onClose }: { onClose: () => void }) {
 
         <div className="offer-modal__actions">
           <a
-            href="/dentiste/rdv-dentiste"
+            href="/rdv"
             target="_blank"
             rel="noopener noreferrer"
             className="offer-modal__btn offer-modal__btn--primary text-white"

@@ -32,7 +32,7 @@ const portfolio_data: PortfolioItem[] = [
 
 export default function PerspectivePortfolioSlider() {
   function scrollTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
   }
 
   return (

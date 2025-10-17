@@ -16,7 +16,7 @@ export default function HeaderEight({style_2,container='1840'}: IProps) {
   return (
     <>
       <header>
-        <div className={`tp-header-6-area tp-header-style-9 tp-transparent z-index-5 pt-40 ${style_2 ? "tp-header-black" : ""}`}>
+        <div className={`mt-10 tp-header-6-area tp-header-style-9 tp-transparent z-index-5 pt-40 ${style_2 ? "tp-header-black" : ""}`}>
           <div className={`container container-${container}`}>
             <div className="row">
               <div className="col-md-6 col-6">

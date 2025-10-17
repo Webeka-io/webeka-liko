@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { BounceArrowIcon2 } from "@/components/BounceArrow/BounceArrow2";
 // images (fallback)
-import port_1 from "@/assets/img/home-09/slider/slider-1.webp";
+import port_1 from "@/assets/img/home-09/slider/dentiste/slider-2.webp";
 import port_2 from "@/assets/img/home-09/slider/slider-2.webp";
 import port_3 from "@/assets/img/home-09/slider/slider-3.webp";
 import port_4 from "@/assets/img/home-09/slider/slider-4.webp";
-import port_5 from "@/assets/img/home-09/slider/slider-5.webp";
+import port_5 from "@/assets/img/home-09/slider/dentiste/slider-6.webp";
 import port_6 from "@/assets/img/home-09/slider/slider-6.webp";
 import port_7 from "@/assets/img/home-09/slider/slider-7.webp";
 import port_8 from "@/assets/img/home-09/slider/slider-8.webp";
@@ -32,7 +32,7 @@ const portfolio_data: PortfolioItem[] = [
 
 export default function PerspectivePortfolioSlider() {
   function scrollTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
   }
 
   return (

@@ -8,7 +8,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderFour from "@/layouts/headers/header-dentiste";
+import HeaderFour from "@/layouts/headers/header-four";
 import ContactOne from "@/components/Calendlyform/ContactCalendly";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";

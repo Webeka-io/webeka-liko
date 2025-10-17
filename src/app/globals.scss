@@ -1738,3 +1738,23 @@
   }
 }
 
+/* 🤝 Animation mains qui se serrent - rotation douce */
+@keyframes handshake {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(6deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.handshake-logo {
+  display: inline-block;
+  transform-origin: 50% 70%; /* pivot naturel au niveau du poignet */
+  animation: handshake 2.5s ease-in-out infinite;
+}
+
+/* Option : rythme un peu plus rapide au survol */
+.handshake-logo:hover {
+  animation-duration: 1.8s;
+}
+

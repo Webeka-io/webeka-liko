@@ -40,11 +40,10 @@ export default function AboutThree() {
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="tp-about-3-content">
               <p className="mb-30 tp_fade_bottom">
-                Nous créons des sites webs de qualités et abordables pour les commerces de proximités.
+                Nous créons des sites web modernes, rapides et efficaces, pensés pour valoriser votre activité et vous simplifier la vie.
               </p>
               <p className="mb-45 tp_fade_bottom">
-                Un site vitrine moderne et personnalisé pour votre commerce.
-                Sans frais cachés. Sans complications. Juste un site qui vous apporte des clients.
+                Notre objectif : faire de votre site un véritable partenaire de croissance — visible sur Google, rassurant pour vos clients, et toujours à jour.
               </p>
               <Link className="tp-btn-black-2 " href="/contact">
                 Commencer

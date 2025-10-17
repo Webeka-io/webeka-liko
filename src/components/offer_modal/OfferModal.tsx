@@ -59,7 +59,7 @@ export default function OfferModal({ onClose }: { onClose: () => void }) {
 
         <div className="offer-modal__actions">
           <a
-            href="/dentiste/rdv-dentiste"
+            href="/rdv"
             target="_blank"
             rel="noopener noreferrer"
             className="offer-modal__btn offer-modal__btn--primary text-white"
@@ -67,7 +67,7 @@ export default function OfferModal({ onClose }: { onClose: () => void }) {
             Réserver un appel
           </a>
           <a
-            href="mailto:hello@dentiste-webeka.fr?subject=Offre%20de%20lancement%20Webeka"
+            href="mailto:contact@webeka.fr?subject=Offre%20de%20lancement%20Webeka"
             className="offer-modal__btn offer-modal__btn--ghost"
           >
             Nous contacter

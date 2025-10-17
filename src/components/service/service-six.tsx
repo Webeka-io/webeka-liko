@@ -15,7 +15,7 @@ const service_data = [
     img: ser_img_1,
     subtitle: "Conception",
     title: "Un design pensé pour vous",
-    text: "Chaque site démarre d’une base moderne, adaptée pour refléter l’identité unique de votre cabinet ou commerce. Votre site n’est jamais une copie : il est conçu autour de vous.",
+    text: "Nous concevons chaque site avec une approche sur mesure, adaptée à votre domaine et à vos objectifs. Design, performance, clarté : tout est optimisé pour offrir à vos visiteurs une expérience fluide et inspirer confiance dès la première impression.",
     lists: [
       "Style visuel sur mesure",
       "Compatible mobile et ordinateur",
@@ -33,7 +33,7 @@ const service_data = [
       "Identité visuelle intégrée",
       "Textes écrits et adaptés à votre métier",
       "Images personnalisées",
-      "Connexion à vos outils (Doctolib, Whatsapp, Planity, Google Maps…)",
+      "Connexion à vos outils ( Whatsapp, Google Maps, Calendly …)",
     ],
   },
   {

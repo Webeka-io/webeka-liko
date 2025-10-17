@@ -12,4 +12,4 @@ const HomePageFour = () => {
   );
 };
 
-export default HomePageFour;
+export default HomePageFour; 

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeFourMain from "@/app/dentiste/page";
+import HomeFourMain from "@/app/(homes)/home-4/page";
 
 export const metadata: Metadata = {
   title: "Webeka.fr - Création de site simple",
