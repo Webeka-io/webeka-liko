@@ -1,15 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
-import PricingMain from "@/pages/pricing/pricing-main dentiste";
+import ContactMain from "@/pages/contact/contact-calendly-dentiste";
 
 export const metadata: Metadata = {
-  title: "Webeka.fr - Offre",
+  title: "Webeka.fr - Contact",
 };
 
-const PricingPage = () => {
+const ContactPage = () => {
   return (
-    <PricingMain/>
+    <ContactMain/>
   );
 };
 
-export default PricingPage;
+export default ContactPage;
