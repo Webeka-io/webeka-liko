@@ -402,7 +402,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(100px + env(safe-area-inset-bottom, 0px)); /* ne suit pas la barre Chrome, protège le home indicator iOS */
+  bottom: calc(50px + env(safe-area-inset-bottom, 0px)); /* ne suit pas la barre Chrome, protège le home indicator iOS */
   pointer-events: none; /* optionnel: n'intercepte pas les clics dessous */
   z-index: 2;
 }
@@ -447,6 +447,14 @@
     bottom: calc(170px + env(safe-area-inset-bottom, 0px));
   }
 }
+ @media ( max-height: 840px ) {
+
+.arrow-dark  { color: #ffffff00; }   /* noir */
+.arrow-gray  { color: #ffffff00; }   /* gris moyen */
+.arrow-light { color: #ffffff00; }   /* gris clair */
+
+ }
+
 
 /* ====== Nettoyage : anciennes variantes éventuelles ====== */
 /* Si tu avais ces classes, elles sont neutralisées pour éviter les conflits */
