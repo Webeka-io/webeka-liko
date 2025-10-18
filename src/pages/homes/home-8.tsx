@@ -43,13 +43,13 @@ HomeEightMain = () => {
     <div>
 
        <LoadingScreen
-              background="#ffffff"
-              color="#111111"
-              title={'Webeka.fr'}
-              // tu peux aussi écrire: 'Un site web\nVraiment simple'
-              minDuration={1400}
-              letterStagger={0.03}
-            />
+         title={'Webeka'}
+         color="#111"
+         background="#fff"
+         logoSrc="/assets/img/logo/logo.png"
+         logoAlt="Webeka"
+         logoWidth={200}
+       />
 
 
       {/* magic cursor start */}
