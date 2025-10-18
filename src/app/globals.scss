@@ -444,7 +444,7 @@
   }
   /* On conserve la même logique de bottom stable (ne pas remettre 9rem) */
   .bounce-arrow-wrapper {
-    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(200px + env(safe-area-inset-bottom, 0px));
   }
 }
 
