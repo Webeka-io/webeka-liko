@@ -46,8 +46,8 @@ export default function BrandSlider() {
               <Image
                 src={b}
                 alt={`Brand ${i + 1}`}
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 className="object-contain"
               />
             </a>

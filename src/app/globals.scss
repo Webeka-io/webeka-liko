@@ -447,7 +447,7 @@
     bottom: calc(170px + env(safe-area-inset-bottom, 0px));
   }
 }
- @media ( max-height: 840px ) {
+ @media ( max-height: 840px ) and ( max-width: 380px ) {
 
 .arrow-dark  { color: #ffffff00; }   /* noir */
 .arrow-gray  { color: #ffffff00; }   /* gris moyen */
