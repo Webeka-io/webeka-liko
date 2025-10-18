@@ -21,8 +21,8 @@ export default function HeroBannerFour() {
 
                <h4 className="tp-hero-3-title tp_reveal_anim">
   <span className="tp-reveal-line">Un Site Web</span><br />
-  <span className="tp-reveal-line d-inline-flex align-items-center justify-content-center gap-4">
-    Clé en Main
+  <span className="tp-reveal-line d-inline-flex align-items-center justify-content-center ">
+    Clé&nbsp;en&nbsp;Main
     <span className="logo-wrap d-inline-block position-relative align-middle ms-2">
       <Image
         src={logoMain}
@@ -40,7 +40,7 @@ export default function HeroBannerFour() {
               </span>
               
             {/* Mobile Avantages */}
-            <div className="d-block d-md-none text-center">
+            <div className="d-block d-md-none text-center pb-30">
   <div className="d-inline-block text-start tp-hero-3-category">
     <div className="d-flex">
       <span className="me-2">•</span>

@@ -155,7 +155,7 @@
   display: block;
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .tp-hero-3-category {
@@ -166,7 +166,7 @@
   text-transform: uppercase;
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .tp-cta-btn-box {
@@ -373,7 +373,7 @@
   color: var(--tp-common-white);
   border: 2px solid transparent;
   margin-top: 1%;
-  margin-bottom: 2% ;
+  margin-bottom: 2.5% ;
 }
 
 /* Positionner en bas de l'écran */
@@ -1758,3 +1758,15 @@
   animation-duration: 1.8s;
 }
 
+.reseaux-hero-tittle {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1.6px;
+  color: #1e1e1e ;
+}
+
+.pt-brand {
+max-width:800px;
+
+}
