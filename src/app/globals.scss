@@ -376,68 +376,94 @@
   margin-bottom: 2.5% ;
 }
 
-/* Positionner en bas de l'écran */
+/******************************
+ *  HERO STABLE + FLÈCHES FIXES
+ *  - Le hero ignore la barre d'URL (100lvh si dispo)
+ *  - Les flèches restent stables (safe-area iOS)
+ ******************************/
+
+/* Viewport meta conseillé dans <head> :
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+*/
+
+/* ====== HERO : hauteur stable ====== */
+.tp-hero-3-area {
+  position: relative;
+  min-height: 100vh; /* fallback */
+}
+@supports (height: 100lvh) {
+  .tp-hero-3-area {
+    min-height: 100lvh; /* ignore la barre du navigateur */
+  }
+}
+
+/* ====== Flèches : position bas d'écran, stables ====== */
 .bounce-arrow-wrapper {
   position: absolute;
-  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px)); /* ne suit pas la barre Chrome, protège le home indicator iOS */
+  pointer-events: none; /* optionnel: n'intercepte pas les clics dessous */
+  z-index: 2;
 }
 
+/* ====== Pile des chevrons + dégradé de couleur ====== */
+.bounce-stack {
+  position: relative;
+}
+.arrow-dark  { color: #292929; }   /* noir */
+.arrow-gray  { color: #666666; }   /* gris moyen */
+.arrow-light { color: #888888; }   /* gris clair */
 
-
-/* Animation */
+/* ====== Animation bounce lissée ====== */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  50%      { transform: translateY(6px); }
 }
 .bounce {
-  animation: bounce 1.2s infinite ease-in-out;
+  animation: bounce 1.2s ease-in-out infinite;
   will-change: transform;
 }
 .bounce-stack .bounce:nth-child(1) { animation-delay: 0ms; }
 .bounce-stack .bounce:nth-child(2) { animation-delay: 200ms; }
 .bounce-stack .bounce:nth-child(3) { animation-delay: 400ms; }
 
-
-.tp-hero-3-area {
-  position: relative;
-  min-height: 100vh; /* occupe tout l’écran */
+/* ====== Accessibilité : réduit l'animation si demandé ====== */
+@media (prefers-reduced-motion: reduce) {
+  .bounce { animation: none; }
 }
 
-/* Dégradé gris */
-.arrow-dark { color: #292929; }       /* noir */ 
-.arrow-gray { color: #666; }       /* gris moyen */
-.arrow-light { color: #888888; }      /* gris clair */
-
-/* Responsive : agrandir sur mobile */
+/* ====== Responsive : tailles des icônes / texte ====== */
 @media (max-width: 767.98px) {
+  /* Icônes Bootstrap .bi plus grandes sur mobile */
   .bounce-arrow-wrapper .bi {
-    font-size: 2.25rem !important; /* flèches plus grandes */
+    font-size: 2.25rem !important;
   }
   .bounce-arrow-wrapper span {
-    font-size: 1.25rem !important; /* texte plus grand */
+    font-size: 1.25rem !important;
   }
-
+  /* On conserve la même logique de bottom stable (ne pas remettre 9rem) */
   .bounce-arrow-wrapper {
-  position: absolute;
-  bottom: 9rem;
-  left: 50%;
-  transform: translateX(-50%);
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
-}
-
-.tp-section-title-200 span {
-  padding-left: 0px;
-}
-
+/* ====== Nettoyage : anciennes variantes éventuelles ====== */
+/* Si tu avais ces classes, elles sont neutralisées pour éviter les conflits */
 .bounce-arrow-wrapper1 {
   position: absolute;
-  bottom: 0rem;
+  bottom: 100; /* gardé neutre si référencé ailleurs */
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* Option : si un autre style global force des paddings en bas, on protège la flèche */
+.tp-section-title-200 span { padding-left: 0; }
+
+/* (Facultatif) Si tu veux une version "compacte" de la flèche quelque part :
+.bounce-arrow-wrapper--compact { bottom: calc(16px + env(safe-area-inset-bottom,0px)); }
+*/
+
 
 
 @media (min-width: 1400px) {
@@ -1766,7 +1792,19 @@
   color: #1e1e1e ;
 }
 
-.pt-brand {
-max-width:800px;
+.max-width-brand {
+max-width:300px;
 
+}
+
+.pt-brand {
+padding-top:0px;
+
+}
+
+@media (max-width: 767.98px) {
+
+  .pt-brand {
+    padding-top:30px;
+  }
 }

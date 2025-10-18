@@ -9,7 +9,7 @@ import b_2 from "@/assets/img/home-01/brand/instagram.png";
 import b_3 from "@/assets/img/home-01/brand/linkedin.png";
 import b_4 from "@/assets/img/home-01/brand/x.png";
 
-const brand_images = [b_1, b_2, b_3, b_4, b_1, b_2, b_3, b_4];
+const brand_images = [b_1, b_2, b_3];
 
 const brand_links = [
   "https://www.tiktok.com/@webeka.studio.des?_t=ZN-90dVqFCeS6I&_r=1", // TikTok
@@ -24,7 +24,7 @@ const brand_links = [
 
 export default function BrandSlider() {
   return (
-    <div className="tp-brand-slider-active fix mtbrand pt-brand mx-auto">
+    <div className="tp-brand-slider-active fix mtbrand max-width-brand mx-auto pt-brand">
       <Marquee
         speed={35}
         loop={0}
