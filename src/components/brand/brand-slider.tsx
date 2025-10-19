@@ -6,20 +6,14 @@ import Marquee from "react-fast-marquee";
 // brand images
 import b_1 from "@/assets/img/home-01/brand/tiktok.png";
 import b_2 from "@/assets/img/home-01/brand/instagram.png";
-import b_3 from "@/assets/img/home-01/brand/linkedin.png";
-import b_4 from "@/assets/img/home-01/brand/x.png";
+import b_3 from "@/assets/img/home-01/brand/youtube.png";
 
 const brand_images = [b_1, b_2, b_3];
 
 const brand_links = [
   "https://www.tiktok.com/@webeka.studio.des?_t=ZN-90dVqFCeS6I&_r=1", // TikTok
   "https://www.instagram.com/webeka.fr/", // Instagram
-  "https://www.linkedin.com/in/will-de-webeka-3b2604387/?originalSubdomain=fr", // LinkedIn
-  "https://x.com/webeka", // X / Twitter (exemple)
-  "https://www.tiktok.com/@webeka.studio.des?_t=ZN-90dVqFCeS6I&_r=1",
-  "https://www.instagram.com/webeka.fr/",
-  "https://www.linkedin.com/in/will-de-webeka-3b2604387/?originalSubdomain=fr",
-  "https://x.com/webeka",
+  "https://www.linkedin.com/in/will-de-webeka-3b2604387/?originalSubdomain=fr", // Youtube
 ];
 
 export default function BrandSlider() {
