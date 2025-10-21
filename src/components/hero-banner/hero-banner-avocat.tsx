@@ -35,7 +35,7 @@ export default function HeroBannerFour() {
 </h4>
 
               <span className=" md : d-none d-md-block tp-hero-3-category tp_reveal_anim ">
-                Design Moderne • Référencement Local • Sans engagement
+                Site Premium • Respect du RGPD • Sans engagement
               </span>
               
             {/* Mobile Avantages */}
@@ -43,11 +43,11 @@ export default function HeroBannerFour() {
   <div className="d-inline-block text-start tp-hero-3-category">
     <div className="d-flex">
       <span className="me-2">•</span>
-      <span>Design Moderne</span>
+      <span>Site Premium</span>
     </div>
     <div className="d-flex">
       <span className="me-2">•</span>
-      <span>Référencement Local</span>
+      <span>Respect du RGPD</span>
     </div>
     <div className="d-flex">
       <span className="me-2">•</span>
