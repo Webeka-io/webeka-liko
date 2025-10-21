@@ -74,9 +74,6 @@ HomeEightMain = () => {
         </div>
       </div>
 
-      {/* theme switcher */}
-      <ThemeSetting/>
-      {/* theme switcher */}
     </div>
   );
 };
