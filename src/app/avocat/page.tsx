@@ -42,14 +42,14 @@ const HomeFourMain = () => {
    return (
     <Wrapper>
       {/* Loader (white/black) */}
-      <LoadingScreen
-        background="#ffffff"
-        color="#111111"
-        title={'Avocat\nWebeka.fr'}
-        // tu peux aussi écrire: 'Un site web\nVraiment simple'
-        minDuration={1400}
-        letterStagger={0.03}
-      />
+       <LoadingScreen
+              title={'Webeka'}
+              color="#111"
+              background="#fff"
+              logoSrc="/assets/img/logo/logo.png"
+              logoAlt="Webeka"
+              logoWidth={200}
+            />
 
       {/* header area start */}
       <HeaderFour />
