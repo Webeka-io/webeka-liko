@@ -28,7 +28,7 @@ export default function HeroBannerFour() {
         src={logoSourire}
         alt="Logo sourire"
         fill
-        className="object-fit-contain"
+        className="object-fit-contain "
         sizes="(min-width:1200px) 180px, (min-width:768px) 60px, (min-width:576px) 60px, 40px"
       />
     </span>
