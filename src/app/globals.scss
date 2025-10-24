@@ -426,7 +426,7 @@
   position: relative;
   min-height: 100vh; /* fallback */
   background:
-    radial-gradient(circle at 50% 40%, rgba(221,168,90,0.12), transparent 65%),
+    radial-gradient(circle at 50% 31%, rgba(221,168,90,0.12), transparent 65%),
     var(--black-deep);
 
 }
@@ -1004,14 +1004,24 @@
   }
 }
 
+@media (max-width: 992px) {
+  .tp-about-3-shape img {
+    width: 10px !important;
+    height: 10px !important;
+    margin-left: 100px;
+    margin-bottom: 90px;
+  }
+}
+
+
 .tp-about-3-area {
   height: 100vh;
   display: flex;             /* optionnel : permet de centrer le contenu */
   align-items: center;       /* centre verticalement */
-  background: #FAF7F4; /* blanc cassé chaud */ 
-  color-scheme: light; /* bons contrastes natifs (inputs, etc.) */
-  border-top : 4px solid var(--gold-500);
-   border-bottom : 4px solid var(--gold-500);
+  position: relative;
+  border-bottom:2px solid var(--gold-500) ;
+
+
 }
 
 .mtbrand {
@@ -2212,4 +2222,51 @@ padding-top:0px;
 
 .border-gold-bot {
   border-bottom: 4px solid var(--gold-500);
+}
+
+.tp-section-subtitle-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--gold-500); /* or à la place du noir */
+  font-family: var(--tp-ff-marcellus);
+  margin-bottom: 25px;
+  display: inline-block;
+  margin-left: 70px;
+}
+@media (max-width: 767px) {
+  .tp-section-subtitle-2 { margin-left: 0; }
+}
+.tp-section-subtitle-2 .tp-subtitle-text {
+  padding: 0 15px;
+  display: inline-block;
+}
+.tp_text_invert > div {
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* or (plein) → or foncé semi-transparent */
+  background-image: linear-gradient(
+    to right,
+    var(--gold-500) 50%,
+    rgba(194, 142, 74, 0.45) 50% /* = var(--gold-600) avec alpha */
+  );
+}
+
+.tp-about-3-content {
+  padding-right: 230px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .tp-about-3-content {
+    padding-right: 0;
+    color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
+  }
 }

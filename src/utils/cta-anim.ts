@@ -28,8 +28,8 @@ export function ctaAnimation() {
       if (el.dataset.ctaInit === "1") return;
       el.dataset.ctaInit = "1";
 
-      // Dégradé statique performant (CSS text gradient)
-      applyStaticGradient(el);
+      // ✅ Dégradé or statique performant (CSS text gradient)
+      applyStaticGoldGradient(el);
 
       gsap.fromTo(
         el,
@@ -57,7 +57,7 @@ export function ctaAnimation() {
     if ((el as any)._ctaInit) return;
     (el as any)._ctaInit = true;
 
-    // Fade-in unique à l’apparition (comme ton code)
+    // Fade-in unique à l’apparition
     gsap.set(el, { opacity: 0 });
     gsap.to(el, {
       opacity: 1,
@@ -70,16 +70,16 @@ export function ctaAnimation() {
     const split = new SplitText(el, { type: "words,chars" });
     const chars = (split.chars as unknown as Element[]) || [];
 
-    // Timeline infinie, mais on la contrôle avec ScrollTrigger (pause hors viewport)
-    const tl = gsap.timeline({ repeat: -1, paused: true });
-
+    // ✅ Palette or cinématique (gold-600 → gold-300)
     const endGradient: ChromaScaleFn = (chroma as any).scale([
-      "#FFB55E",
-      "#F25164",
-      "#7F00D7",
-      "#EC38BC",
-      "#F25164",
+      "#C28E4A", // gold-600
+      "#DDA85A", // gold-500
+      "#E3B567", // gold-400
+      "#F5D9A8", // gold-300
     ]);
+
+    // Timeline infinie (contrôlée au scroll)
+    const tl = gsap.timeline({ repeat: -1, paused: true });
 
     tl.to(chars, {
       duration: 0.5,
@@ -88,9 +88,11 @@ export function ctaAnimation() {
       stagger: 0.04,
       transformOrigin: "center bottom",
       onStart() {
-        chars.forEach((c) => ((c as HTMLElement).style.willChange = "transform, color"));
+        chars.forEach((c) => ((c as HTMLElement).style.willChange = "transform, color, text-shadow"));
       },
     });
+
+    // petite montée
     tl.to(
       chars,
       {
@@ -101,6 +103,8 @@ export function ctaAnimation() {
       },
       0.5
     );
+
+    // retour élastique
     tl.to(
       chars,
       {
@@ -111,17 +115,21 @@ export function ctaAnimation() {
       },
       0.5
     );
+
+    // ✅ passage en dégradé or + halo doux
     tl.to(
       chars,
       {
-        // typage explicite pour éviter TS7006
         color: (i: number, _el: Element, arr: Element[]) => endGradient(i / arr.length).hex(),
+        textShadow: "0 0 16px rgba(221,168,90,0.28)",
         ease: "power1.out",
         stagger: 0.03,
         duration: 0.3,
       },
       0.5
     );
+
+    // RAZ position
     tl.to(
       chars,
       {
@@ -132,8 +140,11 @@ export function ctaAnimation() {
       },
       0.7
     );
+
+    // ✅ retour à une couleur de base lisible : or principal (au lieu de #fff)
     tl.to(chars, {
-      color: "#fff",
+      color: "var(--gold-500, #DDA85A)",
+      textShadow: "none",
       duration: 1.4,
       stagger: 0.05,
       onComplete() {
@@ -141,7 +152,7 @@ export function ctaAnimation() {
       },
     });
 
-    // Trigger qui joue/stoppe la timeline selon la visibilité
+    // Trigger visibilité
     ScrollTrigger.create({
       id: `cta-loop-${idx}`,
       trigger: el,
@@ -155,13 +166,14 @@ export function ctaAnimation() {
   });
 }
 
-/* Applique un gradient texte performant (fond clipé) */
-function applyStaticGradient(el: HTMLElement) {
-  // couleurs identiques à la scale pour garder l’aspect
+/* ✅ Applique un gradient texte or (performant) + halo discret pour mobile */
+function applyStaticGoldGradient(el: HTMLElement) {
   const gradient =
-    "linear-gradient(90deg, #FFB55E 0%, #F25164 25%, #7F00D7 50%, #EC38BC 75%, #F25164 100%)";
+    "linear-gradient(90deg, #C28E4A 0%, #DDA85A 35%, #E3B567 70%, #F5D9A8 100%)";
   el.style.backgroundImage = gradient;
   (el.style as any).webkitBackgroundClip = "text";
   el.style.backgroundClip = "text";
   el.style.color = "transparent";
+  // halo discret lisible sur fond sombre
+  el.style.textShadow = "0 0 12px rgba(221,168,90,0.22)";
 }

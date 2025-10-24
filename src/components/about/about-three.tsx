@@ -9,7 +9,7 @@ export default function AboutThree() {
 
   return (
     <div className="tp-about-3-area">
-      <div className="container">
+      <div className="container"> 
         <div className="row">
           <div className="col-xl-11">
             <div className="tp-about-3-title-box">
@@ -17,7 +17,7 @@ export default function AboutThree() {
                 <span>
                   <FirstBracket />
                 </span>
-                <span className="tp-subtitle-text tp_text_invert">
+                <span className="tp-subtitle-text tp_text_invert ">
                   Notre promesse
                 </span>
                 <span>
@@ -38,11 +38,11 @@ export default function AboutThree() {
             </div>
           </div>
           <div className="col-xl-6 col-lg-6 col-md-8">
-            <div className="tp-about-3-content">
-              <p className="mb-30 tp_fade_bottom">
+            <div className="tp-about-3-content  ">
+              <p className="mb-30 tp_fade_bottom text-white">
                 Nous créons des sites web modernes, rapides et efficaces, pensés pour valoriser votre activité et vous simplifier la vie.
               </p>
-              <p className="mb-45 tp_fade_bottom">
+              <p className="mb-45 tp_fade_bottom text-white">
                 Notre objectif : faire de votre site un véritable partenaire de croissance — visible sur Google, rassurant pour vos clients, et toujours à jour.
               </p>
               <Link className="tp-btn-black-2 " href="/contact">
