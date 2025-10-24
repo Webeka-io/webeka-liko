@@ -111,6 +111,8 @@
   z-index: -1;
   border-radius: 100px;
 
+  
+
   /* 🖤 Fond glossy premium */
   background: rgba(0, 0, 0, 0.65);
   -webkit-backdrop-filter: blur(10px);
@@ -125,6 +127,11 @@
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 
+@media (max-width: 767px) {
+.menu-bg {
+  border: 0px solid ;
+}
+}
 /* Hover premium */
 .tp-header-3-menu-box:hover .menu-bg {
   border-color: var(--gold-400);
