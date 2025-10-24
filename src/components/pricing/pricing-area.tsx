@@ -78,10 +78,10 @@ export default function PricingArea() {
         {/* Avantages */}
         <ul className="list-unstyled text-start mx-auto webeka-features">
           {[
-            { icon: <BadgePlus size={40} />, title: 'Design personnalisé au cabinet', sub: 'Photos, couleurs, spécialités (implantologie, orthodontie, esthétique)' },
-            { icon: <Smartphone size={40} />, title: 'Mobile-first & Rapide', sub: 'Expérience patient optimale sur smartphone' },
-            { icon: <CalendarCheck size={40} />, title: 'Intégration Doctolib & Contact', sub: 'RDV en 1 clic, téléphone cliquable, Google Maps' },
-            { icon: <FileCheck2 size={40} />, title: 'Conformité & Mentions Obligatoires', sub: 'Ordre, informations & RGPD intégrés' },
+            { icon: <BadgePlus size={40} />, title: 'Design Premium', sub: 'Images hautes définitions, design pensé et personnalisé à votre activité' },
+            { icon: <Smartphone size={40} />, title: 'Mobile-first & Rapide', sub: 'Expérience optimale sur smartphone et tablette' },
+            { icon: <CalendarCheck size={40} />, title: 'Intégration & Contact', sub: 'RDV en 1 clic, téléphone cliquable, Google Maps' },
+            { icon: <FileCheck2 size={40} />, title: 'Conformité & Mentions Obligatoires', sub: 'informations & RGPD intégrés' },
             { icon: <CheckCircle size={40} />, title: 'Modifications incluses', sub: 'Textes, images, horaires – sous 48–72 h' },
             { icon: <WifiPen size={40} />, title: 'Publication mensuelle', sub: '1 article par mois pour maintenir le référencement' },
           ].map((item, idx) => (

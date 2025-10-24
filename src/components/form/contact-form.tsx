@@ -61,7 +61,7 @@ export default function ContactForm({ btnCls = '' }: IProps) {
     <form onSubmit={onSubmit}>
       <div className="cn-contactform-input mb-25 text-white">
         <label htmlFor="name">Nom</label>
-        <input id="name" {...register("name")} type="text" placeholder="John Doe" />
+        <input id="name" {...register("name")} type="text" placeholder="Votre nom" />
         <ErrorMsg msg={errors.name?.message!} />
       </div>
 
