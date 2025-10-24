@@ -45,8 +45,8 @@ const HomeFourMain = () => {
       {/* Loader (white/black) */}
       <LoadingScreen
         title={'Webeka'}
-        color="#111"
-        background="#fff"
+        color="#DDA85A"
+        background="#000"
         logoSrc="/assets/img/logo/logo.png"
         logoAlt="Webeka"
         logoWidth={200}
@@ -71,11 +71,6 @@ const HomeFourMain = () => {
             <ServiceMain />
             {/* service area */}    
 
-           
-
-            {/* project area start */}
-            <ProjectFour />
-            {/* project area end */}
 
             {/* contact area start */}
             <ContactOne />

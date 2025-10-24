@@ -10,7 +10,7 @@ export default function FaqItem({ item }: IProps) {
     <div className="accordion-items">
       <h2 className="accordion-header">
         <button
-          className="accordion-buttons collapsed"
+          className="accordion-buttons text-white collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#collapse-${item.id}`}

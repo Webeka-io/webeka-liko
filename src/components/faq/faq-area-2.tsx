@@ -12,14 +12,14 @@ export default function FaqAreaTwo() {
           <div className="col-xl-4 col-lg-5">
             <div className="tp-price-inner-faq">
               <div className="tp-service-2-title-box pt-25 pb-120">
-                <h4 className="tp-service-2-title mb-20 tp_title_anim">
+                <h4 className="tp-service-2-title mb-20 tp_title_anim text-white">
                   Questions fréquentes
                 </h4>
-                <p className="tp_title_anim">
+                <p className="tp_title_anim text-white">
                   Nous pensons que la communication est la clés de projets réussis
                 </p>
               </div>
-              <div className="tp-service-2-shape-img text-center text-lg-start">
+              <div className="tp-service-2-shape-img text-center text-lg-start text-white">
                 <Image src={shape} alt="shape" />
               </div>
             </div>

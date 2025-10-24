@@ -170,7 +170,8 @@
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
   margin-bottom: 20px;
-  
+   color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
 }
 
 .tp-hero-3-category-3 {
@@ -181,6 +182,8 @@
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
   margin-bottom: 10px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
 }
 
 .tp-hero-3-category {
@@ -318,6 +321,15 @@
   line-height: 0.9;
   letter-spacing: -12px;
   color: var(--tp-common-black-2);
+   /* 🌟 or premium discret */
+  color: var(--gold-500);
+
+  /* ✨ halo léger pour le confort de lecture sur fond noir */
+  text-shadow: 0 0 16px rgba(221,168,90,0.32);
+
+  /* propriétés de rendering pour une bonne netteté */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1946,4 +1958,201 @@ padding-top:0px;
   margin: 0 auto;
   transition: 0.3s;
   color: var(--tp-common-black);
+}
+
+.rfm-initial-child-container {
+    flex: 0 0 auto;
+    display: flex
+;
+    min-width: auto;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+.hover-gold-glow {
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+.hover-gold-glow:hover {
+  transform: translateY(-2px); /* effet "bouton qui se soulève" */
+  box-shadow: 0 0 22px  rgba(227, 182, 103, 0.685); /* halo doux et premium */
+}
+
+/* CARD DARK GOLD PREMIUM */
+.webeka-card {
+  background: var(--black-deep);
+  border: 1px solid rgba(221,168,90,0.25);
+  box-shadow: 0 0 26px rgba(227,181,103,0.08);
+  color: var(--white-pure);
+}
+
+/* Ribbon */
+.webeka-card-ribbon {
+  background: linear-gradient(180deg, rgba(221,168,90,0.10), transparent);
+  padding: 22px 16px;
+  border-radius: 10px;
+}
+
+.webeka-badge {
+  background: transparent;
+  color: var(--gold-500);
+  border: 1px solid var(--gold-600);
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(221,168,90,0.25);
+}
+
+.webeka-ribbon-text {
+  color: var(--gold-400);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Prix */
+.webeka-price-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--gold-500);
+  text-shadow: 0 0 18px rgba(221,168,90,0.25);
+}
+
+.webeka-price-sub {
+  color: rgba(255,255,255,0.72) !important;
+  font-size: 17px;
+}
+
+.webeka-price-month,
+.webeka-price-conditions {
+  color: var(--white-pure);
+}
+
+/* Divider */
+.webeka-divider {
+  border-color: rgba(227,181,103,0.22);
+}
+
+/* Avantages */
+.webeka-features { max-width: 520px; }
+
+.webeka-feature-item {
+  gap: 12px;
+  padding: 12px 0;
+  align-items: flex-start;
+}
+
+.webeka-feature-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0px solid var(--gold-600);
+  color: var(--gold-500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webeka-feature-title {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--white-pure);
+}
+
+.webeka-feature-sub {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #bcbcbc;
+}
+
+/* Inclus */
+.webeka-included {
+  background: rgba(227,181,103,0.09);
+  border: 1px solid var(--gold-600);
+  padding: 14px 12px;
+}
+
+.webeka-included-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold-500);
+}
+
+.webeka-included-items {
+  gap: 12px;
+  color: var(--white-pure);
+}
+
+/* CTA */
+.webeka-cta-card {
+  background: var(--black-deep);
+  color: var(--gold-500) !important;
+  border: 1px solid var(--gold-600);
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none !important;
+  transition: .25s ease;
+  box-shadow: 0 0 12px rgba(221,168,90,0.18);
+}
+
+.webeka-cta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(227,181,103,0.35);
+}
+
+.text-gold1 {
+   /* 🌟 or premium discret */
+  color: var(--gold-500);
+
+  /* ✨ halo léger pour le confort de lecture sur fond noir */
+  text-shadow: 0 0 16px rgba(221,168,90,0.32);
+
+  /* propriétés de rendering pour une bonne netteté */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.text-white-golden {
+     color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
+}
+
+.cn-contactform-input label {
+   color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ab-about-shape-1 {
+  position: absolute;
+  bottom: -85px;
+  right: 5%;
+    filter: invert(1);
+}
+
+.tp-service-2-shape-img {
+  padding-left: 90px;
+  filter: invert(1);
+}
+
+.tp-service-2-shape-img img {
+  animation: rotate2 8s linear infinite;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tp-service-2-shape-img {
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .tp-service-2-shape-img {
+    padding-left: 0;
+    margin-bottom: 50px;
+  }
+
 }

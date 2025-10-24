@@ -20,7 +20,7 @@ export default function BrandSlider() {
   return (
     <div className="tp-brand-slider-active fix mtbrand max-width-brand mx-auto pt-brand">
       <Marquee
-        speed={35}
+        speed={0}
         loop={0}
         gradient={false}
         className="brand-wrapper mx-auto"
@@ -28,21 +28,21 @@ export default function BrandSlider() {
         {brand_images.map((b, i) => (
           <div
             key={i}
-            className="tp-brand-item flex items-center justify-center mx-4"
+            className="tp-brand-item flex items-center justify-center mx-2"
             style={{ width: "60px", height: "60px" }}
           >
             <a
               href={brand_links[i]}
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:opacity-80 transition-all duration-300"
+              className="block hover:opacity-80 transition-all duration-300 hover-gold-glow"
             >
               <Image
                 src={b}
                 alt={`Brand ${i + 1}`}
                 width={50}
                 height={50}
-                className="object-contain"
+                className="object-contain "
               />
             </a>
           </div>
