@@ -73,7 +73,7 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Webeka</span>
+                        <span className="tm-hero-subtitle text-gold1">Webeka</span>
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Contact
                         </h4>

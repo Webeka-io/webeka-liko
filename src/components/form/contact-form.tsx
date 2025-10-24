@@ -79,7 +79,7 @@ export default function ContactForm({ btnCls = '' }: IProps) {
 
       <div className="cn-contactform-btn">
         <button
-          className={`tp-btn-black-md ${btnCls} w-100`}
+          className={`tp-btn-black-2 ${btnCls} w-50 mx-auto`}
           type="submit"
           disabled={isSubmitting}
           aria-busy={isSubmitting}

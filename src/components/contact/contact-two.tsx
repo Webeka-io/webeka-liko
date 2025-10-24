@@ -11,7 +11,7 @@ export default function ContactTwo() {
         {/*<div className="ab-2-hero-social">
           <Social/>
         </div>*/}
-        <div className="ab-2-hero-social-text">
+        <div className="ab-2-hero-social-text text-gold1">
           <span>Webeka</span>
         </div>
       </div>

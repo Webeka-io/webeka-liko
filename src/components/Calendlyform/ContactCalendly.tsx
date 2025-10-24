@@ -22,11 +22,11 @@ export default function ContactCalendly() {
           {/* Colonne gauche */}
           <div className="col-xl-5">
             <div className="ab-about-category-title-box mb-40 p-relative">
-              <h4 className="ab-about-category-title">
+              <h4 className="ab-about-category-title text-white-golden">
                 Réservez votre appel <br />
-                <span>avec un expert Webeka</span>
+                <span className="text-white">avec un expert Webeka</span>
               </h4>
-              <p className="mt-20">
+              <p className="mt-20 text-g text-white-golden">
                 Discutez gratuitement de votre projet et découvrez comment nous pouvons
                 transformer votre présence en ligne.  
                 Aucun engagement — juste un échange constructif.

@@ -2156,3 +2156,23 @@ padding-top:0px;
   }
 
 }
+.ab-2-hero-social-text span {
+ /* 🌟 or premium discret */
+  color: var(--gold-500);
+
+  /* ✨ halo léger pour le confort de lecture sur fond noir */
+  text-shadow: 0 0 16px rgba(221,168,90,0.32);
+
+  /* propriétés de rendering pour une bonne netteté */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.56px;
+  position: relative;
+  display: inline-block;
+  transform: rotate(90deg);
+  top: 65px;
+  left: -64px;
+}
