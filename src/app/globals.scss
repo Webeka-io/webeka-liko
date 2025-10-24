@@ -390,6 +390,7 @@
 .tp-hero-3-area {
   position: relative;
   min-height: 100vh; /* fallback */
+
 }
 @supports (height: 100lvh) {
   .tp-hero-3-area {

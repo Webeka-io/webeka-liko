@@ -5,7 +5,7 @@ import Link from "next/link";
 import HeaderMenus from "./header-menu-avocat";
 import { Cart } from "@/components/svg";
 import logo_1 from '@/assets/img/logo/logo.png';
-import logo_2 from '@/assets/img/logo/logo-white.png';
+import logo_2 from '@/assets/img/logo/logo-white.png'; 
 import useSticky from "@/hooks/use-sticky";
 import CartOffcanvas from "@/components/offcanvas/cart-offcanvas";
 import MobileOffcanvas from "@/components/offcanvas/mobile-offcanvas avocat";

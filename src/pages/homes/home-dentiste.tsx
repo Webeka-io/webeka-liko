@@ -8,7 +8,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import LoadingScreen from "@/components/loading/LoadingScreen";
 
 // internal imports
-import HeaderFour from "@/layouts/headers/header-dentiste";
+import HeaderEight from "@/layouts/headers/header-eight-dentiste";
 import { perspective } from "@/utils/perspective-anim";
 import PerspectivePortfolioSlider from "@/components/portfolio/slider/perspective-port-slider dentiste";
 import { revelAnimationOne } from "@/utils/title-animation";
@@ -59,7 +59,7 @@ HomeEightMain = () => {
  />
 
       {/* header area start */}
-      <HeaderFour />
+      <HeaderEight />
       {/* header area end */}
 
       <div id="smooth-wrapper">
