@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BounceArrowIcon } from "../BounceArrow/BounceArrow";
 import BrandSlider from "../brand/brand-slider";
 import Image from "next/image";
-import logoMain from "@/assets/img/global/main.png"
+import logoMain from "@/assets/img/global/main.svg"
 import OfferButton from '@/components/offer_modal/OfferButton'
 
 export default function HeroBannerFour() {
@@ -19,7 +19,7 @@ export default function HeroBannerFour() {
                 <span></span>
               </div>
 
-               <h4 className="tp-hero-3-title tp_reveal_anim">
+               <h4 className="tp-hero-3-title tp_reveal_anim "> 
   <span className="tp-reveal-line">Un Site Web</span><br />
   <span className="tp-reveal-line d-inline-flex align-items-center justify-content-center ">
     Clé&nbsp;en&nbsp;Main
@@ -35,7 +35,7 @@ export default function HeroBannerFour() {
   </span>
 </h4>
 
-              <span className=" md : d-none d-md-block tp-hero-3-category tp_reveal_anim ">
+              <span className=" md : d-none d-md-block tp-hero-3-category text-white tp_reveal_anim ">
                 Design Moderne • Référencement Local • Sans engagement
               </span>
               

@@ -73,14 +73,22 @@
   z-index: -1;
 }
 
-.tp-hero-3-circle-shape2 span {
+.tp-hero-3-circle-shape span {
+  z-index : 1 ;
   height: 480px;
   width: 460px;
   display: inline-block;
-  filter: blur(35px);
-  border-radius: 62% 47% 82% 35%/45% 45% 80% 66%;
-  background: linear-gradient(220deg, rgba(148, 254, 98, 0.5) 0.77%, rgba(255, 226, 122, 0.5) 55.4%, rgba(234, 94, 94, 0.5) 100%);
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  filter: blur(38px);
+  opacity: .55; /* 🔥 très important : halo subtil */
+
+  /* 🎨 Halo Gold Cinematic Webeka */
+  background:
+    radial-gradient(circle at 50% 35%, rgba(221,168,90,0.45) 0%, rgba(221,168,90,0) 65%),
+    radial-gradient(circle at 60% 65%, rgba(227,181,103,0.30) 0%, rgba(227,181,103,0) 70%);
 }
+
+
 
 .tp-hero-3-circle-shape3 span {
   height: 480px;
@@ -100,12 +108,29 @@
   position: absolute;
   top: 20px;
   display: inline-block;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  background: rgba(46, 46, 46, 0.9);
-  border-radius: 100px;
   z-index: -1;
+  border-radius: 100px;
+
+  /* 🖤 Fond glossy premium */
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+
+  /* ✨ Contour or */
+  border: 1.5px solid var(--gold-600);
+
+  /* 💫 Halo doux */
+  box-shadow: 0 0 18px rgba(227,181,103,0.18);
+  
+  transition: border-color .25s ease, box-shadow .25s ease;
 }
+
+/* Hover premium */
+.tp-header-3-menu-box:hover .menu-bg {
+  border-color: var(--gold-400);
+  box-shadow: 0 0 24px rgba(227,181,103,0.32);
+}
+
 
 .tp-header-3-menu-box {
   display: inline-block;
@@ -167,6 +192,8 @@
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
   margin-bottom: 0px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 8px rgba(227,181,103,0.55);
 }
 
 .tp-cta-btn-box {
@@ -183,7 +210,7 @@
 }
 
 .tp-hero-3-title-p {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: normal;
@@ -221,11 +248,20 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: -5.6px;
-  color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
-  margin-bottom: 0px;
-  margin-top:0px;
+  margin: 0;
+
+  /* 🌟 or premium discret */
+  color: var(--gold-500);
+
+  /* ✨ halo léger pour le confort de lecture sur fond noir */
+  text-shadow: 0 0 16px rgba(221,168,90,0.32);
+
+  /* propriétés de rendering pour une bonne netteté */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tp-hero-3-title {
@@ -355,26 +391,6 @@
   }
 }
 
-.tp-btn-black-2 {
-  height: 60px;
-  line-height: 55px;
-  border-radius: 40px;
-  padding: 0 18px 0 24px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-  z-index: 9;
-  overflow: hidden;
-  display: inline-block;
-  text-transform: capitalize;
-  position: relative;
-  transition: all 0.3s;
-  background-color: var(--tp-common-black);
-  color: var(--tp-common-white);
-  border: 2px solid transparent;
-  margin-top: 1%;
-  margin-bottom: 2.5% ;
-}
 
 /******************************
  *  HERO STABLE + FLÈCHES FIXES
@@ -388,10 +404,14 @@
 
 /* ====== HERO : hauteur stable ====== */
 .tp-hero-3-area {
+
   position: relative;
   min-height: 100vh; /* fallback */
-
+  background:
+    radial-gradient(circle at 50% 40%, rgba(221,168,90,0.12), transparent 65%),
+    var(--black-deep);
 }
+
 @supports (height: 100lvh) {
   .tp-hero-3-area {
     min-height: 100lvh; /* ignore la barre du navigateur */
@@ -412,9 +432,10 @@
 .bounce-stack {
   position: relative;
 }
-.arrow-dark  { color: #292929; }   /* noir */
-.arrow-gray  { color: #666666; }   /* gris moyen */
-.arrow-light { color: #888888; }   /* gris clair */
+
+.arrow-dark  { color: #E3B567; }   /* noir */
+.arrow-gray  { color: #DDA85A; }   /* gris moyen */
+.arrow-light { color: #C28E4A; }   /* gris clair */
 
 /* ====== Animation bounce lissée ====== */
 @keyframes bounce {
@@ -968,6 +989,8 @@
   height: 100vh;
   display: flex;             /* optionnel : permet de centrer le contenu */
   align-items: center;       /* centre verticalement */
+  background: #FAF7F4; /* blanc cassé chaud */ 
+  color-scheme: light; /* bons contrastes natifs (inputs, etc.) */
 }
 
 .mtbrand {
@@ -1447,8 +1470,9 @@
 }
 /* Fond chaleureux global */
 .site-bg-warm {
-  background: #FAF7F4;         /* blanc cassé chaud */
-  color-scheme: light;         /* bons contrastes natifs (inputs, etc.) */
+  background: var(--black-deep); /* noir profond */
+  color-scheme: dark;            /* UI systèmes adaptés au mode sombre */
+  color: var(--white-pure);      /* Texte par défaut lisible */
 }
 
 /* Si tu as un mode sombre, on garde un fond propre */
@@ -1469,7 +1493,7 @@
   min-height: 44px;
   padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 10px solid var(--gold-500);
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   text-decoration: none;
   overflow: hidden;
@@ -1513,11 +1537,11 @@
   position: relative;
   display: flex; align-items: center; justify-content: center;
   width: 100%;
-  background: #0f0f0f; color: #fff;
+  background: #d1d1d1; color: #fff;
   min-height: 44px;
   padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid var(--gold-500);
   box-shadow: 0 2px 8px rgba(0,0,0,.12);
   overflow: hidden;
   transition: background .3s ease;
@@ -1556,7 +1580,7 @@
 }
 .offer-modal__header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 20px; border-bottom: 1px solid rgba(0,0,0,.06);
+  padding: 18px 20px; border-bottom: 1px solid ;
   background: linear-gradient(180deg, #fff, #fafafa);
 }
 .offer-modal__title {
@@ -1713,8 +1737,8 @@
   min-height: 44px;
   padding: max(8px, env(safe-area-inset-top)) 0 8px 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-bottom: 1px solid var(--gold-500);
+  box-shadow: 0 2px 8px #dda95a74;
   overflow: hidden;
   transition: background 0.3s ease;
 }
@@ -1816,4 +1840,110 @@ padding-top:0px;
   .pt-brand {
     padding-top:30px;
   }
+}
+
+// gold palette
+
+:root {
+  /* 🌟 Palette Gold Premium Webeka */
+  --gold-50:  #FFF8EB;
+  --gold-100: #FDEFD6;
+  --gold-200: #F5D9A8;
+  --gold-300: #EEC47A;
+  --gold-400: #E3B567; /* Accent glow + Icons */
+  --gold-500: #DDA85A; /* Or métal réaliste */
+  --gold-600: #C28E4A;
+  --gold-700: #A7753C;
+  --gold-800: #7F5730;
+  --gold-900: #593D24;
+
+  /* 🖤 Noir premium */
+  --black-deep: #0A0A0A;
+  --black-soft: #121212;
+
+  /* ⚪ Blanc / crème doux Webeka */
+  --white-pure: #FFFFFF;
+  --white-soft: #FFF8F1;
+
+  /* ✨ Glows et ombres luxe */
+  --gold-glow: 0 0 12px 4px rgba(221,168,90,0.45);
+  --gold-soft-glow: 0 0 28px 10px rgba(227,181,103,0.20);
+}
+
+:root{
+  /* Or premium */
+  --gold-400:#E3B567;
+  --gold-500:#DDA85A; /* principal */
+  --gold-600:#C28E4A;
+
+  /* Noir profond + halo */
+  --black-deep:#0A0A0A;
+  --black:#000000;
+
+  /* Glows */
+  --gold-glow:0 0 14px 3px rgba(221,168,90,.45);
+  --gold-soft:0 0 28px 10px rgba(227,181,103,.20);
+}
+
+
+
+.tp-btn-black-2 {
+  height: 60px;
+  line-height: 55px;
+  border-radius: 40px;
+  padding: 0 18px 0 24px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  z-index: 9;
+  overflow: hidden;
+  display: inline-block;
+  text-transform: capitalize;
+  position: relative;
+  transition: all 0.3s;
+  background-color: var(--tp-common-black);
+  color: var(--gold-500);
+  border: 2px solid var(--gold-500) ;
+  margin-top: 1%;
+  margin-bottom: 2.5% ;
+}
+
+@media (max-width: 767px) {
+  .tp-btn-black-2 {
+    height: 50px;
+    line-height: 43px;
+    padding: 0px 30px;
+    border-color: var(--gold-500);
+  }
+}
+.tp-btn-black-2:hover {
+  background-color: transparent;
+  color: var(--gold-500);
+  border-color: var(--gold-500);
+  transform: translateY(-4px);
+  box-shadow: 0 0 22px rgba(227,181,103,0.35); /* halo or renforcé */
+
+}
+
+.tp-btn-black-2:hover span .svg-icon {
+  color: white ;
+}
+
+.tp-btn-black-2:hover span .svg-bg {
+  animation: rotate2 10s linear infinite;
+}
+
+.tp-btn-black-2 span {
+  margin-left: 12px;
+}
+
+.tp-btn-black-2 span .svg-icon {
+  position: absolute;
+  top: 7px;
+  left: -2px;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  transition: 0.3s;
+  color: var(--tp-common-black);
 }
