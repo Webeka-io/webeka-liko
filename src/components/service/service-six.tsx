@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import ser_img_1 from "@/assets/img/webeka/01.webp";
-import ser_img_2 from "@/assets/img/webeka//02.webp";
-import ser_img_3 from "@/assets/img/webeka/03.webp";
-import ser_img_4 from "@/assets/img/webeka/04.webp";
+import ser_img_1 from "@/assets/img/webeka/1.jpg";
+import ser_img_2 from "@/assets/img/webeka//2.jpg";
+import ser_img_3 from "@/assets/img/webeka/3.jpg";
+import ser_img_4 from "@/assets/img/webeka/4.jpg";
 import { RightArrow, ProjectShape } from "../svg";
 import Link from "next/link";
 

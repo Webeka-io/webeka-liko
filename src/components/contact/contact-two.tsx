@@ -6,7 +6,7 @@ import shape from "@/assets/img/inner-about/about/shape-1.png";
 
 export default function ContactTwo() {
   return (
-    <div className="cn-contactform-area cn-contactform-style p-relative pb-100">
+    <div className="cn-contactform-area cn-contactform-style p-relative pb-100 border-gold-bot">
       <div className="ab-2-hero-social-wrap d-none d-xl-block">
         {/*<div className="ab-2-hero-social">
           <Social/>
@@ -31,7 +31,7 @@ export default function ContactTwo() {
             </div>
           </div>
           <div className="col-xl-7">
-            <div className="cn-contactform-wrap">
+            <div className="cn-contactform-wrap ">
               {/* form start */}
               <ContactForm />
               {/* form end */}

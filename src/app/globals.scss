@@ -230,19 +230,25 @@
 .sv-service-content-wrap {
   height: 100%;
   width: 100%;
-  padding: 110px;
+  padding: 90px;
   background-color: var(--tp-common-black-2);
   border-top: 2px solid #333333;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sv-service-content-wrap {
-    padding: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 767px) {
   .sv-service-content-wrap {
-    padding: 80px 30px;
+    padding-top: 20px 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -422,6 +428,7 @@
   background:
     radial-gradient(circle at 50% 40%, rgba(221,168,90,0.12), transparent 65%),
     var(--black-deep);
+
 }
 
 @supports (height: 100lvh) {
@@ -1003,6 +1010,8 @@
   align-items: center;       /* centre verticalement */
   background: #FAF7F4; /* blanc cassé chaud */ 
   color-scheme: light; /* bons contrastes natifs (inputs, etc.) */
+  border-top : 4px solid var(--gold-500);
+   border-bottom : 4px solid var(--gold-500);
 }
 
 .mtbrand {
@@ -1665,6 +1674,7 @@
 .tm-hero-ptb {
   padding-top: 200px;
   padding-bottom: 20px;
+  border-top: 4px solid var(--gold-500);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1689,7 +1699,7 @@
   border-radius: 100px;
   z-index: -1;
 }
-
+/* Container du menu mobile — pas de changement structurel */
 .tp-header-3-menu-box {
   display: inline-block;
   padding: 0px 15px;
@@ -1697,7 +1707,7 @@
   padding-top: 20px;
 }
 
-
+/* Icone Burger Mobile */
 .tp-header-3-bar {
   height: 40px;
   width: 40px;
@@ -1705,15 +1715,38 @@
   font-size: 18px;
   text-align: center;
   display: inline-block;
-  color: var(--tp-common-black);
-  border: 1px solid var(--tp-common-black);
-  transition: 0.3s;
-  margin-left: 15px;
+
+  /* 🎨 Nouvelle DA */
+  background: var(--black-deep);
+  color: var(--gold-500);
+  border: 1px solid var(--gold-600);
+
   border-radius: 50%;
-  background : white;
+  transition: 0.3s ease;
+  margin-left: 15px;
   position: fixed;
   right: 10px;
-  
+  z-index: 9999; /* pour passer au-dessus si nécessaire */
+
+  /* subtile lumière */
+  box-shadow: 0 0 10px rgba(221,168,90,0.20);
+}
+
+/* Hover */
+.tp-header-3-bar:hover {
+  color: var(--gold-400);
+  border-color: var(--gold-400);
+  box-shadow: 0 0 18px rgba(227,181,103,0.35);
+  transform: translateY(-2px);
+}
+
+@keyframes goldPulse {
+  0%   { box-shadow: 0 0 12px rgba(227,181,103,.18); }
+  100% { box-shadow: 0 0 22px rgba(227,181,103,.32); }
+}
+
+.tp-header-3-bar.attention {
+  animation: goldPulse 2.4s ease-in-out infinite alternate;
 }
 
 .tp-header-3-area {
@@ -2175,4 +2208,8 @@ padding-top:0px;
   transform: rotate(90deg);
   top: 65px;
   left: -64px;
+}
+
+.border-gold-bot {
+  border-bottom: 4px solid var(--gold-500);
 }

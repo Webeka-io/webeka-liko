@@ -13,6 +13,7 @@ import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
 import GalleryOne from "@/components/gallery/gallery-one";
 import AboutThree from "@/components/about/about-three";
 import ProjectFour from "@/components/project/project-four";
+import ContactTwo from "@/components/contact/contact-two";
 import ContactOne from "@/components/contact/contact-one";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";
@@ -21,6 +22,7 @@ import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ServiceMain from "@/pages/service/service-2";
 import LoadingScreen from "@/components/loading/LoadingScreen";
+
 
 
 
@@ -70,6 +72,26 @@ const HomeFourMain = () => {
             {/* service area */}
             <ServiceMain />
             {/* service area */}    
+
+           <div className="tm-hero-area tm-hero-ptb p-relative ">
+                           <div className="container " >
+                             <div className="row">
+                               <div className="col-xl-12">
+                                 <div className="tm-hero-content ">
+                                   <span className="tm-hero-subtitle text-gold1">Webeka</span>
+                                   <h4 className="tm-hero-title-big tp-char-animation">
+                                     Contact
+                                   </h4>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                         {/* hero area end */}
+           
+                         {/* contact area */}
+                         <ContactTwo/>
+                         {/* contact area */}
 
 
             {/* contact area start */}
