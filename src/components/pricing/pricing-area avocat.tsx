@@ -26,11 +26,11 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <h4 className="tp-hero-3-title1 tp_reveal_anim pt-30px pb-10">
+              <h4 className="tp-hero-3-title tp_reveal_anim pt-30px pb-10">
                 <span className="tp-reveal-line">Sans engagement</span>
               </h4>
 
-              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim pt-20">
+              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim pt-20 ">
                 Abonnement tout inclus. Zéro surprise.
               </span>
               <span className="mx-auto w-75 ms-7 text-center d-block d-md-none tp-hero-3-category-2 tp_reveal_anim">
@@ -40,254 +40,92 @@ export default function PricingArea() {
           </div>
         </div>
 
-        {/* Card */}
-        <div className="row justify-content-center mt-5 mb-10">
-          <div className="col-md-7 col-lg-6 col-xl-5">
-            <div
-              className="card shadow border-0 rounded-4"
-              style={{
-                overflow: 'hidden',
-                borderRadius: 24,
-              }}
-            >
-              {/* Top ribbon */}
-              <div
-                className="w-100 text-center"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02))',
-                  padding: '22px 16px',
-                }}
-              >
-                <span
-                  className="badge rounded-pill"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, #111 0%, #333 100%)',
-                    color: '#fff',
-                    fontWeight: 700,
-                    fontSize: 20,
-                    padding: '10px 16px',
-                  }}
-                >
-                  Satisfaction Garantie
-                </span>
-                <div
-                  className="mt-3"
-                  style={{
-                    color: '#4b5563',
-                    fontSize: 17,
-                    letterSpacing: 0.2,
-                    fontWeight: 500,
-                  }}
-                >
-                  Hébergement & maintenance inclus
-                </div>
+       {/* Card */}
+<div className="row justify-content-center mt-5 mb-10">
+  <div className="col-md-7 col-lg-6 col-xl-5">
+    <div className="card webeka-card rounded-4 shadow-none">
+
+      {/* Top ribbon */}
+      <div className="webeka-card-ribbon text-center">
+        <span className="webeka-badge rounded-pill">
+          Satisfaction Garantie
+        </span>
+        <div className="webeka-ribbon-text mt-3">
+          Hébergement & maintenance inclus
+        </div>
+      </div>
+
+      <div className="card-body p-4 p-md-5 text-center">
+
+        {/* Price block */}
+        <div className="my-2">
+          <div className="fw-bold webeka-price-title">
+            400&nbsp;€
+            <span className="webeka-price-sub ms-1 text-white">
+              si satisfaction
+            </span>
+          </div>
+          <div className="mt-2 webeka-price-month">
+            puis <strong>75&nbsp;€ / mois</strong>
+          </div>
+          <div className="mt-2 webeka-price-conditions">
+            sans engagement, tout inclus
+          </div>
+        </div>
+
+        <hr className="my-4 webeka-divider" />
+
+        {/* Avantages */}
+        <ul className="list-unstyled text-start mx-auto webeka-features">
+          {[
+            { icon: <BadgePlus size={40} />, title: 'Design Premium', sub: 'Couleurs, typographies, visuels et présentation adaptés à votre image' },
+            { icon: <Smartphone size={40} />, title: 'Mobile-first & Rapide', sub: 'Expérience optimale sur smartphone et tablette ' },
+            { icon: <CalendarCheck size={40} />, title: 'Intégration & Contact', sub: 'Formulaire, appel en 1 clic, intégrations Justifit / Calendly / Google Maps' },
+            { icon: <FileCheck2 size={40} />, title: 'Conformité & Mentions Obligatoires', sub: 'RGPD, mentions légales et obligations déontologiques intégrées ' },
+            { icon: <CheckCircle size={40} />, title: 'Modifications incluses', sub: 'Textes, images, horaires – sous 48–72 h' },
+            { icon: <WifiPen size={40} />, title: 'Publication mensuelle', sub: '1 article par mois pour maintenir un bon référencement et convertir des clients' },
+          ].map((item, idx) => (
+            <li key={idx} className="webeka-feature-item d-flex">
+              <div className="webeka-feature-icon">
+                {item.icon}
               </div>
-
-              <div className="card-body p-4 p-md-5 text-center">
-                {/* Price block */}
-                <div className="my-2">
-                  <div
-                    className="fw-bold"
-                    style={{
-                      fontSize: '44px',
-                      lineHeight: 1.1,
-                      letterSpacing: -0.5,
-                    }}
-                  >
-                    400&nbsp;€
-                    <span
-                      className="text-muted"
-                      style={{
-                        fontSize: 17,
-                        marginLeft: 6,
-                        fontWeight: 500,
-                      }}
-                    >
-                      si satisfaction
-                    </span>
-                  </div>
-                  <div
-                    className="mt-2"
-                    style={{ fontSize: 20, color: '#111' }}
-                  >
-                    puis <strong style={{ fontSize: 22 }}>75&nbsp;€ / mois</strong>
-                  </div>
-                  <div
-                    className="mt-2"
-                    style={{
-                      color: '#111',
-                      fontSize: 17,
-                      fontWeight: 600,
-                    }}
-                  >
-                    sans engagement, tout inclus
-                  </div>
-                </div>
-
-                <hr className="my-4" style={{ opacity: 0.15 }} />
-
-                {/* Avantages */}
-                <ul
-                  className="list-unstyled text-start mx-auto"
-                  style={{ maxWidth: 520 }}
-                >
-                  {[
-                    {
-                      icon: <BadgePlus size={20} />,
-                      title: 'Design personnalisé au cabinet',
-                      sub: 'Couleurs, typographies, visuels et présentation adaptés à votre image',
-                    },
-                    {
-                      icon: <Smartphone size={20} />,
-                      title: 'Mobile-first & Rapide',
-                      sub: 'Expérience patient optimale sur smartphone',
-                    },
-                    {
-                      icon: <CalendarCheck size={20} />,
-                      title: 'Prise de contact & rendez-vous',
-                      sub: 'Formulaire, appel en 1 clic, intégrations Justifit / Calendly / Google Maps',
-                    },
-                    {
-                      icon: <FileCheck2 size={20} />,
-                      title: 'Conformité & Mentions Obligatoires',
-                      sub: 'RGPD, mentions légales et obligations déontologiques intégrées',
-                    },
-                    {
-                      icon: <CheckCircle size={20} />,
-                      title: 'Modifications incluses',
-                      sub: 'Textes, images, horaires – sous 48–72 h',
-                    },
-                    {
-                      icon: <WifiPen size={20} />,
-                      title: 'Publication mensuelle',
-                      sub: 'Nous publions un article tout les mois pour maintenir un bon référencement',
-                    },
-                  ].map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="d-flex"
-                      style={{
-                        gap: 12,
-                        padding: '12px 0',
-                        alignItems: 'flex-start',
-                      }}
-                    >
-                      <div
-                        className="d-inline-flex align-items-center justify-content-center rounded-circle"
-                        style={{
-                          width: 32,
-                          height: 32,
-                          border: '1px solid #111',
-                          flex: '0 0 auto',
-                        }}
-                      >
-                        {item.icon}
-                      </div>
-                      <div>
-                        <div
-                          style={{
-                            fontWeight: 700,
-                            fontSize: 17,
-                            marginBottom: 4,
-                          }}
-                        >
-                          {item.title}
-                        </div>
-                        <div
-                          className="text-muted"
-                          style={{
-                            fontSize: 15,
-                            lineHeight: 1.55,
-                            color: '#6b7280',
-                          }}
-                        >
-                          {item.sub}
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Inclus */}
-                <div
-                  className="rounded-3 mt-3 "
-                  style={{
-                    background: '#f7f7f7',
-                    padding: '14px 12px',
-                  }}
-                >
-                  <div
-                    className="text-center mb-2"
-                    style={{ fontSize: 20, fontWeight: 600 }}
-                  >
-                    + Inclus
-                  </div>
-                  <div
-                    className="d-flex justify-content-between text-muted"
-                    style={{ gap: 12 }}
-                  >
-                    <div className="flex-fill text-center">
-                      <TrendingUp size={20} />
-                      <div className="mt-1" style={{ fontSize: 13 }}>
-                        Optimisation Google
-                      </div>
-                    </div>
-                    <div className="flex-fill text-center">
-                      <Shield size={20} />
-                      <div className="mt-1" style={{ fontSize: 13 }}>
-                        Sécurité renforcée
-                      </div>
-                    </div>
-                    <div className="flex-fill text-center">
-                      <Zap size={18} />
-                      <div className="mt-1" style={{ fontSize: 13 }}>
-                        Vitesse optimisée
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <Link
-                  className="d-inline-flex align-items-center justify-content-center w-100 mt-4"
-                  href="/contact"
-                  data-offer-modal
-
-                  style={{
-                    background: '#111',
-                    color: '#fff',
-                    borderRadius: 999,
-                    padding: '14px 18px',
-                    fontWeight: 700,
-                    fontSize: 16,
-                    boxShadow: '0 10px 24px rgba(0,0,0,.15)',
-                    textDecoration: 'none',
-                    transition: 'transform .15s ease, box-shadow .15s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.transform =
-                      'translateY(-1px)';
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                      '0 12px 28px rgba(0,0,0,.22)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.transform = '';
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                      '0 10px 24px rgba(0,0,0,.15)';
-                  }}
-                >
-                Prendre un rendez-vous {' '}
-                  <span className="ms-2 d-inline-flex align-items-center">
-                    <RightArrowTwo />
-                  </span>
-                </Link>
+              <div>
+                <div className="webeka-feature-title">{item.title}</div>
+                <div className="webeka-feature-sub">{item.sub}</div>
               </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* Inclus */}
+        <div className="webeka-included rounded-3 mt-3">
+          <div className="webeka-included-title mb-2">+ Inclus</div>
+          <div className="webeka-included-items d-flex justify-content-between">
+            <div className="webeka-included-item text-center flex-fill">
+              <TrendingUp size={20} />
+              <div className="mt-1">Optimisation Google</div>
+            </div>
+            <div className="webeka-included-item text-center flex-fill">
+              <Shield size={20} />
+              <div className="mt-1">Sécurité renforcée</div>
+            </div>
+            <div className="webeka-included-item text-center flex-fill">
+              <Zap size={18} />
+              <div className="mt-1">Vitesse optimisée</div>
             </div>
           </div>
         </div>
-        {/* End card */}
+
+        {/* CTA */}
+        <Link href="/contact" data-offer-modal className="webeka-cta-card d-inline-flex align-items-center justify-content-center w-100 mt-4">
+          Prendre un rendez-vous <span className="ms-2"><RightArrowTwo /></span>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+{/* End card */}
+
       </div>
     </div>
   );

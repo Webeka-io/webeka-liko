@@ -11,7 +11,7 @@ import Wrapper from "@/layouts/wrapper";
 import HeaderFour from "@/layouts/headers/header-dentiste";
 import HeroBannerFour from "@/components/hero-banner/hero-banner-dentiste";
 import AboutThree from "@/components/about/about-dentiste";
-import ProjectFour from "@/components/project/project-dentiste";
+import ContactTwo from "@/components/contact/contact-two";
 import ContactOne from "@/components/contact/contact-dentiste";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";
@@ -43,9 +43,9 @@ const HomeFourMain = () => {
     <Wrapper>
       {/* Loader (white/black) */}
       <LoadingScreen
-  title={'Webeka'}
-  color="#111"
-  background="#fff"
+  title={'Webeka\nDentiste'}
+  color="#"
+  background="#"
   logoSrc="/assets/img/logo/logo.png"
   logoAlt="Webeka"
   logoWidth={200}
@@ -72,9 +72,25 @@ const HomeFourMain = () => {
             <ServiceMain />
             {/* service area */}    
 
-            {/* project area start */}
-            <ProjectFour />
-            {/* project area end */}
+         <div className="tm-hero-area tm-hero-ptb p-relative ">
+                                   <div className="container " >
+                                     <div className="row">
+                                       <div className="col-xl-12">
+                                         <div className="tm-hero-content ">
+                                           <span className="tm-hero-subtitle text-gold1">Webeka</span>
+                                           <h4 className="tm-hero-title-big tp-char-animation">
+                                             Contact
+                                           </h4>
+                                         </div>
+                                       </div>
+                                     </div>
+                                   </div>
+                                 </div>
+                                 {/* hero area end */}
+                   
+                                 {/* contact area */}
+                                 <ContactTwo/>
+                                 {/* contact area */}
 
             {/* contact area start */}
             <ContactOne />
