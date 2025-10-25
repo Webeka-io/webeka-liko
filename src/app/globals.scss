@@ -252,8 +252,8 @@
 }
 @media (max-width: 767px) {
   .sv-service-content-wrap {
-    padding-top: 20px 30px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 95px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -407,15 +407,14 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tp-hero-3-ptb2 {
-    padding-top: 50px;
+    padding-top: 100px;
   }
 }
 @media (max-width: 767px) {
   .tp-hero-3-ptb2 {
-    padding-top: 20px;
+    padding-top: 150px;
   }
 }
-
 
 /******************************
  *  HERO STABLE + FLÈCHES FIXES
@@ -1027,7 +1026,9 @@
   align-items: center;       /* centre verticalement */
   position: relative;
   border-bottom:2px solid var(--gold-500) ;
+}
 
+@media (max-width: 800px) {
 
 }
 
