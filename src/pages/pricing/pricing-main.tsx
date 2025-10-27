@@ -51,8 +51,8 @@ const HomeFourMain = () => {
 
       <LoadingScreen
         title={'Webeka'}
-        color=""
-        background=""
+        color="#111"
+        background="#fff"
         logoSrc="/assets/img/logo/logo.png"
         logoAlt="Webeka"
         logoWidth={200}

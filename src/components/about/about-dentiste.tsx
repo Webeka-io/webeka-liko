@@ -42,11 +42,11 @@ export default function AboutThree() {
 
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="tp-about-3-content">
-              <p className="mb-30 mt-20 tp_fade_bottom text-white-golden">
+              <p className="mb-30 mt-20 tp_fade_bottom">
                 Nous créons des sites modernes pour cabinets dentaires : clairs , rapides et pensés pour mobile.
               </p>
 
-              <p className="mb-45 tp_fade_bottom text-white-golden">
+              <p className="mb-45 tp_fade_bottom">
                 Votre expertise est mieux présentée , vos patients vous trouvent et prennent rendez-vous plus facilement.
               </p>
 

@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderFour from "@/layouts/headers/header-four";
-import ContactOne from "@/components/Calendlyform/ContactCalendly";
+import ContactOne from "@/components/contact/contact-one";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";
 import { fadeAnimation, revelAnimationOne, } from "@/utils/title-animation";
@@ -48,16 +48,12 @@ const ContactMain = () => {
         {/* Loader (white/black) */}
              <LoadingScreen
          title={'Webeka'}
-         color="#"
-         background="#"
+         color="#111"
+         background="#fff"
          logoSrc="/assets/img/logo/logo.png"
          logoAlt="Webeka"
          logoWidth={200}
        />
-
-      {/* header area start */}
-      <HeaderFour />
-      {/* header area end */}
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -75,7 +71,7 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle text-gold1">Webeka</span>
+                        <span className="tm-hero-subtitle">Webeka</span>
                         <h4 className="tm-hero-title-big tp_reveal_anim">
                           Réservation
                         </h4>
@@ -89,6 +85,12 @@ const ContactMain = () => {
               {/* contact area start */}
               <ContactCalendly />
               {/* contact area end */}
+
+   {/* contact area start */}
+            <ContactOne />
+            {/* contact area end */}
+
+
             </main>
 
             {/* footer area */}

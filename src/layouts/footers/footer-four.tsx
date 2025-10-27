@@ -20,7 +20,6 @@ export default function FooterFour() {
                       <li><a href="/pricing">Offre</a></li>
                       <li><a href="/contact">Contact</a></li>
                       <li><a href="/cgu">CGU</a></li>
-                      <li><a href="/portfolio">Portfolio</a></li>
                     </ul>
                   </div>
                 </div>

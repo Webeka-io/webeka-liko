@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // images
 import ser_img_1 from "@/assets/img/webeka/1-dentiste.jpg";
-import ser_img_2 from "@/assets/img/webeka//2-dentiste.jpg";
+import ser_img_2 from "@/assets/img/webeka/2-dentiste.jpg";
 import ser_img_3 from "@/assets/img/webeka/3-dentiste.jpg";
 import ser_img_4 from "@/assets/img/webeka/4-dentiste.jpg";
 import { RightArrow, ProjectShape } from "../svg";

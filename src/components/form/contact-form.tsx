@@ -59,19 +59,19 @@ export default function ContactForm({ btnCls = '' }: IProps) {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="cn-contactform-input mb-25 text-white">
+      <div className="cn-contactform-input mb-25">
         <label htmlFor="name">Nom</label>
-        <input id="name" {...register("name")} type="text" placeholder="Votre nom" />
+        <input id="name" {...register("name")} type="text" placeholder="John Doe" />
         <ErrorMsg msg={errors.name?.message!} />
       </div>
 
-      <div className="cn-contactform-input mb-25 text-white">
+      <div className="cn-contactform-input mb-25">
         <label htmlFor="email">Email</label>
         <input id="email" {...register("email")} type="text" placeholder="Votre email" />
         <ErrorMsg msg={errors.email?.message!} />
       </div>
 
-      <div className="cn-contactform-input mb-25 text-white">
+      <div className="cn-contactform-input mb-25">
         <label htmlFor="message">Message</label>
         <textarea id="message" {...register("message")} placeholder="Décrivez votre secteur, vos couleurs, vos envies ..."></textarea>
         <ErrorMsg msg={errors.message?.message!} />
@@ -79,7 +79,7 @@ export default function ContactForm({ btnCls = '' }: IProps) {
 
       <div className="cn-contactform-btn">
         <button
-          className={`tp-btn-black-2 ${btnCls} w-50 mx-auto`}
+          className={`tp-btn-black-md ${btnCls} w-100`}
           type="submit"
           disabled={isSubmitting}
           aria-busy={isSubmitting}

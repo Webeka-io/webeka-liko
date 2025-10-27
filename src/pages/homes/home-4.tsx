@@ -12,8 +12,7 @@ import HeaderFour from "@/layouts/headers/header-four";
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
 import GalleryOne from "@/components/gallery/gallery-one";
 import AboutThree from "@/components/about/about-three";
-import ProjectFour from "@/components/project/project-four";
-import ContactTwo from "@/components/contact/contact-two";
+import ContactCalendly from "@/components/Calendlyform/ContactCalendly";
 import ContactOne from "@/components/contact/contact-one";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";
@@ -22,7 +21,6 @@ import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import ServiceMain from "@/pages/service/service-2";
 import LoadingScreen from "@/components/loading/LoadingScreen";
-
 
 
 
@@ -47,8 +45,8 @@ const HomeFourMain = () => {
       {/* Loader (white/black) */}
       <LoadingScreen
         title={'Webeka'}
-        color="#DDA85A"
-        background="#000"
+        color="#111"
+        background="#fff"
         logoSrc="/assets/img/logo/logo.png"
         logoAlt="Webeka"
         logoWidth={200}
@@ -73,26 +71,26 @@ const HomeFourMain = () => {
             <ServiceMain />
             {/* service area */}    
 
-           <div className="tm-hero-area tm-hero-ptb p-relative ">
-                           <div className="container " >
-                             <div className="row">
-                               <div className="col-xl-12">
-                                 <div className="tm-hero-content ">
-                                   <span className="tm-hero-subtitle text-gold1">Webeka</span>
-                                   <h4 className="tm-hero-title-big tp-char-animation">
-                                     Contact
-                                   </h4>
-                                 </div>
-                               </div>
-                             </div>
-                           </div>
-                         </div>
-                         {/* hero area end */}
-           
-                         {/* contact area */}
-                         <ContactTwo/>
-                         {/* contact area */}
-
+             {/* hero area start */}
+                          <div className="tm-hero-area tm-hero-ptb p-relative">
+                            <div className="container">
+                              <div className="row">
+                                <div className="col-xl-12">
+                                  <div className="tm-hero-content">
+                                    <span className="tm-hero-subtitle">Webeka</span>
+                                    <h4 className="tm-hero-title-big tp_reveal_anim">
+                                      Réservation
+                                    </h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* hero area end */}
+            
+                          {/* contact area start */}
+                          <ContactCalendly />
+                          {/* contact area end */}
 
             {/* contact area start */}
             <ContactOne />

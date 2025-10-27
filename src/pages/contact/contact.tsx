@@ -46,8 +46,8 @@ const ContactMain = () => {
 
       <LoadingScreen
         title={'Webeka'}
-        color="#"
-        background="#"
+        color="#111"
+        background="#fff"
         logoSrc="/assets/img/logo/logo.png"
         logoAlt="Webeka"
         logoWidth={200}
@@ -73,7 +73,7 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle text-gold1">Webeka</span>
+                        <span className="tm-hero-subtitle">Webeka</span>
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Contact
                         </h4>

@@ -42,11 +42,11 @@ export default function AboutThree() {
 
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="tp-about-3-content">
-              <p className="mb-30 mt-20 tp_fade_bottom text-white-golden">
+              <p className="mb-30 mt-20 tp_fade_bottom">
                 Nous créons des sites modernes pour cabinets d’avocats : élégants, clairs et pensés pour inspirer confiance.
               </p>
 
-              <p className="mb-45 tp_fade_bottom text-white-golden">
+              <p className="mb-45 tp_fade_bottom">
                 Chaque détail est conçu pour valoriser votre expertise juridique, améliorer votre visibilité et faciliter la prise de contact de vos clients.
               </p>
 

@@ -10,23 +10,25 @@ type Props = {
   background?: string;
   color?: string;
   title?: string;
-  minDuration?: number;
-  letterStagger?: number;
+  minDuration?: number;        // ms
+  letterStagger?: number;      // s
   fontSize?: string;
   blurHeightVH?: number;
   blurStrength?: number;
-  revealDelaySec?: number;
-  revealDurationSec?: number;
-  clipGuardPx?: number;
-  mobileGuardMb?: number;
+  revealDelaySec?: number;     // délai avant révélation (s)
+  revealDurationSec?: number;  // durée révélation (s)
+  clipGuardPx?: number;        // desktop: px masqués en bas du titre (anti chevauchement)
+  mobileGuardMb?: number;      // mobile: margin-bottom temporaire (évite chevauchement sans clip)
+
+  /** 🆕 Logo au-dessus du slogan */
   logoSrc?: string;
   logoAlt?: string;
-  logoWidth?: number;
+  logoWidth?: number;          // px
 };
 
 export default function LoadingScreen({
-  background = 'var(--black-deep, #000)',     // 🖤 fond noir
-  color = 'var(--gold-500, #DDA85A)',         // 🟡 or pour la barre
+  background = '#ffffff',
+  color = '#111111',
   title = 'Un site vraiment simple',
   minDuration = 1400,
   letterStagger = 0.02,
@@ -35,8 +37,10 @@ export default function LoadingScreen({
   blurStrength = 16,
   revealDelaySec = 0,
   revealDurationSec = 1.25,
-  clipGuardPx = 18,
-  mobileGuardMb = 28,
+  clipGuardPx = 18,      // desktop
+  mobileGuardMb = 28,    // mobile
+
+  // 🆕 Logo
   logoSrc,
   logoAlt = 'Webeka',
   logoWidth = 112,
@@ -46,7 +50,7 @@ export default function LoadingScreen({
   const titleRef = useRef<HTMLDivElement | null>(null);
   const titleWrapRef = useRef<HTMLDivElement | null>(null);
   const blurRef = useRef<HTMLDivElement | null>(null);
-  const logoRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLDivElement | null>(null); // 🆕
 
   const lines = useMemo(() => title.split('\n'), [title]);
 
@@ -56,7 +60,8 @@ export default function LoadingScreen({
     const titleEl = titleRef.current;
     const titleWrapEl = titleWrapRef.current;
     const blurEl = blurRef.current;
-    const logoEl = logoRef.current;
+    const logoEl = logoRef.current; // 🆕
+
     if (!wrap || !bar || !titleEl || !titleWrapEl || !blurEl) return;
 
     const isMobile = typeof window !== 'undefined'
@@ -78,18 +83,20 @@ export default function LoadingScreen({
       } catch {}
     };
 
+    // anti-flash SSR
     gsap.set(titleWrapEl, { visibility: 'visible' });
-    if (logoEl) gsap.set(logoEl, { visibility: 'visible' });
+    if (logoEl) gsap.set(logoEl, { visibility: 'visible' }); // 🆕
 
     if (reduce) {
       gsap.set(bar, { transformOrigin: 'left center', scaleX: 1 });
       gsap.set(blurEl, { opacity: 0 });
       gsap.set(titleWrapEl, { WebkitClipPath: 'none', clipPath: 'none' });
-      if (logoEl) gsap.set(logoEl, { opacity: 1, y: 0, scale: 1 });
+      if (logoEl) gsap.set(logoEl, { opacity: 1, y: 0, scale: 1 }); // 🆕
       tl.set(wrap, { display: 'none', onComplete: notifyDone });
       return () => { tl.kill(); };
     }
 
+    // --- États init ---
     const barDur = Math.max(0.6, minDuration / 1000);
     const initialY = isMobile ? 72 : 96;
 
@@ -104,6 +111,7 @@ export default function LoadingScreen({
     });
     gsap.set(blurEl, { opacity: 0, y: 20 });
 
+    // 🆕 Logo initial state
     if (logoEl) {
       gsap.set(logoEl, {
         opacity: 0,
@@ -128,23 +136,27 @@ export default function LoadingScreen({
       });
     }
 
-    // 1) Barre
+    // --- 1) Barre de progression ---
     tl.to(bar, { scaleX: 1, duration: barDur, ease: 'power1.inOut' }, 0);
 
-    // 2) Bande floue
+    // --- 2) Bande floue ---
     tl.to(blurEl, { opacity: 1, y: 0, duration: 0.5 }, 0.1)
       .to(blurEl, { opacity: 0, y: 10, duration: 0.35 }, '>-0.15');
 
-    // 2bis) Logo
+    // 🆕 2bis) Révélation du logo (juste avant le texte)
     if (logoEl) {
       tl.set(logoEl, { visibility: 'visible' }, 0);
       tl.to(logoEl, {
-        opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out',
-        delay: revealDelaySec * 0.6,
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power3.out',
+        delay: revealDelaySec * 0.6, // commence un peu avant le texte
       }, 0);
     }
 
-    // 3) Lettres
+    // --- 3) Révélation des lettres ---
     const revealTotal = revealDelaySec + revealDurationSec;
     tl.to(chars, {
       duration: revealDurationSec,
@@ -156,22 +168,38 @@ export default function LoadingScreen({
       delay: revealDelaySec,
     }, 0);
 
-    // 3bis) Libération clip
+    // --- 3bis) Fin d’anim : on relâche proprement ---
     if (isMobile) {
-      tl.to(titleWrapEl, { marginBottom: clipGuardPx, duration: 0.25, ease: 'power1.out' }, revealTotal - 0.05);
+      tl.to(titleWrapEl, {
+        marginBottom: clipGuardPx,
+        duration: 0.25,
+        ease: 'power1.out',
+      }, revealTotal - 0.05);
     } else {
-      tl.to(titleWrapEl, { WebkitClipPath: 'inset(0 0 0 0)', clipPath: 'inset(0 0 0 0)', duration: 0.22, ease: 'power1.out' }, revealTotal - 0.05);
+      tl.to(titleWrapEl, {
+        WebkitClipPath: 'inset(0 0 0 0)',
+        clipPath: 'inset(0 0 0 0)',
+        duration: 0.22,
+        ease: 'power1.out',
+      }, revealTotal - 0.05);
     }
 
-    // 4) Sortie
+    // --- 4) Fermeture ---
     const totalWait = Math.max(revealTotal, barDur);
     tl.to(wrap, { yPercent: -100, duration: 0.65, ease: 'power2.inOut' }, totalWait + 0.1)
       .set(wrap, { display: 'none', onComplete: notifyDone });
 
     return () => { tl.kill(); };
   }, [
-    minDuration, letterStagger, blurHeightVH, blurStrength, title,
-    revealDelaySec, revealDurationSec, clipGuardPx, mobileGuardMb,
+    minDuration,
+    letterStagger,
+    blurHeightVH,
+    blurStrength,
+    title,
+    revealDelaySec,
+    revealDurationSec,
+    clipGuardPx,
+    mobileGuardMb,
   ]);
 
   return (
@@ -181,8 +209,8 @@ export default function LoadingScreen({
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        background: 'var(--black-deep, #000)',  // 🖤 fond plein
-        color: 'var(--gold-500, #DDA85A)',      // 🟡 couleur par défaut
+        background: 'transparent',
+        color,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -191,21 +219,23 @@ export default function LoadingScreen({
       aria-live="polite"
       aria-busy="true"
     >
-      {/* Halo ciné (fond) */}
+      {/* Panneau blanc avec dégradé */}
       <div
         aria-hidden="true"
         style={{
           position: 'absolute',
           inset: 0,
           zIndex: 0,
-          // halo doré subtil au centre + fond noir
-          background: `radial-gradient(900px 600px at 50% 42%, rgba(221,168,90,0.14) 0%, rgba(221,168,90,0) 65%), ${background}`,
+          background: `linear-gradient(to bottom,
+            ${background} 0%,
+            ${background} ${100 - blurHeightVH}vh,
+            rgba(255,255,255,0) 100%)`,
         }}
       />
 
       {/* Contenu central */}
       <div style={{ textAlign: 'center', width: 'min(92vw, 1000px)', position: 'relative', zIndex: 1 }}>
-        {/* Logo au-dessus du titre (optionnel) */}
+        {/* 🆕 Logo au-dessus du titre */}
         {logoSrc && (
           <div
             ref={logoRef}
@@ -215,10 +245,10 @@ export default function LoadingScreen({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              filter: 'drop-shadow(0 0 8px rgba(221,168,90,0.18))',
             }}
             aria-hidden="true"
           >
+            {/* img simple pour compat max, remplaçable par <Image/> si tu veux */}
             <img
               src={logoSrc}
               alt={logoAlt}
@@ -232,7 +262,10 @@ export default function LoadingScreen({
         {/* Wrapper du titre */}
         <div
           ref={titleWrapRef}
-          style={{ display: 'inline-block', visibility: 'hidden' }}
+          style={{
+            display: 'inline-block',
+            visibility: 'hidden', // anti-flash SSR
+          }}
         >
           <div
             ref={titleRef}
@@ -242,9 +275,6 @@ export default function LoadingScreen({
               lineHeight: 1,
               letterSpacing: '-0.01em',
               fontSize,
-              // 🟡 or + halo doux
-              color: 'var(--gold-500, #DDA85A)',
-              textShadow: '0 0 16px rgba(221,168,90,0.32)',
             }}
           >
             {lines.map((line, i) => (
@@ -267,18 +297,17 @@ export default function LoadingScreen({
           </div>
         </div>
 
-        {/* Barre de progression (or) */}
+        {/* Barre de progression */}
         <div
           style={{
             margin: '28px auto 0',
             width: 'min(460px, 72%)',
             height: 4,
-            background: 'rgba(255,255,255,0.06)',   // piste discrète
+            background: 'rgba(0,0,0,0.08)',
             borderRadius: 999,
             overflow: 'hidden',
             position: 'relative',
             zIndex: 3,
-            boxShadow: '0 0 12px rgba(227,181,103,0.15)', // lueur ligne
           }}
           aria-hidden="true"
         >
@@ -288,14 +317,14 @@ export default function LoadingScreen({
               display: 'block',
               width: '100%',
               height: '100%',
-              background: 'var(--gold-500, #DDA85A)', // remplissage or
+              background: color,
               transform: 'scaleX(0)',
             }}
           />
         </div>
       </div>
 
-      {/* Bande floue animée (dorée, vers le haut) */}
+      {/* Bande floue animée en bas */}
       <div
         ref={blurRef}
         aria-hidden="true"
@@ -307,11 +336,9 @@ export default function LoadingScreen({
           height: `${blurHeightVH}vh`,
           backdropFilter: `blur(${blurStrength}px)`,
           WebkitBackdropFilter: `blur(${blurStrength}px)`,
-          // masque vers le haut
           maskImage: 'linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))',
           WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))',
-          // lueur dorée subtile sur noir
-          background: 'linear-gradient(to top, rgba(221,168,90,0.18), rgba(221,168,90,0))',
+          background: 'linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0))',
           pointerEvents: 'none',
           zIndex: 2,
         }}
