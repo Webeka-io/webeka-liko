@@ -43,7 +43,7 @@ export default function RatingStrip({
           <Star size={18} className="rs-star" />
           <Star size={18} className="rs-star" />
         </div>
-        <span className="rs-label">Déjà 2 clients satisfaits</span>
+        <span className="rs-label text-black">Déjà 2 clients satisfaits</span>
       </div>
     </div>
   );
