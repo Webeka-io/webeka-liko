@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Download, GiftBox, Orders, WishlistThree } from "../svg";
-import avatar from '@/assets/img/avatar/avata.jpg';
+import avatar from '@/assets/img/avatar/Avis 1.png';
 
 export default function AccountProfile() {
   return (
     <div className="profile__main">
-      <div className="profile__main-top pb-80">
+      <div className="profile__main-top pb-80"> 
         <div className="row align-items-center">
           <div className="col-md-6">
             <div className="profile__main-inner d-flex flex-wrap align-items-center">
