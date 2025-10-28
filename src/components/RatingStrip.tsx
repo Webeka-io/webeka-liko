@@ -28,22 +28,27 @@ export default function RatingStrip({
                 className="rs-avatar-img"
               />
             ) : (
-              <span className="rs-avatar-fallback" style={{ background: a.bg || "#E6EEF6" }} />
+              <span
+                className="rs-avatar-fallback"
+                style={{ background: a.bg || "#E6EEF6" }}
+              />
             )}
           </div>
         ))}
       </div>
 
-      {/* Ligne unique : étoiles + texte (collés) */}
-      <div className="rs-row">
-        <div className="rs-stars">
-          <Star size={18} className="rs-star" />
-          <Star size={18} className="rs-star" />
-          <Star size={18} className="rs-star" />
-          <Star size={18} className="rs-star" />
-          <Star size={18} className="rs-star" />
+      {/* Ligne unique : étoiles + texte */}
+      <div className="rs-row flex items-center gap-2 mt-2">
+        <div className="rs-stars flex items-center gap-1 text-yellow-400">
+          <Star size={18} fill="#E4B028" stroke="E4B028" />
+          <Star size={18} fill="#E4B028" stroke="E4B028" />
+          <Star size={18} fill="#E4B028" stroke="E4B028" />
+          <Star size={18} fill="#E4B028" stroke="E4B028" />
+          <Star size={18} fill="#E4B028" stroke="E4B028" />
         </div>
-        <span className="rs-label text-black">Déjà 2 clients satisfaits !</span>
+        <span className="rs-label text-black text-sm">
+          Déjà plusieurs clients satisfaits !
+        </span>
       </div>
     </div>
   );

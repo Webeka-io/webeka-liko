@@ -1,4 +1,6 @@
 'use client';
+import Image from 'next/image';
+import logoMain from "@/assets/img/pricing/logo_cadeau.png";
 import React from 'react';
 import { ArrowBg, RightArrowTwo } from '../svg';
 import Link from 'next/link';
@@ -16,21 +18,33 @@ import {
 
 export default function PricingArea() {
   return (
-    <div className="tp-hero-3-area tp-hero-3-ptb2 fix">
+    <div className="tp-hero-3-area tp-hero-3-ptb1 fix">
       <div className="container">
-        {/* Header */}
+        {/* HERO */}
         <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-hero-3-content-box text-center p-relative ">
-              <div className="tp-hero-3-circle-shape2 my-custom-circle">
+          <div className="col-xl-12 pt-dynamic">
+            <div className="tp-hero-3-content-box text-center p-relative">
+              <div className="tp-hero-3-circle-shape my-custom-circle">
                 <span></span>
               </div>
 
-              <h4 className="tp-hero-3-title1 tp_reveal_anim pt-30px pb-10">
-                <span className="tp-reveal-line">Sans engagement</span>
+              <h4 className="tp-hero-3-title tp_reveal_anim mb-2">
+                <span className="tp-reveal-line">
+                  Notre Offre
+                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2 mb-40">
+                    <Image
+                      src={logoMain}
+                      alt="Logo Webeka"
+                      fill
+                      className="object-fit-contain handshake-logo"
+                      sizes="(min-width:1200px) 180px, (min-width:768px) 60px, (min-width:576px) 60px, 40px"
+                    />
+                  </span>
+                </span>
               </h4>
 
-              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim pt-20">
+
+              <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim ">
                 Abonnement tout inclus. Zéro surprise.
               </span>
               <span className="mx-auto w-75 ms-7 text-center d-block d-md-none tp-hero-3-category-2 tp_reveal_anim">

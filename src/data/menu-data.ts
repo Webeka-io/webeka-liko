@@ -4,7 +4,8 @@ import { IMenuDT } from "@/types/menu-d-t";
 const menu_data: IMenuDT[] = [
   { id: 1, title: "Accueil", link: "/" },
   { id: 2, title: "Offre", link: "/pricing" },
-  { id: 3, title: "Contact", link: "/contact" },
+  { id: 3, title: "Secteurs", link: "/secteurs" },
+  { id: 4, title: "Articles", link: "/articles" },
 ];
 
 export default menu_data;
@@ -13,5 +14,7 @@ export default menu_data;
 export const mobile_menu_data: { id: number; title: string; link: string }[] = [
   { id: 1, title: "Accueil", link: "/" },
   { id: 2, title: "Offre", link: "/pricing" },
-  { id: 3, title: "Contact", link: "/contact" },
+  { id: 3, title: "Secteurs", link: "/secteurs" },
+  { id: 4, title: "Articles", link: "/articles" },
+  
 ];
