@@ -50,7 +50,7 @@ HomeEightMain = () => {
 
   {/* Loader (white/black) */}
        <LoadingScreen
-   title={'Webeka'}
+   title={'Webeka\nDentiste'}
    color="#111"
    background="#fff"
    logoSrc="/assets/img/logo/logo.png"

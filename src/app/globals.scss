@@ -393,7 +393,7 @@
 }
 @supports (height: 100lvh) {
   .tp-hero-3-area {
-    min-height: 100lvh; /* ignore la barre du navigateur */
+    min-height: 700px; /* ignore la barre du navigateur */
   }
 }
 
@@ -444,7 +444,7 @@
   }
   /* On conserve la même logique de bottom stable (ne pas remettre 9rem) */
   .bounce-arrow-wrapper {
-    bottom: calc(170px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(50px + env(safe-area-inset-bottom, 0px));
   }
 }
  @media ( max-height: 840px ) and ( max-width: 380px ) {
@@ -1916,10 +1916,20 @@ padding-top:0px;
   overflow: hidden;
   position: relative;
   margin-left: -10px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.15),   /* ombre diffuse principale */
-    0 0 0 3px rgba(11, 11, 11, 0.8); /* halo blanc autour */
+  /* ✅ Ombre améliorée */
+  box-shadow:
+    0 0px 12px rgba(0, 0, 0, 0.25),  /* ombre principale douce */
+    0 0 0 0px rgba(255, 255, 255, 0.9); /* contour clair pour contraste */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.rs-avatar:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.3),
+    0 0 0 2px rgba(255, 255, 255, 1);
+}
+
 
 .rs-avatar:first-child { margin-left: 0; }
 .rs-avatar-img, .rs-avatar-fallback {
@@ -1970,3 +1980,14 @@ padding-top:0px;
           color: #000;
           border: 1px solid #000;
         }
+
+
+.icontitle {
+  margin-bottom: 40px;
+}
+
+@media (max-width:767.98px) {
+  .icontitle {
+    margin-bottom: 20px;
+  }
+}

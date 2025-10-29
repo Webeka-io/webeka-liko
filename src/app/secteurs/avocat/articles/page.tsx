@@ -8,18 +8,16 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderFour from "@/layouts/headers/header-dentiste";
-import HeroBannerFour from "@/components/hero-banner/hero-banner-dentiste";
-import AboutThree from "@/components/about/about-dentiste";
+import HeaderFour from "@/layouts/headers/header-avocat";
 import ContactCalendly from "@/components/Calendlyform/ContactCalendly";
-import ContactOne from "@/components/contact/contact-dentiste";
+import ContactOne from "@/components/contact/contact-one";
 import FooterFour from "@/layouts/footers/footer-four";
 import { textInvert } from "@/utils/text-invert";
 import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
-import ServiceMain from "@/pages/service/service-dentiste";
 import LoadingScreen from "@/components/loading/LoadingScreen";
+import ArticlesPage from "@/components/articles/articles-global";
 
 
 
@@ -31,7 +29,7 @@ const HomeFourMain = () => {
       fadeAnimation();
       revelAnimationOne();
       projectThreeAnimation();
-      ctaAnimation(); 
+      ctaAnimation();
       textInvert();
     }, 100);
     return () => clearTimeout(timer);
@@ -43,35 +41,26 @@ const HomeFourMain = () => {
     <Wrapper>
       {/* Loader (white/black) */}
       <LoadingScreen
-  title={'Webeka\nDentiste'}
-  color="#111"
-  background="#fff"
-  logoSrc="/assets/img/logo/logo.png"
-  logoAlt="Webeka Dentiste"
-  logoWidth={200}
-/>
-
-
-      {/* header area start */}
-      <HeaderFour />
-      {/* header area end */}
+        title={'Webeka\nAvocat'}
+        color="#111"
+        background="#fff"
+        logoSrc="/assets/img/logo/logo.png"
+        logoAlt="Webeka Avocat"
+        logoWidth={200}
+      />
+       {/* header area start */}
+       <HeaderFour />
+       {/* header area end */}
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
 
-            {/* hero area start */}
-            <HeroBannerFour />
-            {/* hero area end */}
+              {/* Secteurs start */}
+      <ArticlesPage/> 
+      {/* Secteurs end */}
 
-            {/* about area start */}
-            <AboutThree />
-            {/* about area end */}
-
-            {/* service area */}
-            <ServiceMain />
-            {/* service area */}    
-{/* hero area start */}
+             {/* hero area start */}
                           <div className="tm-hero-area tm-hero-ptb p-relative">
                             <div className="container">
                               <div className="row">

@@ -28,10 +28,10 @@ export default function HeaderFour() {
             <div className="row align-items-center ">
               <div className="col-xl-3 col-lg-6 col-md-6 col-6 ">
                 <div className="tp-header-logo tp-header-3-logo pt-20px">
-                  <Link className="logo-1" href="/dentiste">
+                  <Link className="logo-1" href="/secteurs/dentiste">
                     <Image src={logo_1} alt="logo" />
                   </Link>
-                  <Link className="logo-2" href="/dentiste">
+                  <Link className="logo-2" href="/secteurs/dentiste">
                     <Image src={logo_2} alt="logo" />
                   </Link>
                 </div>

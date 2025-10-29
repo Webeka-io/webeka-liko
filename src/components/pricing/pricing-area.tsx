@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import logoMain from "@/assets/img/pricing/logo_cadeau.png";
+import logoCadeau from "@/assets/img/pricing/logo_cadeau.png";
 import React from 'react';
 import { ArrowBg, RightArrowTwo } from '../svg';
 import Link from 'next/link';
@@ -31,9 +31,9 @@ export default function PricingArea() {
               <h4 className="tp-hero-3-title tp_reveal_anim mb-2">
                 <span className="tp-reveal-line">
                   Notre Offre
-                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2 mb-40">
+                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2 icontitle">
                     <Image
-                      src={logoMain}
+                      src={logoCadeau}
                       alt="Logo Webeka"
                       fill
                       className="object-fit-contain handshake-logo"

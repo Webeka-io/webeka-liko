@@ -75,6 +75,9 @@ export default function HeroBannerFour() {
         avatars={[
           { src: "/assets/img/avatar/Avis 1.png" },
           { src: "/assets/img/avatar/Avis 2.png" },
+          { src: "/assets/img/avatar/Avis 3.png" },
+          { src: "/assets/img/avatar/Avis 4.png" },
+          { src: "/assets/img/avatar/Avis 5.png" },
 
 
         ]}

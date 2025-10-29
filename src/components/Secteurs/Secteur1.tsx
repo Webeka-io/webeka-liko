@@ -40,9 +40,9 @@ export default function SectorsPage() {
               </div>
 
               <h4 className="tp-hero-3-title tp_reveal_anim mb-2">
-                <span className="tp-reveal-line">
+                <span className="tp-reveal-line ">
                   Votre Secteur
-                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2">
+                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2 ml-10">
                     <Image
                       src={logoMain}
                       alt="Logo Webeka"

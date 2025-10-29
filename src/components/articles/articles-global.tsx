@@ -59,10 +59,10 @@ export default function ArticlesPage() {
                 <span></span>
               </div>
 
-              <h4 className="tp-hero-3-title tp_reveal_anim mb-2">
-                <span className="tp-reveal-line pb-0">
+              <h4 className="tp-hero-3-title tp_reveal_anim mb-2 ">
+                <span className="tp-reveal-line pb-0  ">
                   Nos Articles
-                  <span className="logo-wrap d-inline-block position-relative align-middle mb-45">
+                  <span className="logo-wrap d-inline-block position-relative align-middle icontitle ml-10 ">
                     <Image
                       src={logoMain}
                       alt="Logo Webeka"
