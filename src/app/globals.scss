@@ -1888,6 +1888,20 @@ padding-top:0px;
   text-align: center;
 }
 
+@media ( max-width:767.98px ) {
+
+  .rating-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;            /* petit espace entre avatars et ligne étoiles+texte */
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+}
+
+
 /* Avatars (chevauchement) */
 .rs-avatars {
   display: flex;
