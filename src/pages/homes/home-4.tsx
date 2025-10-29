@@ -44,10 +44,10 @@ const HomeFourMain = () => {
     <Wrapper>
       {/* Loader (white/black) */}
       <LoadingScreen
-        title={'Webeka'}
+        title={''}
         color="#111"
         background="#fff"
-        logoSrc="/assets/img/logo/logo.png"
+        logoSrc="/assets/img/logo/logo-anim.png"
         logoAlt="Webeka"
         logoWidth={200}
       />

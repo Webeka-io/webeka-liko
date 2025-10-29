@@ -50,11 +50,11 @@ const HomeFourMain = () => {
     <Wrapper>
 
       <LoadingScreen
-        title={'Webeka'}
+        title={'Offre'}
         color="#111"
         background="#fff"
-        logoSrc="/assets/img/logo/logo.png"
-        logoAlt="Webeka"
+        logoSrc="/assets/img/logo/logo-anim.png"
+        logoAlt="Webeka Offre"
         logoWidth={200}
       />
 

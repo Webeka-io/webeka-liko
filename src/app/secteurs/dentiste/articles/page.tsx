@@ -41,11 +41,11 @@ const HomeFourMain = () => {
     <Wrapper>
       {/* Loader (white/black) */}
       <LoadingScreen
-        title={'Webeka\nDentiste'}
+        title={'Secteurs'}
         color="#111"
         background="#fff"
-        logoSrc="/assets/img/logo/logo.png"
-        logoAlt="Webeka Dentiste"
+        logoSrc="/assets/img/logo/logo-anim.png"
+        logoAlt="Webeka Dentiste Articles"
         logoWidth={200}
       />
     {/* header area start */}

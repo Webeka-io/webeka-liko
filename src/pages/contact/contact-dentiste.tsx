@@ -49,7 +49,7 @@ const ContactMain = () => {
          title={'Webeka\nDentiste'}
          color="#111"
          background="#fff"
-         logoSrc="/assets/img/logo/logo.png"
+         logoSrc="/assets/img/logo/logo-anim.png"
          logoAlt="Webeka Dentsite"
          logoWidth={200}
        />

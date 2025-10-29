@@ -388,11 +388,18 @@
 /* ====== HERO : hauteur stable ====== */
 .tp-hero-3-area {
   position: relative;
-  min-height: 100vh; /* fallback */
+  min-height: 100lvh; /* fallback */
 
 }
-@supports (height: 100lvh) {
+@media (min-width:450px) {
   .tp-hero-3-area {
+
+    min-height: 100lvh; /* ignore la barre du navigateur */
+  }
+}
+@media (max-width:450px) {
+  .tp-hero-3-area {
+    
     min-height: 700px; /* ignore la barre du navigateur */
   }
 }

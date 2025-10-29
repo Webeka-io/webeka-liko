@@ -46,8 +46,8 @@ const HomeFourMain = () => {
   title={'Webeka\nDentiste'}
   color="#111"
   background="#fff"
-  logoSrc="/assets/img/logo/logo.png"
-  logoAlt="Webeka Dentiste"
+  logoSrc="/assets/img/logo/logo-anim.png"
+  logoAlt="Dentiste"
   logoWidth={200}
 />
 
