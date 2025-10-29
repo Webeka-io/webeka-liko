@@ -7,7 +7,7 @@ export default function SiteWideBanner() {
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   const text =
-    '🎁 Offre de lancement Webeka : création du site offerte — paiement uniquement si vous êtes satisfait • 15 places disponibles • 75 €/mois tout inclus';
+    '🎁 Offre de lancement Webeka : création du site offerte • 15 places disponibles • 75 €/mois tout inclus';
 
   // scroll lock quand modal ouvert
   useEffect(() => {

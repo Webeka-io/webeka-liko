@@ -57,9 +57,11 @@
   z-index: -1;
 }
 
+
+
 .tp-hero-3-circle-shape3 {
   position: absolute;
-  top: 40%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -88,12 +90,7 @@
   display: inline-block;
   filter: blur(35px);
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-  background: linear-gradient(
-    220deg,
-    rgba(98, 178, 254, 0.5) 0.77%,   /* bleu clair */
-    rgba(72, 142, 255, 0.5) 50%,     /* bleu plus profond */
-    rgba(120, 94, 234, 0.5) 100%     /* violet bleuté */
-  );
+  background: linear-gradient(220deg, rgba(148, 254, 98, 0.5) 0.77%, rgba(255, 226, 122, 0.5) 55.4%, rgba(234, 94, 94, 0.5) 100%);
 }
 
 .menu-bg {
@@ -219,7 +216,7 @@
   font-size: 140px;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: -5.6px;
+  letter-spacing: 1px;
   color: var(--tp-common-black);
   font-family: var(--tp-ff-marcellus);
   margin-bottom: 0px;
@@ -235,12 +232,13 @@
   .tp-hero-3-title {
     font-size: 95px;
     margin-top:20px;
+    
   }
 }
 @media (max-width: 767px) {
   .tp-hero-3-title {
     font-size: 55px;
-    letter-spacing: -4.6px;
+    letter-spacing: -3.5px;
   }
 }
 
@@ -1633,18 +1631,18 @@
 }
 
 .tm-hero-ptb {
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tm-hero-ptb {
-    padding-top: 150px;
+    padding-top: 50px;
   }
 }
 @media (max-width: 767px) {
   .tm-hero-ptb {
-    padding-top: 140px;
+    padding-top: 40px;
   }
 }
 

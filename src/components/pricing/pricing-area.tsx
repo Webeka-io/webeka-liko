@@ -24,7 +24,7 @@ export default function PricingArea() {
         <div className="row">
           <div className="col-xl-12 pt-dynamic">
             <div className="tp-hero-3-content-box text-center p-relative">
-              <div className="tp-hero-3-circle-shape my-custom-circle">
+              <div className="tp-hero-3-circle-shape3 my-custom-circle">
                 <span></span>
               </div>
 

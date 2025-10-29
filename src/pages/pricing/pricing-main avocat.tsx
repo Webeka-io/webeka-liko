@@ -51,7 +51,7 @@ const HomeFourMain = () => {
 
        {/* Loader (white/black) */}
              <LoadingScreen
-                    title={'Avocat'}
+                    title={'Avocat.'}
                     color="#111"
                     background="#fff"
                     logoSrc="/assets/img/logo/logo-anim.png"
