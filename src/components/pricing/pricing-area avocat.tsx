@@ -110,16 +110,16 @@ export default function PricingArea() {
                       letterSpacing: -0.5,
                     }}
                   >
-                    400&nbsp;€
+                    <span className="price-offered">1500&nbsp;€</span>
                     <span
                       className="text-muted"
                       style={{
                         fontSize: 17,
-                        marginLeft: 6,
+                        marginLeft: 6, 
                         fontWeight: 500,
                       }}
                     >
-                      si satisfaction
+                      offert
                     </span>
                   </div>
                   <div

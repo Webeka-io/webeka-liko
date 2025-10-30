@@ -2009,3 +2009,21 @@ padding-top:0px;
     margin-bottom: 20px;
   }
 }
+
+.price-offered {
+  position: relative;
+  color: #999;
+  opacity: 0.8;
+}
+
+.price-offered::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 55%;
+  rotate: 10%;
+  width: 100%;
+  height: 5px;
+  background-color: #e74c3c;
+  transform: translateY(-50%);
+}

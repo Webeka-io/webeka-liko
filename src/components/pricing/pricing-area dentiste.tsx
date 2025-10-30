@@ -22,7 +22,7 @@ export default function PricingArea() {
       <div className="container">
         {/* Header */}
            <div className="row">
-          <div className="col-xl-12 pt-dynamic">
+          <div className="col-xl-12 pt-dynamic"> 
             <div className="tp-hero-3-content-box text-center p-relative">
               <div className="tp-hero-3-circle-shape3 my-custom-circle">
                 <span></span>
@@ -100,7 +100,7 @@ export default function PricingArea() {
               </div>
 
               <div className="card-body p-4 p-md-5 text-center">
-                {/* Price block */}
+               {/* Price block */}
                 <div className="my-2">
                   <div
                     className="fw-bold"
@@ -110,16 +110,16 @@ export default function PricingArea() {
                       letterSpacing: -0.5,
                     }}
                   >
-                    400&nbsp;€
+                    <span className="price-offered">1500&nbsp;€</span>
                     <span
                       className="text-muted"
                       style={{
                         fontSize: 17,
-                        marginLeft: 6,
+                        marginLeft: 6, 
                         fontWeight: 500,
                       }}
                     >
-                      si satisfaction
+                      offert
                     </span>
                   </div>
                   <div

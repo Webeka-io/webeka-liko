@@ -43,7 +43,6 @@ export default function PricingArea() {
                 </span>
               </h4>
 
-
               <span className="d-none d-md-block tp-hero-3-category-2 tp_reveal_anim ">
                 Abonnement tout inclus. Zéro surprise.
               </span>
@@ -54,7 +53,7 @@ export default function PricingArea() {
           </div>
         </div>
 
-        {/* Card */}
+        {/* CARD */}
         <div className="row justify-content-center mt-5 mb-10">
           <div className="col-md-7 col-lg-6 col-xl-5">
             <div
@@ -110,16 +109,16 @@ export default function PricingArea() {
                       letterSpacing: -0.5,
                     }}
                   >
-                    400&nbsp;€
+                    <span className="price-offered">1500&nbsp;€</span>
                     <span
                       className="text-muted"
                       style={{
                         fontSize: 17,
-                        marginLeft: 6,
+                        marginLeft: 6, 
                         fontWeight: 500,
                       }}
                     >
-                      si satisfaction
+                      offert
                     </span>
                   </div>
                   <div
@@ -268,7 +267,6 @@ export default function PricingArea() {
                   className="d-inline-flex align-items-center justify-content-center w-100 mt-4"
                   href="/contact"
                   data-offer-modal
-
                   style={{
                     background: '#111',
                     color: '#fff',
@@ -292,7 +290,7 @@ export default function PricingArea() {
                       '0 10px 24px rgba(0,0,0,.15)';
                   }}
                 >
-                Prendre un rendez-vous {' '}
+                  Prendre un rendez-vous{' '}
                   <span className="ms-2 d-inline-flex align-items-center">
                     <RightArrowTwo />
                   </span>
