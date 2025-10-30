@@ -28,7 +28,7 @@ export default function PricingArea() {
                 <span></span>
               </div>
 
-              <h4 className="tp-hero-3-title tp_reveal_anim mb-2">
+              <h4 className="tp-hero-3-title1 tp_reveal_anim mb-2">
                 <span className="tp-reveal-line">
                   Notre Offre
                   <span className="logo-wrap d-inline-block position-relative align-middle ms-2 icontitle">
