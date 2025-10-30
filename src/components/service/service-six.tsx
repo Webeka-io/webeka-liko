@@ -106,7 +106,7 @@ export default function ServiceSix() {
                       <div className="sv-service-btn">
                         <Link
                            className="tp-btn-zikzak p-relative"
-                            href="/contact"
+                            href="/rdv"
                         >
                           <span className="zikzak-content">
                             Je <br /> Me lance

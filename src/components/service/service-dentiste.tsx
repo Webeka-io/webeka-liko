@@ -107,7 +107,7 @@ export default function ServiceSix() {
                       <div className="sv-service-btn">
                         <Link
                            className="tp-btn-zikzak p-relative"
-                            href="https://calendly.com/webeka-contact/30min?month=2025-10"
+                            href="/rdv"
                             data-offer-modal
 
                         >
