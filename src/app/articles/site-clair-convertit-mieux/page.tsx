@@ -144,7 +144,7 @@ const HomeFourMain = () => {
           Parlons de votre projet — sans engagement, juste pour voir ce qu’on peut créer ensemble.
         </p>
         <Link
-          href="https://calendly.com/webeka-contact/30min"
+          href="/rdv"
           className="tp-btn-black-2"
         >
           Réserver un appel{" "}

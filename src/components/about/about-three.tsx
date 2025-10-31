@@ -45,7 +45,7 @@ export default function AboutThree() {
               <p className="mb-45 tp_fade_bottom">
                 Notre objectif : faire de votre site un véritable partenaire de croissance — visible sur Google, rassurant pour vos clients, et toujours à jour.
               </p>
-              <Link className="tp-btn-black-2 " href="/contact">
+              <Link className="tp-btn-black-2 " href="/rdv">
                 Commencer
                 <span className="p-relative">
                   <RightArrowTwo />

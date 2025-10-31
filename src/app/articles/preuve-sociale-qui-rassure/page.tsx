@@ -198,7 +198,7 @@ const HomeFourMain = () => {
       On vous conçoit un bloc d’avis + logos + KPIs sur-mesure, intégré à votre page en 48h.
     </p>
     <Link
-      href="https://calendly.com/webeka-contact/30min"
+      href="/rdv"
       className="tp-btn-black-2"
     >
       Concevoir ma preuve sociale{" "}

@@ -63,7 +63,7 @@ export default function HeroBannerFour() {
 
 
           
-              <Link className="tp-btn-black-2" href="https://calendly.com/webeka-contact/30min?month=2025-10" data-offer-modal>
+              <Link className="tp-btn-black-2" href="/rdv" data-offer-modal>
                 Réserver un appel{" "}
                 <span className="p-relative">
                   <RightArrowTwo />

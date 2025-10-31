@@ -179,7 +179,7 @@ const HomeFourMain = () => {
       On vérifie votre fiche Google et votre page locale ensemble — rapide, concret, sans engagement.
     </p>
     <Link
-      href="https://calendly.com/webeka-contact/30min"
+      href="/rdv"
       className="tp-btn-black-2"
     >
       Réserver un audit SEO local{" "}

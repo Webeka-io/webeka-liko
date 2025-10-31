@@ -50,7 +50,7 @@ export default function AboutThree() {
                 Chaque détail est conçu pour valoriser votre expertise juridique, améliorer votre visibilité et faciliter la prise de contact de vos clients.
               </p>
 
-              <Link className="tp-btn-black-2" href="/contact">
+              <Link className="tp-btn-black-2" href="/rdv">
                 Commencer
                 <span className="p-relative"><RightArrowTwo /><ArrowBg /></span>
               </Link>
