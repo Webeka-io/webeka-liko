@@ -50,7 +50,7 @@ const HomeFourMain = () => {
     <Wrapper>
 
       <LoadingScreen
-        title={'Offre.'}
+        title={''}
         color="#111"
         background="#fff"
         logoSrc="/assets/img/logo/logo-anim.png"

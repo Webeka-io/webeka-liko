@@ -45,7 +45,7 @@ const ContactMain = () => {
     <Wrapper>
 
         <LoadingScreen
-               title={'Webeka\nAvocat'}
+               title={''}
                color="#111"
                background="#fff"
                logoSrc="/assets/img/logo/logo-anim.png"

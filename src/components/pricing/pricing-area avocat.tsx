@@ -30,16 +30,8 @@ export default function PricingArea() {
 
               <h4 className="tp-hero-3-title1 tp_reveal_anim mb-2">
                 <span className="tp-reveal-line">
-                  Notre Offre
-                  <span className="logo-wrap d-inline-block position-relative align-middle ms-2 icontitle">
-                    <Image
-                      src={logoCadeau}
-                      alt="Logo Webeka"
-                      fill
-                      className="object-fit-contain handshake-logo"
-                      sizes="(min-width:1200px) 180px, (min-width:768px) 60px, (min-width:576px) 60px, 40px"
-                    />
-                  </span>
+                  Notre Offre.
+                 
                 </span>
               </h4>
 

@@ -46,7 +46,7 @@ const ContactMain = () => {
 
         {/* Loader (white/black) */}
              <LoadingScreen
-         title={'Webeka\nDentiste'}
+         title={''}
          color="#111"
          background="#fff"
          logoSrc="/assets/img/logo/logo-anim.png"
