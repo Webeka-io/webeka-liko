@@ -75,7 +75,7 @@ export default function PricingArea() {
                     padding: '10px 16px',
                   }}
                 >
-                  Satisfaction Garantie
+                  Création Offerte
                 </span>
                 <div
                   className="mt-3"
