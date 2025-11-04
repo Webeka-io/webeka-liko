@@ -29,7 +29,7 @@ const SECTORS: Sector[] = [
 
 export default function SectorsPage() {
   return (
-    <div className="tp-hero-3-area tp-hero-3-ptb fix">
+    <div className="tp-hero-3-area tp-hero-3-ptb1 fix">
       <div className="container">
         {/* HERO */}
         <div className="row">

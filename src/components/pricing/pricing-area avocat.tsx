@@ -30,7 +30,7 @@ export default function PricingArea() {
 
               <h4 className="tp-hero-3-title1 tp_reveal_anim mb-2">
                 <span className="tp-reveal-line">
-                  Notre Offre.
+                  1 mois offert
                  
                 </span>
               </h4>

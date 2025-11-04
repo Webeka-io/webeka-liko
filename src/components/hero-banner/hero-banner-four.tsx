@@ -11,7 +11,7 @@ import RatingStrip from "@/components/RatingStrip";
 
 export default function HeroBannerFour() {
   return (
-    <div className=" tp-hero-3-area tp-hero-3-ptb fix ">
+    <div className=" tp-hero-3-area tp-hero-3-ptb2 fix ">
       <div className="container">
         <div className="row">
           <div className="col-xl-12 pt-dynamic">

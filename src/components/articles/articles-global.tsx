@@ -49,7 +49,7 @@ const ARTICLES: Article[] = [
 
 export default function ArticlesPage() {
   return (
-   <div className="tp-hero-3-area tp-hero-3-ptb1 fix">
+   <div className="tp-hero-3-area tp-hero-3-ptb2 fix">
       <div className="container">
         {/* HERO */}
         <div className="row">

@@ -18,7 +18,7 @@ import {
 
 export default function PricingArea() {
   return (
-    <div className="tp-hero-3-area tp-hero-3-ptb2 fix">
+    <div className="tp-hero-3-area tp-hero-3-ptb1 fix">
       <div className="container">
         {/* Header */}
            <div className="row">
@@ -30,7 +30,7 @@ export default function PricingArea() {
 
               <h4 className="tp-hero-3-title1 tp_reveal_anim mb-2">
                 <span className="tp-reveal-line">
-                  Notre Offre.
+                  1 mois offert
                 
                 </span>
               </h4>
